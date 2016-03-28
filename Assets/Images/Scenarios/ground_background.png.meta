@@ -1,0 +1,120 @@
+fileFormatVersion: 2
+guid: 37cf07feb3be5a149bea767c57e50f36
+timeCreated: 1444173400
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: GroundBackground_0
+    21300002: GroundBackground_1
+    21300004: GroundBackground_2
+    21300006: GroundBackground_3
+    21300008: GroundBackground_4
+    21300010: GroundBackground_5
+    21300012: GroundBackground_6
+    21300014: GroundBackground_7
+    21300016: GroundBackground_8
+    21300018: mountain_2
+    21300020: mountain_1
+    21300022: mountain_0
+    21300024: ground_floor
+    21300026: ground_background
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 40
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: mountain_2
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 1317
+        width: 895
+        height: 301
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mountain_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 1073
+        width: 896
+        height: 239
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mountain_0
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 896
+        width: 898
+        height: 159
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ground_floor
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 764
+        width: 897
+        height: 92
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ground_background
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 409
+        width: 596
+        height: 324
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

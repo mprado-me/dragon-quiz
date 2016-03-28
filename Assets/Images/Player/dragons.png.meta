@@ -1,0 +1,364 @@
+fileFormatVersion: 2
+guid: 11b4d0e2e9d0da54bab535db4075c94a
+timeCreated: 1444787631
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: dragons_0
+    21300002: dragons_1
+    21300004: dragons_2
+    21300006: dragons_3
+    21300008: dragons_4
+    21300010: dragons_5
+    21300012: dragons_6
+    21300014: red_normal_body
+    21300016: red_wing_0
+    21300018: red_wing_1
+    21300020: red_wing_2
+    21300022: red_wing_3
+    21300024: red_dead_body
+    21300026: dragons_13
+    21300028: dragons_14
+    21300030: dragons_15
+    21300032: dragons_16
+    21300034: dragons_17
+    21300036: dragons_18
+    21300038: dragons_19
+    21300040: dragons_20
+    21300042: dragons_21
+    21300044: dragons_22
+    21300046: dragons_23
+    21300048: dragons_24
+    21300050: dragons_25
+    21300052: dragons_26
+    21300054: dragons_27
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 40
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: dragons_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 936
+        width: 125
+        height: 80
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: dragons_1
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 946
+        width: 46
+        height: 51
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: dragons_2
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 957
+        width: 48
+        height: 27
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: dragons_3
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 947
+        width: 44
+        height: 40
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: dragons_4
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 932
+        width: 40
+        height: 60
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: dragons_5
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 930
+        width: 127
+        height: 82
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: dragons_6
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 820
+        width: 285
+        height: 172
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: red_normal_body
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 808
+        width: 124
+        height: 81
+      alignment: 9
+      pivot: {x: .619809389, y: .477073401}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: red_wing_0
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 832
+        width: 48
+        height: 52
+      alignment: 9
+      pivot: {x: .915096939, y: .0595081039}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: red_wing_1
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 840
+        width: 48
+        height: 26
+      alignment: 9
+      pivot: {x: .941244781, y: .143984288}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: red_wing_2
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 831
+        width: 45
+        height: 40
+      alignment: 9
+      pivot: {x: .932310641, y: .93536073}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: red_wing_3
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 819
+        width: 41
+        height: 61
+      alignment: 9
+      pivot: {x: .844385684, y: .955228209}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: red_dead_body
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 812
+        width: 119
+        height: 80
+      alignment: 9
+      pivot: {x: .621722043, y: .495356739}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: dragons_13
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 700
+        width: 115
+        height: 80
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: dragons_14
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 722
+        width: 44
+        height: 46
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: dragons_15
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 724
+        width: 43
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: dragons_16
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 716
+        width: 40
+        height: 38
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: dragons_17
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 707
+        width: 36
+        height: 54
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: dragons_18
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 704
+        width: 112
+        height: 80
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: dragons_19
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 584
+        width: 278
+        height: 173
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: dragons_20
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 584
+        width: 126
+        height: 93
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: dragons_21
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 607
+        width: 49
+        height: 52
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: dragons_22
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 617
+        width: 51
+        height: 27
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: dragons_23
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 608
+        width: 47
+        height: 43
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: dragons_24
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 602
+        width: 43
+        height: 63
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: dragons_25
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 598
+        width: 122
+        height: 93
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: dragons_26
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 368
+        width: 295
+        height: 172
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: dragons_27
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 369
+        width: 279
+        height: 171
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
