@@ -17,8 +17,6 @@ public class MonoBehaviour2 : MonoBehaviour {
     protected GameObject AddChild( GameObject prefab ) {
         GameObject child = Instantiate(prefab);
         child.transform.parent = transform;
-        child.transform.localPosition = Vector3.zero;
-        child.transform.localEulerAngles = Vector3.zero;
         return child;
     }
 }
