@@ -21,8 +21,7 @@ public class GameModeController : MonoBehaviour2 {
     }
 
     private void CreateGame() {
-        GameObject game = new GameObject("Game");
-        game.AddComponent<GameController>();
+        GameFactory.Instance.CreateGame();
     }
 
     private void CreateTest() {
