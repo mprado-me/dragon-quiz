@@ -1,0 +1,128 @@
+fileFormatVersion: 2
+guid: a7758424227ac194ea443a3489ebf604
+timeCreated: 1459223021
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: red_wings_0
+    21300002: red_wings_1
+    21300004: red_wings_2
+    21300006: red_wings_3
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 40
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: red_wings_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 23
+        width: 44
+        height: 49
+      alignment: 9
+      pivot: {x: 0.9598976, y: 0.050592188}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -42.235493, y: 46.52098}
+        - {x: -42.235493, y: 24.520983}
+        - {x: -40.235493, y: 11.520983}
+        - {x: -17.235493, y: -2.4790173}
+        - {x: 1.7645073, y: -2.4790173}
+        - {x: 1.7645073, y: 33.52098}
+        - {x: -6.2354927, y: 46.52098}
+    - name: red_wings_1
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 32
+        width: 45
+        height: 24
+      alignment: 9
+      pivot: {x: 0.9629035, y: 0.07842668}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: red_wings_2
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 21
+        width: 43
+        height: 40
+      alignment: 9
+      pivot: {x: 0.94291085, y: 0.93149215}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.545166, y: 2.7403145}
+        - {x: -32.545166, y: -15.2596855}
+        - {x: -40.545166, y: -33.259686}
+        - {x: -40.545166, y: -37.259686}
+        - {x: -10.545166, y: -37.259686}
+        - {x: 2.454834, y: -20.259686}
+        - {x: 2.454834, y: 2.7403145}
+    - name: red_wings_3
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 10
+        width: 39
+        height: 59
+      alignment: 9
+      pivot: {x: 0.85099286, y: 0.9640243}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.18872, y: 2.1225662}
+        - {x: -21.18872, y: 0.12256622}
+        - {x: -33.18872, y: -24.877434}
+        - {x: -33.18872, y: -39.877434}
+        - {x: -19.18872, y: -56.877434}
+        - {x: -11.188721, y: -56.877434}
+        - {x: 5.8112793, y: -33.877434}
+        - {x: 5.8112793, y: -0.8774338}
+        - {x: 4.8112793, y: 2.1225662}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

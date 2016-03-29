@@ -10,6 +10,8 @@ public class PlayerSettings : Settings {
     public float minAng = -70.0f;
     public float controlAngUpFactor = 1.0f;
     public float controlAngDownFactor = 0.8f;
+    public float gravityScale = 1.5f;
+    public float wingCyclePeriod = 1f;
     public GetInitialStateDelegate GetInitialState = GetDefaultInitialState;
 
     private static PlayerSettings _instance;

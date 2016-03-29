@@ -8,6 +8,7 @@ public class MainMenuPS : PlayerState {
     protected override void Enter() {
         _nextPlayerState = null;
         MainMenuController mainMenuController = UIStorer.Instance.MainMenuController;
+        Controller.Add<BeatWingPB>();
         mainMenuController.On(MainMenuEvent.PLAY_BUTTON_CLICK, delegate { _nextPlayerState = PlayerStatesStorer.Instance.Get<MainMenuToDivertingVerticalPipesPS>(); });
     }
 

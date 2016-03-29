@@ -38,6 +38,11 @@ public static class ExtensionMethods {
         sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, newAlpha);
     }
 
+    public static bool ContainTag(this SpriteRenderer sr, string tag) {
+        Regex tagRE = new Regex(".*" + tag + ".*");
+        return tagRE.Match(sr.tag).Success;
+    }
+
     // GameObject
     public static void SetParent(this GameObject go, GameObject parent) {
         go.transform.parent = parent.transform;
@@ -54,6 +59,11 @@ public static class ExtensionMethods {
         child.transform.parent = go.transform;
         child.transform.localPosition = Vector3.zero;
         return child;
+    }
+
+    public static bool ContainTag(this GameObject go, string tag) {
+        Regex tagRE = new Regex(".*" + tag + ".*");
+        return tagRE.Match(go.tag).Success;
     }
 
     public static GameObject AddChild(this GameObject go, string name, string folderName, string spriteName) {

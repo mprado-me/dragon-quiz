@@ -7,10 +7,18 @@ public class PlayerData : Data {
     private Transform _transform;
     private Rigidbody2D _rigidBody;
     private Collider2D _otherCollider2D;
+    private SpriteRenderer _frontWingSR;
+    private SpriteRenderer _backWingSR;
 
     public PlayerData( PlayerController playerController ) {
         RigidBody = playerController.GetComponent<Rigidbody2D>();
         Transform = playerController.transform;
+        foreach( SpriteRenderer sr in playerController.GetComponentsInChildren<SpriteRenderer>()) {
+            if(sr.ContainTag("BackWing"))
+                BackWingSR = sr;
+            else if(sr.ContainTag("FrontWing"))
+                FrontWingSR = sr;
+        }
     }
 
     public float AbsVel {
@@ -50,6 +58,27 @@ public class PlayerData : Data {
 
         set {
             _otherCollider2D = value;
+        }
+    }
+
+    public SpriteRenderer FrontWingSR {
+        get {
+            return _frontWingSR;
+        }
+
+        set {
+            _frontWingSR = value;
+        }
+    }
+
+    public SpriteRenderer BackWingSR
+    {
+        get {
+            return _backWingSR;
+        }
+
+        set {
+            _backWingSR = value;
         }
     }
 }

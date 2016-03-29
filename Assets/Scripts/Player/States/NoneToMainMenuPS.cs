@@ -9,6 +9,7 @@ public class NoneToMainMenuPS : PlayerState {
     protected override void Enter() {
         _nextPlayerState = null;
         MainMenuController mainMenuController = UIStorer.Instance.MainMenuController;
+        Controller.Add<BeatWingPB>();
         mainMenuController.On(MainMenuEvent.IN_ANIMATION_END, delegate { _nextPlayerState = PlayerStatesStorer.Instance.Get<MainMenuPS>(); });
     }
 
