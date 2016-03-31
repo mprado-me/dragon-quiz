@@ -14,7 +14,13 @@ public class TestController : MonoBehaviour2 {
         //TestPlayerYMove();
         //TestPlayerRelScenarioMove();
         //TestPlayerDieOnFloorCollision();
-        TestPlayerDieOnCeilFloorCollision();
+        //TestPlayerDieOnCeilFloorCollision();
+        TestVerticalPipeCreation();
+    }
+
+    private void TestVerticalPipeCreation() {
+        ScenariosManager.Instance.vel = -5f;
+        PipesFactory.Instance.CreateFixesVerticalPipe();
     }
 
     private void MainMenuPrefab() {

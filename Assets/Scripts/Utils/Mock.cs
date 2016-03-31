@@ -22,7 +22,7 @@ public class Mock : MonoBehaviour2 {
     public void UpdateAbsVels() {
         PlayerController playerController = PlayerStorer.Instance.PlayerController;
         playerController.AbsVel = VelPlayerScenario * playerController.NormalizedVel;
-        ScenariosManager.Instance.absVel = -VelPlayerScenario * (1 - playerController.NormalizedVel);
+        ScenariosManager.Instance.vel = -VelPlayerScenario * (1 - playerController.NormalizedVel);
     }
 
     public static Mock Instance {

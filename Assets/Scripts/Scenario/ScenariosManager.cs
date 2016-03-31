@@ -11,7 +11,9 @@ public enum ScenarioType {
 
 public class ScenariosManager : MonoBehaviour2{
 
-    public float absVel; // The signal is inside vel;
+    // The signal is inside vel
+    // Isn't releated to player vel
+    public float vel; 
 
     private Dictionary<ScenarioType, GameObject> scenariosDict;
     private ScenarioType _current;

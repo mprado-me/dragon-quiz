@@ -53,7 +53,7 @@ public class ScenarioController : MonoBehaviour2 {
     }
 
     void Update() {
-        Move(Time.deltaTime * ScenariosManager.Instance.absVel);
+        Move(Time.deltaTime * ScenariosManager.Instance.vel);
     }
 
     public void Move(float dx) {
