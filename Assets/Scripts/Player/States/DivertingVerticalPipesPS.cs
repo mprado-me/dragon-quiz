@@ -8,6 +8,8 @@ public class DivertingVerticalPipesPS : PlayerState {
         Controller.Add<JumpPB>();
         Controller.Add<CollisionPB>();
         Controller.Add<AngleControlPB>();
+        Controller.Add<BeatWingPB>();
+        Data.RigidBody.gravityScale = PlayerSettings.Instance.gravityScale;
     }
 
     protected override void Exit() {

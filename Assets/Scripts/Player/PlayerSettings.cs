@@ -12,6 +12,8 @@ public class PlayerSettings : Settings {
     public float controlAngDownFactor = 0.8f;
     public float gravityScale = 1.5f;
     public float wingCyclePeriod = 1f;
+    public float initialX = -2f;
+    public float timeToReachInitialX = 0.3f;
     public GetInitialStateDelegate GetInitialState = GetDefaultInitialState;
 
     private static PlayerSettings _instance;

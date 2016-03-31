@@ -2,13 +2,12 @@
 using System.Collections;
 using System;
 
-public class MainMenuToDivertingVerticalPipesPS : PlayerState {
-    PlayerState _nextPlayerState;
+public class JumpStartTutorialPS : PlayerState {
+
 
     protected override void Enter() {
-        _nextPlayerState = null;
         MainMenuController mainMenuController = UIStorer.Instance.MainMenuController;
-        mainMenuController.On(MainMenuEvent.OUT_ANIMATION_END, delegate { _nextPlayerState = PlayerStatesStorer.Instance.Get<DivertingVerticalPipesPS>(); });
+        Controller.Add<BeatWingPB>();
     }
 
     protected override void Exit() {
@@ -16,6 +15,6 @@ public class MainMenuToDivertingVerticalPipesPS : PlayerState {
     }
 
     protected override State<PlayerController, PlayerSettings, PlayerData> Update() {
-        return _nextPlayerState;
+        return PlayerStatesStorer.Instance.Get<DivertingVerticalPipesPS>();
     }
 }
