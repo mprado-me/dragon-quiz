@@ -15,7 +15,23 @@ public class TestController : MonoBehaviour2 {
         //TestPlayerRelScenarioMove();
         //TestPlayerDieOnFloorCollision();
         //TestPlayerDieOnCeilFloorCollision();
-        TestVerticalPipeCreation();
+        //TestVerticalPipeCreation();
+        TestQuestionBoard();
+    }
+
+    private bool initInAn = false;
+    QuestionBoardController questionBoardController;
+    private void TestQuestionBoard() {
+        QuestionBoardFactory.Instance.CreateQuestionBoard();
+        questionBoardController = QuestionBoardStorer.Instance.QuestionBoardController;
+        StartCoroutine(TestQuestionBoardUpdate());
+    }
+
+    private IEnumerator TestQuestionBoardUpdate() {
+        yield return new WaitForSeconds(0.5f);
+        questionBoardController.InitInAn();
+        yield return new WaitForSeconds(2f);
+        questionBoardController.InitOutAn();
     }
 
     private void TestVerticalPipeCreation() {
