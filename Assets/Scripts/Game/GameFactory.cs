@@ -8,7 +8,8 @@ public class GameFactory : MonoBehaviour2 {
     private static GameFactory _instance;
 
     public void CreateGame() {
-        AddChild(gamePrefab);
+        GameObject game = AddChild(gamePrefab);
+        GameStorer.Instance.GameController = game.GetComponent<GameController>();
     }
 
     public static GameFactory Instance
