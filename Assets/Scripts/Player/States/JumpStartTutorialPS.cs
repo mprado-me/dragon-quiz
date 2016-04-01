@@ -4,7 +4,6 @@ using System;
 
 public class JumpStartTutorialPS : PlayerState {
 
-
     protected override void Enter() {
         MainMenuController mainMenuController = UIStorer.Instance.MainMenuController;
         Controller.Add<BeatWingPB>();
@@ -15,6 +14,9 @@ public class JumpStartTutorialPS : PlayerState {
     }
 
     protected override State<PlayerController, PlayerSettings, PlayerData> Update() {
-        return PlayerStatesStorer.Instance.Get<DivertingVerticalPipesPS>();
+        if(Input.GetKeyDown(KeyCode.Mouse0))
+            return PlayerStatesStorer.Instance.Get<DivertingObstaclesPS>();
+        else
+            return null;
     }
 }

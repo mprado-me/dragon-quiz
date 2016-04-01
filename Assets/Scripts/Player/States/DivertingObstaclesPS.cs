@@ -2,7 +2,7 @@
 using System.Collections;
 using System;
 
-public class DivertingVerticalPipesPS : PlayerState {
+public class DivertingObstaclesPS : PlayerState {
     protected override void Enter() {
         Controller.ClearBehaviours();
         Controller.Add<JumpPB>();

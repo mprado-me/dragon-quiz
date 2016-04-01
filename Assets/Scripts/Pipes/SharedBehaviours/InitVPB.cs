@@ -16,10 +16,7 @@ public class InitVPB : MonoBehaviour {
         float h = Camera.main.orthographicSize;
         float min = -h + PipesSettings.Instance.yDist / 2 + PipesSettings.Instance.minVisibleYSize;
         float max = h - PipesSettings.Instance.yDist / 2 - PipesSettings.Instance.minVisibleYSize;
-        Debug.Log(min);
-        Debug.Log(max);
         float y = UnityEngine.Random.Range(min, max);
-        Debug.Log(y);
         transform.position = new Vector3(transform.position.x, y);
 
         BoxCollider2D upColl = _up.GetComponent<BoxCollider2D>();

@@ -13,7 +13,7 @@ public class MainMenuGS : GameState {
     protected override void Enter() {
         _nextState = null;
         MainMenuController mainMenuController = UIStorer.Instance.MainMenuController;
-        mainMenuController.On(MainMenuEvent.PLAY_BUTTON_CLICK, delegate { _nextState = GameStatesStorer.Instance.Get<MainMenuToLaunchingVerticalPipesGS>(); });
+        mainMenuController.On(MainMenuEvent.PLAY_BUTTON_CLICK, delegate { _nextState = GameStatesStorer.Instance.Get<MainMenuToMatchGS>(); });
     }
 
     protected override State<GameController, GameSettings, GameData> Update() {

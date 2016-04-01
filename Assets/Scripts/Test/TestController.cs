@@ -16,22 +16,52 @@ public class TestController : MonoBehaviour2 {
         //TestPlayerDieOnFloorCollision();
         //TestPlayerDieOnCeilFloorCollision();
         //TestVerticalPipeCreation();
-        TestQuestionBoard();
+        //TestQuestionBoard1();
+        TestQuestionBoard2();
+        //TestQuestionTextImageCreation();
     }
 
-    private bool initInAn = false;
-    QuestionBoardController questionBoardController;
-    private void TestQuestionBoard() {
+    private void TestQuestionBoard2() {
         QuestionBoardFactory.Instance.CreateQuestionBoard();
-        questionBoardController = QuestionBoardStorer.Instance.QuestionBoardController;
-        StartCoroutine(TestQuestionBoardUpdate());
+        StartCoroutine(TestQuestionBoardUpdate2());
+    }
+    private IEnumerator TestQuestionBoardUpdate2() {
+        yield return new WaitForSeconds(0.5f);
+        QuestionBoardStorer.Instance.QuestionBoardController.InitNewQuestionContent();
+        QuestionBoardStorer.Instance.QuestionBoardController.AddImage("Images/Tutorial/spacebar");
+        QuestionBoardStorer.Instance.QuestionBoardController.AddText("or");
+        QuestionBoardStorer.Instance.QuestionBoardController.AddImage("Images/Tutorial/mouse_left_click");
+        QuestionBoardStorer.Instance.QuestionBoardController.AddText("to jump and start");
+        QuestionBoardStorer.Instance.QuestionBoardController.FinishNewQuestionContent();
+        QuestionBoardStorer.Instance.QuestionBoardController.InitInAn();
+        yield return new WaitForSeconds(2f);
+        QuestionBoardStorer.Instance.QuestionBoardController.InitOutAn();
+        yield return new WaitForSeconds(2f);
+        QuestionBoardStorer.Instance.QuestionBoardController.InitNewQuestionContent();
     }
 
-    private IEnumerator TestQuestionBoardUpdate() {
+    private void TestQuestionTextImageCreation() {
+        GameObject go = QuestionBoardFactory.Instance.CreateText("oi amiguinho como vai vc eu vou bem");
+        go.transform.parent = QuestionBoardFactory.Instance.transform;
+        go = QuestionBoardFactory.Instance.CreateText("oi");
+        go.transform.parent = QuestionBoardFactory.Instance.transform;
+        go = QuestionBoardFactory.Instance.CreateText("oi amiguinho");
+        go.transform.parent = QuestionBoardFactory.Instance.transform;
+        go = QuestionBoardFactory.Instance.CreateImage("Images/Tutorial/mouse_left_click");
+        go.transform.parent = QuestionBoardFactory.Instance.transform;
+        go = QuestionBoardFactory.Instance.CreateImage("Images/Tutorial/spacebar");
+        go.transform.parent = QuestionBoardFactory.Instance.transform;
+    }
+
+    private void TestQuestionBoard1() {
+        QuestionBoardFactory.Instance.CreateQuestionBoard();
+        StartCoroutine(TestQuestionBoardUpdate1());
+    }
+    private IEnumerator TestQuestionBoardUpdate1() {
         yield return new WaitForSeconds(0.5f);
-        questionBoardController.InitInAn();
+        QuestionBoardStorer.Instance.QuestionBoardController.InitInAn();
         yield return new WaitForSeconds(2f);
-        questionBoardController.InitOutAn();
+        QuestionBoardStorer.Instance.QuestionBoardController.InitOutAn();
     }
 
     private void TestVerticalPipeCreation() {
@@ -54,7 +84,7 @@ public class TestController : MonoBehaviour2 {
         pc = PlayerStorer.Instance.PlayerController;
     }
     private PlayerState GetInitialState() {
-        return PlayerStatesStorer.Instance.Get<DivertingVerticalPipesPS>();
+        return PlayerStatesStorer.Instance.Get<DivertingObstaclesPS>();
     }
 
     private void TestPlayerDieOnFloorCollision() {
@@ -64,7 +94,7 @@ public class TestController : MonoBehaviour2 {
         this.Invoke("TestPlayerDieOnFloorCollision2", 0.1f);
     }
     private void TestPlayerDieOnFloorCollision2() {
-        pc.State = new DivertingVerticalPipesPS();
+        pc.State = new DivertingObstaclesPS();
         pc.NormalizedVel = 0.0f;
         Mock.Instance.VelPlayerScenario = 2f;
     }
@@ -76,7 +106,7 @@ public class TestController : MonoBehaviour2 {
         this.Invoke("TestPlayerRelScenarioMove2", 0.1f);
     }
     private void TestPlayerRelScenarioMove2() {
-        pc.State = new DivertingVerticalPipesPS();
+        pc.State = new DivertingObstaclesPS();
         pc.NormalizedVel = 0.5f;
         Mock.Instance.VelPlayerScenario = 1f;
     }
@@ -88,7 +118,7 @@ public class TestController : MonoBehaviour2 {
         this.Invoke("TestPlayerYMove2", 0.1f);
     }
     private void TestPlayerYMove2() {
-        pc.State = new DivertingVerticalPipesPS();
+        pc.State = new DivertingObstaclesPS();
     }
 
     private void TestSkyScenario() {

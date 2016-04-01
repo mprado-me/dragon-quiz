@@ -2,15 +2,16 @@
 using System.Collections;
 using System;
 
-public class LaunchingVerticalPipesGS : GameState {
+public class DivertingObstaclesGS : GameState {
 
     private float delta;
 
-    public LaunchingVerticalPipesGS() {
+    public DivertingObstaclesGS() {
     }
 
     protected override void Enter() {
         delta = 0.0f;
+        ScenariosManager.Instance.vel = ScenarioSettings.Instance.vel;
     }
 
     protected override State<GameController, GameSettings, GameData> Update() {

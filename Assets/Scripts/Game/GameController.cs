@@ -4,6 +4,8 @@ using System;
 
 public class GameController : Controller<GameSettings, GameData> {
 
+    public string currentState;
+
     private GameStatesManager _gameStatesManager;
 
     private void Start() {
@@ -16,5 +18,6 @@ public class GameController : Controller<GameSettings, GameData> {
 
     private void Update() {
         _gameStatesManager.Update();
+        currentState = _gameStatesManager.CurrentState.GetType().Name;
     }
 }
