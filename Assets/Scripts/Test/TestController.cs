@@ -17,8 +17,23 @@ public class TestController : MonoBehaviour2 {
         //TestPlayerDieOnCeilFloorCollision();
         //TestVerticalPipeCreation();
         //TestQuestionBoard1();
-        TestQuestionBoard2();
+        //TestQuestionBoard2();
         //TestQuestionTextImageCreation();
+        TestSetQuestionFromJSONFile1();
+    }
+
+    private void TestSetQuestionFromJSONFile1() {
+        QuestionBoardFactory.Instance.CreateQuestionBoard();
+        StartCoroutine(TestSetQuestionFromJSONFile2());
+    }
+    private IEnumerator TestSetQuestionFromJSONFile2() {
+        yield return new WaitForSeconds(0.5f);
+        QuestionBoardStorer.Instance.QuestionBoardController.SetQuestion(QuestionGenerator.Instance.GetNew());
+        QuestionBoardStorer.Instance.QuestionBoardController.InitInAn();
+        yield return new WaitForSeconds(2f);
+        QuestionBoardStorer.Instance.QuestionBoardController.InitOutAn();
+        yield return new WaitForSeconds(2f);
+        QuestionBoardStorer.Instance.QuestionBoardController.InitNewQuestionContent();
     }
 
     private void TestQuestionBoard2() {

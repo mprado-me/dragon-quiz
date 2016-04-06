@@ -4,7 +4,6 @@ using System.Collections;
 public class DeadAirCollisionPS : PlayerState {
 
     protected override void Enter() {
-        Debug.Log("DeadAirCollisionPS.Enter()");
         Controller.ClearBehaviours();
         Data.RigidBody.velocity = Vector2.zero;
         Controller.Add<XMovePB>();
