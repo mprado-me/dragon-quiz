@@ -30,8 +30,8 @@ public class PlayerController : Controller<PlayerSettings, PlayerData> {
         currentState = _playerStatesManager.CurrentState.GetType().Name;
     }
 
-    public void Add<PAB>() where PAB : PlayerBehaviour, new() {
-        _playerBehavioursManager.Add<PAB>();
+    public void Add<PB>() where PB : PlayerBehaviour, new() {
+        _playerBehavioursManager.Add<PB>();
     }
 
     public void ClearBehaviours() {

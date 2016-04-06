@@ -1,24 +1,26 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System;
 
 public class DivertingObstaclesGS : GameState {
 
-    private float delta;
+    private int _nPipesToLauchUntilShowQuestion;
+    FixedVerticalPipesLauncherGB _fixedVerticalPipesLauncherGB;
 
     public DivertingObstaclesGS() {
     }
 
     protected override void Enter() {
-        delta = 0.0f;
         ScenariosManager.Instance.vel = ScenarioSettings.Instance.vel;
+        Controller.Add<FixedVerticalPipesLauncherGB>();
+        _fixedVerticalPipesLauncherGB = GameBehavioursStorer.Instance.Get<FixedVerticalPipesLauncherGB>();
+        _nPipesToLauchUntilShowQuestion = Random.Range(
+            GameSettings.Instance.minPipesLaunchedUntilShowQuestion,
+            GameSettings.Instance.maxPipesLaunchedUntilShowQuestion);
     }
 
     protected override State<GameController, GameSettings, GameData> Update() {
-        delta += Time.deltaTime;
-        if( delta >= GameSettings.Instance.launchFixedVerticalPipePeriod) {
-            delta = 0.0f;
-            PipesFactory.Instance.CreateFixesVerticalPipe();
+        if(_fixedVerticalPipesLauncherGB.NLauched >= _nPipesToLauchUntilShowQuestion) {
+            return GameStatesStorer.Instance.Get<QuestionVisibleGS>();
         }
         return null;
     }

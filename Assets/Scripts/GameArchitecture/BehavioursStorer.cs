@@ -11,11 +11,11 @@ public class BehavioursStorer<B> {
         _behavioursByType = new Dictionary<Type, B>();
     }
 
-    public B Get<BD>() where BD : B, new() {
+    public BD Get<BD>() where BD : B, new() {
         Type type = typeof(BD);
-        B behaviour;
+        BD behaviour;
         try {
-            behaviour = _behavioursByType[type];
+            behaviour = (BD) _behavioursByType[type];
         }
         catch(KeyNotFoundException) {
             behaviour = new BD();

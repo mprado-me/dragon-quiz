@@ -7,22 +7,29 @@ public class GameController : Controller<GameSettings, GameData> {
 
     public string currentState;
 
+    private GameBehavioursManager _gameBehavioursManager;
     private GameStatesManager _gameStatesManager;
     private GameEventsManager _gameEventsManager;
 
     private void Start() {
-        InitGameStatesManager();
-        QuestionBoardFactory.Instance.CreateQuestionBoard();
         _gameEventsManager = new GameEventsManager();
-    }
-
-    private void InitGameStatesManager() {
+        _gameBehavioursManager = new GameBehavioursManager(this);
         _gameStatesManager = new GameStatesManager(this);
+        QuestionBoardFactory.Instance.CreateQuestionBoard();
     }
 
     private void Update() {
         _gameStatesManager.Update();
+        _gameBehavioursManager.Update();
         currentState = _gameStatesManager.CurrentState.GetType().Name;
+    }
+
+    public void Add<GB>() where GB : GameBehaviour, new() {
+        _gameBehavioursManager.Add<GB>();
+    }
+
+    public void ClearBehaviours() {
+        _gameBehavioursManager.Clear();
     }
 
     public void On(GameEvent gameEvent, UnityAction call) {

@@ -81,7 +81,7 @@ public class TestController : MonoBehaviour2 {
 
     private void TestVerticalPipeCreation() {
         ScenariosManager.Instance.vel = -5f;
-        PipesFactory.Instance.CreateFixesVerticalPipe();
+        PipesFactory.Instance.CreateFixedVerticalPipe();
     }
 
     private void MainMenuPrefab() {

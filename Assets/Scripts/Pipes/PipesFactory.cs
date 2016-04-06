@@ -7,7 +7,7 @@ public class PipesFactory : MonoBehaviour2 {
 
     private static PipesFactory _instance;
 
-    public void CreateFixesVerticalPipe() {
+    public void CreateFixedVerticalPipe() {
         GameObject pipe = AddChild(skyFixedVerticalPipePrefab);
         pipe.transform.localPosition = Vector3.zero;
     }
