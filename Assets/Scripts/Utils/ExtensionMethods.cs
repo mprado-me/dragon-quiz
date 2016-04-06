@@ -56,8 +56,12 @@ public static class ExtensionMethods {
 
     public static GameObject AddChild(this GameObject go, string name) {
         GameObject child = new GameObject(name);
-        child.transform.parent = go.transform;
-        child.transform.localPosition = Vector3.zero;
+        child.transform.SetParent(go.transform, false);
+        return child;
+    }
+
+    public static GameObject AddChild(this GameObject go, GameObject child) {
+        child.transform.SetParent(go.transform, false);
         return child;
     }
 

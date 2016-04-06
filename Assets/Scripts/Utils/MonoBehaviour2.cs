@@ -16,7 +16,13 @@ public class MonoBehaviour2 : MonoBehaviour {
 
     protected GameObject AddChild( GameObject prefab ) {
         GameObject child = Instantiate(prefab);
-        child.transform.parent = transform;
+        child.transform.SetParent(transform, false);
+        return child;
+    }
+
+    protected GameObject AddChild(string name) {
+        GameObject child = new GameObject(name);
+        child.transform.SetParent(transform, false);
         return child;
     }
 }

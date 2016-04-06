@@ -19,7 +19,13 @@ public class TestController : MonoBehaviour2 {
         //TestQuestionBoard1();
         //TestQuestionBoard2();
         //TestQuestionTextImageCreation();
-        TestSetQuestionFromJSONFile1();
+        //TestSetQuestionFromJSONFile1();
+        TestCreateAnswer();
+    }
+
+    private void TestCreateAnswer() {
+        AnswersFactory.Instance.CreateUp('I', "Soccer Ball");
+        AnswersFactory.Instance.CreateDown('T', "a23aa");
     }
 
     private void TestSetQuestionFromJSONFile1() {
@@ -56,15 +62,15 @@ public class TestController : MonoBehaviour2 {
     }
 
     private void TestQuestionTextImageCreation() {
-        GameObject go = QuestionBoardFactory.Instance.CreateText("oi amiguinho como vai vc eu vou bem");
+        GameObject go = CanvasFactory.Instance.CreateText("oi amiguinho como vai vc eu vou bem");
         go.transform.parent = QuestionBoardFactory.Instance.transform;
-        go = QuestionBoardFactory.Instance.CreateText("oi");
+        go = CanvasFactory.Instance.CreateText("oi");
         go.transform.parent = QuestionBoardFactory.Instance.transform;
-        go = QuestionBoardFactory.Instance.CreateText("oi amiguinho");
+        go = CanvasFactory.Instance.CreateText("oi amiguinho");
         go.transform.parent = QuestionBoardFactory.Instance.transform;
-        go = QuestionBoardFactory.Instance.CreateImage("Images/Tutorial/mouse_left_click");
+        go = CanvasFactory.Instance.CreateImage("Images/Tutorial/mouse_left_click");
         go.transform.parent = QuestionBoardFactory.Instance.transform;
-        go = QuestionBoardFactory.Instance.CreateImage("Images/Tutorial/spacebar");
+        go = CanvasFactory.Instance.CreateImage("Images/Tutorial/spacebar");
         go.transform.parent = QuestionBoardFactory.Instance.transform;
     }
 

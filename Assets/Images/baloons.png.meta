@@ -1,0 +1,97 @@
+fileFormatVersion: 2
+guid: 577686aed0bb2f648a08690902ec0c34
+timeCreated: 1459983880
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: medium_baloon
+    21300002: small_baloon
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 40
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: medium_baloon
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 157
+        width: 172
+        height: 98
+      alignment: 9
+      pivot: {x: 0.46003395, y: 0.5000002}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -79.12584, y: 48.999985}
+        - {x: -79.12584, y: -45.000015}
+        - {x: -74.12584, y: -49.000015}
+        - {x: 76.87416, y: -49.000015}
+        - {x: 92.87416, y: -20.000015}
+        - {x: 92.87416, y: 36.999985}
+        - {x: 85.87416, y: 48.999985}
+    - name: small_baloon
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 33
+        width: 124
+        height: 98
+      alignment: 9
+      pivot: {x: 0.44247264, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 69.13339, y: 8}
+        - {x: 52.133392, y: 49}
+        - {x: -52.866608, y: 49}
+        - {x: -54.866608, y: 48}
+        - {x: -54.866608, y: -49}
+        - {x: 50.133392, y: -49}
+        - {x: 53.133392, y: -46}
+        - {x: 55.133392, y: -41}
+        - {x: 69.13339, y: -8}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

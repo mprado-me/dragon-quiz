@@ -22,8 +22,8 @@ public class QuestionContentManager : MonoBehaviour2 {
     }
 
     public void AddText(string text) {
-        GameObject textGO = QuestionBoardFactory.Instance.CreateText(text);
-        textGO.transform.parent = _controller.transform;
+        GameObject textGO = CanvasFactory.Instance.CreateText(text);
+        textGO.transform.SetParent(_controller.transform, false);
         textGO.transform.localPosition = Vector3.zero;
         RectTransform rt = textGO.GetComponent<RectTransform>();
         _totalWidth += rt.sizeDelta.x*rt.localScale.x;
@@ -31,8 +31,8 @@ public class QuestionContentManager : MonoBehaviour2 {
     }
 
     public void AddImage(string adress) {
-        GameObject imageGO = QuestionBoardFactory.Instance.CreateImage(adress);
-        imageGO.transform.parent = _controller.transform;
+        GameObject imageGO = CanvasFactory.Instance.CreateImage(adress);
+        imageGO.transform.SetParent(_controller.transform, false);
         imageGO.transform.localPosition = Vector3.zero;
         RectTransform rt = imageGO.GetComponent<RectTransform>();
         _totalWidth += rt.sizeDelta.x * rt.localScale.x;

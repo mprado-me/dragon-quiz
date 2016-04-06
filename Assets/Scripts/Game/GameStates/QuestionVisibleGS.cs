@@ -6,7 +6,6 @@ public class QuestionVisibleGS : GameState {
 
     protected override void Enter() {
         QuestionBoardController questionBoardController = QuestionBoardStorer.Instance.QuestionBoardController;
-
         questionBoardController.SetQuestion(QuestionGenerator.Instance.GetNew());
         questionBoardController.InitInAn();
     }
