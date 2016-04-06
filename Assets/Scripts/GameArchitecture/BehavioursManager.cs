@@ -23,6 +23,10 @@ public abstract class BehavioursManager<C, S, D> where S : Settings where D : Da
     }
 
     public void Clear() {
+        foreach(Behaviour<C, S, D> auxiliaryBehaviour in BehavioursByType.Values) {
+            auxiliaryBehaviour.Controller = _controller;
+            auxiliaryBehaviour.BeforeClear();
+        }
         _behavioursByType.Clear();
     }
 

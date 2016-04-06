@@ -11,4 +11,6 @@ public class XMovePB : PlayerBehaviour {
         Data.RigidBody.velocity = new Vector2(Data.AbsVel, Data.RigidBody.velocity.y);
     }
 
+    public override void BeforeClear() {
+    }
 }

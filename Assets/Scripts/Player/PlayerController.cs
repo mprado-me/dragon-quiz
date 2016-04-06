@@ -42,6 +42,10 @@ public class PlayerController : Controller<PlayerSettings, PlayerData> {
         _playerEventsManager.On(playerEvent, call);
     }
 
+    public void Remove(PlayerEvent playerEvent, UnityAction call) {
+        _playerEventsManager.Remove(playerEvent, call);
+    }
+
     public void Invoke(PlayerEvent playerEvent) {
         _playerEventsManager.Invoke(playerEvent);
     }

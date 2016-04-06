@@ -12,4 +12,7 @@ public class JumpPB : PlayerBehaviour {
             Data.RigidBody.velocity = new Vector2(Data.RigidBody.velocity.x, Settings.jumpVel);
         }
 	}
+
+    public override void BeforeClear() {
+    }
 }

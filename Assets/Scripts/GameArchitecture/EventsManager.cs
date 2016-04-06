@@ -23,6 +23,17 @@ public class EventsManager<ET> {
         unityEvent.AddListener(call);
     }
 
+    public void Remove(ET eventType, UnityAction call) {
+        UnityEvent unityEvent;
+        try {
+            unityEvent = _unityEventsByEventType[eventType];
+        }
+        catch(KeyNotFoundException) {
+            return;
+        }
+        unityEvent.RemoveListener(call);
+    }
+
     public void Invoke(ET eventType) {
         try {
             _unityEventsByEventType[eventType].Invoke();

@@ -29,4 +29,5 @@ public abstract class Behaviour<C, S, D> where S : Settings where D : Data where
 
     public abstract void Start();
     public abstract void Update();
+    public abstract void BeforeClear();
 }

@@ -51,4 +51,7 @@ public class BeatWingPB : PlayerBehaviour {
             }
         }
     }
+
+    public override void BeforeClear() {
+    }
 }

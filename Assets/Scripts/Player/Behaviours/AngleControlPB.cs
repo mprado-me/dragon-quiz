@@ -28,4 +28,7 @@ public class AngleControlPB : PlayerBehaviour {
                 Data.Transform.localEulerAngles = Vector3.forward * minAng;
         }
     }
+
+    public override void BeforeClear() {
+    }
 }

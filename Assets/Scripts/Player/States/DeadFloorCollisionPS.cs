@@ -1,12 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DeadFloorCollisionPS : DeadPS {
+public class DeadFloorCollisionPS : PlayerState {
 
     protected override void Enter() {
-        base.Enter();
+        Controller.ClearBehaviours();
+        Data.RigidBody.velocity = Vector2.zero;
+        Controller.Add<XMovePB>();
         Data.RigidBody.gravityScale = 0.0f;
         Data.RigidBody.angularVelocity = 0.0f;
+        ScenariosManager.Instance.vel = 0.0f;
     }
 
     protected override void Exit() {
