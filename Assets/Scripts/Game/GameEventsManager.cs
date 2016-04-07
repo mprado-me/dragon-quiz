@@ -2,7 +2,8 @@
 using System.Collections;
 
 public enum GameEvent {
-    ON_EXIT_JUMP_START_TUTORIAL
+    ON_EXIT_JUMP_START_TUTORIAL,
+    ON_HORIZONTAL_PIPE_COMPLETLY_VISIBLE
 }
 
 

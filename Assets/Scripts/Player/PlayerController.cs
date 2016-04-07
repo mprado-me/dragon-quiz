@@ -77,11 +77,10 @@ public class PlayerController : Controller<PlayerSettings, PlayerData> {
 
     public float AbsVel {
         get {
-            //return refs.absVel;
-            return 0.0f;
+            return Data.AbsVel;
         }
         set {
-            //refs.absVel = value;
+            Data.AbsVel = value;
         }
     }
 }

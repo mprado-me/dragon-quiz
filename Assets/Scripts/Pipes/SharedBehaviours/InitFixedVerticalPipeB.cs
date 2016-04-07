@@ -2,7 +2,7 @@
 using System.Collections;
 using System;
 
-public class InitVPB : MonoBehaviour {
+public class InitFixedVerticalPipeB : MonoBehaviour {
 
     private Transform _up;
     private Transform _down;

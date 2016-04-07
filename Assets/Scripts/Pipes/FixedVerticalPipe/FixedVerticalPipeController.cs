@@ -14,10 +14,10 @@ public class FixedVerticalPipeController : MonoBehaviour2 {
                 _down = t;
         }
 
-        InitVPB initVPB = gameObject.AddComponent<InitVPB>();
-        initVPB.SetParams(_up, _down);
-        gameObject.AddComponent<MoveXVPB>();
-        gameObject.AddComponent<DestroyPB>();
+        InitFixedVerticalPipeB initFixedVerticalB = gameObject.AddComponent<InitFixedVerticalPipeB>();
+        initFixedVerticalB.SetParams(_up, _down);
+        gameObject.AddComponent<MoveX>();
+        gameObject.AddComponent<DestroyPipeB>();
     }
 	
 	void Update () {

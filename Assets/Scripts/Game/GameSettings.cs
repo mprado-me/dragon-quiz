@@ -10,6 +10,8 @@ public class GameSettings : Settings {
     public int maxPipesLaunchedUntilShowAnswers = 4;
     public int minPipesLaunchedUntilLaunchHorizontalPipes = 1;
     public int maxPipesLaunchedUntilLaunchHorizontalPipes = 3;
+    public float delayToRemoveQuestionBoard = 1.0f;
+    public float delayToLaunchHorizontalPipes = 3.0f;
 
     private static GameSettings _instance;
 

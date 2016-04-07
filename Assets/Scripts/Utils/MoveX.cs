@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MoveXVPB : MonoBehaviour {
+public class MoveX : MonoBehaviour {
 
 	void Start () {
 	

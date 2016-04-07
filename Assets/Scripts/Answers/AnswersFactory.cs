@@ -4,6 +4,7 @@ using System;
 
 public class AnswersFactory : MonoBehaviour2 {
 
+    public GameObject answerPrefab;
     public GameObject smallBaloonPrafab;
     public GameObject mediumBaloonPrafab;
 
@@ -22,17 +23,17 @@ public class AnswersFactory : MonoBehaviour2 {
     }
 
     public void CreateUp(char type, string content) {
-        GameObject up = AddChild("UpAnswer");
+        GameObject up = Instantiate(answerPrefab);
+        up.transform.SetParent(transform, false);
         up.transform.localPosition = new Vector3(up.transform.localPosition.x, _upY);
         CreateAnswer(up, type, content);
-        up.AddComponent<AnswerController>();
     }
 
     public void CreateDown(char type, string content) {
-        GameObject down = AddChild("DownAnswer");
+        GameObject down = Instantiate(answerPrefab);
+        down.transform.SetParent(transform, false);
         down.transform.localPosition = new Vector3(down.transform.localPosition.x, _downY);
         CreateAnswer(down, type, content);
-        down.AddComponent<AnswerController>();
     }
 
     private void CreateAnswer(GameObject go, char type, string content) {

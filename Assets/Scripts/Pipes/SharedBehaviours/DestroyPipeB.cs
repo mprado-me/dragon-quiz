@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DestroyPB : MonoBehaviour2 {
+public class DestroyPipeB : MonoBehaviour2 {
 
 	void Start () {
 	

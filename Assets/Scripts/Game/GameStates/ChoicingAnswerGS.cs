@@ -1,15 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
-public class ChoicingAnswerGS : MonoBehaviour {
+public class ChoicingAnswerGS : GameState {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    protected override void Enter() {
+        Controller.ClearBehaviours();
+        ScenariosManager.Instance.vel = 0.0f;
+    }
+
+    protected override State<GameController, GameSettings, GameData> Update() {
+        return null;
+    }
+
+    protected override void Exit() {
+    }
 }

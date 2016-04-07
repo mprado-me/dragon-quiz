@@ -27,7 +27,7 @@ public class AnswersVisibleGS : GameState {
 
     protected override State<GameController, GameSettings, GameData> Update() {
         if(_fixedVerticalPipesLauncherGB.NLauched >= _nPipesToLauchUntilShowQuestion) {
-            return GameStatesStorer.Instance.Get<HorizontalPipesLaunchedGS>();
+            return GameStatesStorer.Instance.Get<LaunchingHorizontalPipesGS>();
         }
         return null;
     }
