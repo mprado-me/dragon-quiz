@@ -10,12 +10,13 @@ public class DivertingObstaclesGS : GameState {
     }
 
     protected override void Enter() {
-        ScenariosManager.Instance.vel = ScenarioSettings.Instance.vel;
+        Controller.ClearBehaviours();
         Controller.Add<FixedVerticalPipesLauncherGB>();
         _fixedVerticalPipesLauncherGB = GameBehavioursStorer.Instance.Get<FixedVerticalPipesLauncherGB>();
         _nPipesToLauchUntilShowQuestion = Random.Range(
-            GameSettings.Instance.minPipesLaunchedUntilShowQuestion,
-            GameSettings.Instance.maxPipesLaunchedUntilShowQuestion);
+            Settings.minPipesLaunchedUntilShowQuestion,
+            Settings.maxPipesLaunchedUntilShowQuestion);
+        ScenariosManager.Instance.vel = ScenarioSettings.Instance.vel;
     }
 
     protected override State<GameController, GameSettings, GameData> Update() {

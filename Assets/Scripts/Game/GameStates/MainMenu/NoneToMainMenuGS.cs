@@ -33,7 +33,7 @@ public class NoneToMainMenuGS : GameState {
 
     protected override State<GameController, GameSettings, GameData> Update() {
         _delta += Time.deltaTime;
-        if(!_inAnimationInitialized && _delta >= GameSettings.Instance.initMainMenuDelay) {
+        if(!_inAnimationInitialized && _delta >= Settings.initMainMenuDelay) {
             _mainMenuController.gameObject.SetActive(true);
             _mainMenuController.InitInAnimation();
             _inAnimationInitialized = true;

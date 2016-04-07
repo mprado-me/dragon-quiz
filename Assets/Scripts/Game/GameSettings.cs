@@ -6,8 +6,8 @@ public class GameSettings : Settings {
     public float launchFixedVerticalPipePeriod = 2f;
     public int minPipesLaunchedUntilShowQuestion = 3;
     public int maxPipesLaunchedUntilShowQuestion = 6;
-    public int minPipesLaunchedUntilShowAnswer = 2;
-    public int maxPipesLaunchedUntilShowAnswer = 4;
+    public int minPipesLaunchedUntilShowAnswers = 2;
+    public int maxPipesLaunchedUntilShowAnswers = 4;
     public int minPipesLaunchedUntilLaunchHorizontalPipes = 1;
     public int maxPipesLaunchedUntilLaunchHorizontalPipes = 3;
 

@@ -12,6 +12,8 @@ public class GameController : Controller<GameSettings, GameData> {
     private GameEventsManager _gameEventsManager;
 
     private void Start() {
+        Settings = GameSettings.Instance;
+        Data = new GameData();
         _gameEventsManager = new GameEventsManager();
         _gameBehavioursManager = new GameBehavioursManager(this);
         _gameStatesManager = new GameStatesManager(this);

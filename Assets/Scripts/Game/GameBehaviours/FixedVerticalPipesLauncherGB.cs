@@ -14,7 +14,7 @@ public class FixedVerticalPipesLauncherGB : GameBehaviour {
 
     public override void Update() {
         _delta += Time.deltaTime;
-        if(_delta >= GameSettings.Instance.launchFixedVerticalPipePeriod) {
+        if(_delta >= Settings.launchFixedVerticalPipePeriod) {
             _nLauched++;
             _delta = 0.0f;
             PipesFactory.Instance.CreateFixedVerticalPipe();
