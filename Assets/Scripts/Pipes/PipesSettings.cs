@@ -8,6 +8,8 @@ public class PipesSettings : MonoBehaviour {
     public float minVisibleYSize = 1f;
     public float yDist = 5f;
     public float xToDestroy = -12f;
+    public Transform upHorizontalPipe;
+    public Transform downHorizontalPipe;
 
     public static PipesSettings Instance
     {
