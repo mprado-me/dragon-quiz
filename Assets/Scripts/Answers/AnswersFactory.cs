@@ -25,12 +25,14 @@ public class AnswersFactory : MonoBehaviour2 {
         GameObject up = AddChild("UpAnswer");
         up.transform.localPosition = new Vector3(up.transform.localPosition.x, _upY);
         CreateAnswer(up, type, content);
+        up.AddComponent<AnswerController>();
     }
 
     public void CreateDown(char type, string content) {
         GameObject down = AddChild("DownAnswer");
         down.transform.localPosition = new Vector3(down.transform.localPosition.x, _downY);
         CreateAnswer(down, type, content);
+        down.AddComponent<AnswerController>();
     }
 
     private void CreateAnswer(GameObject go, char type, string content) {
