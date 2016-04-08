@@ -83,4 +83,12 @@ public static class ExtensionMethods {
         child.transform.localPosition = Vector3.zero;
         return child;
     }
+
+    // Bounds
+    public static bool Contains(this Bounds b, Bounds other) {
+        return other.max.y < b.max.y &&
+            other.min.y > b.min.y &&
+            other.min.x > b.min.x &&
+            other.max.x < b.max.x;
+    }
 }

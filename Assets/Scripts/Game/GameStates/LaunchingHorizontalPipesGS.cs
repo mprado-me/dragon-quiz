@@ -31,8 +31,8 @@ public class LaunchingHorizontalPipesGS : GameState {
 
     private IEnumerator LaunchHorizontalPipeWithDelay() {
         yield return new WaitForSeconds(Settings.delayToLaunchHorizontalPipes);
-        PipesFactory.Instance.CreateUpHorizontalPipe();
-        PipesFactory.Instance.CreateDownHorizontalPipe();
+        Data.UpHorizontalPipeController = PipesFactory.Instance.CreateUpHorizontalPipe();
+        Data.DownHorizontalPipeController = PipesFactory.Instance.CreateDownHorizontalPipe();
     }
 
     private IEnumerator RemoveQuestionBoardWithDelay() {

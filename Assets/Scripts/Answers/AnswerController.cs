@@ -43,8 +43,6 @@ public class AnswerController : MonoBehaviour2 {
                 break;
             case AnswerState.UNSHOWING:
                 break;
-            default:
-                break;
         }
     }
 

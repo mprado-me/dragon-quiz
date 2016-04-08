@@ -13,16 +13,16 @@ public class PipesFactory : MonoBehaviour2 {
         pipe.transform.localPosition = Vector3.zero;
     }
 
-    public GameObject CreateUpHorizontalPipe() {
+    public HorizontalPipeController CreateUpHorizontalPipe() {
         GameObject go = CreateHorizontalPipe();
         go.transform.localPosition = new Vector3(go.transform.localPosition.x, PipesSettings.Instance.upHorizontalPipe.localPosition.y);
-        return go;
+        return go.GetComponent<HorizontalPipeController>();
     }
 
-    public GameObject CreateDownHorizontalPipe() {
+    public HorizontalPipeController CreateDownHorizontalPipe() {
         GameObject go = CreateHorizontalPipe();
         go.transform.localPosition = new Vector3(go.transform.localPosition.x, PipesSettings.Instance.downHorizontalPipe.localPosition.y);
-        return go;
+        return go.GetComponent<HorizontalPipeController>();
     }
 
     private GameObject CreateHorizontalPipe() {

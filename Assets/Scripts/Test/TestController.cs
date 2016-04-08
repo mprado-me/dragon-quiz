@@ -29,11 +29,11 @@ public class TestController : MonoBehaviour2 {
         
     }
     private IEnumerator TestGreenHorizontalPipeCreatePlayer() {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.25f);
         ScenariosManager.Instance._DANGER_UnsafeSetVel(-GameSettings.Instance.vel);
         PipesFactory.Instance.CreateUpHorizontalPipe();
         PipesFactory.Instance.CreateDownHorizontalPipe();
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.25f);
         GameController gc = FindObjectOfType<MockGameController>();
         gc.VelPlayerScenario = GameSettings.Instance.vel;
         GameStorer.Instance.GameController = gc;
