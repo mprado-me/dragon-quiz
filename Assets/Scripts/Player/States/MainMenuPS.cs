@@ -4,19 +4,26 @@ using System;
 
 public class MainMenuPS : PlayerState {
     PlayerState _nextPlayerState;
+    MainMenuController _mainMenuController;
 
     protected override void Enter() {
         _nextPlayerState = null;
-        MainMenuController mainMenuController = UIStorer.Instance.MainMenuController;
+
         Controller.Add<BeatWingPB>();
-        mainMenuController.On(MainMenuEvent.PLAY_BUTTON_CLICK, delegate { _nextPlayerState = PlayerStatesStorer.Instance.Get<MainMenuToJumpStartTutorialPS>(); });
+
+        _mainMenuController = UIStorer.Instance.MainMenuController;
+        _mainMenuController.On(MainMenuEvent.PLAY_BUTTON_CLICK, GoNextState);
     }
 
-    protected override void Exit() {
-
+    private void GoNextState() {
+        _nextPlayerState = PlayerStatesStorer.Instance.Get<MainMenuToMatchPS>();
     }
 
     protected override State<PlayerController, PlayerSettings, PlayerData> Update() {
         return _nextPlayerState;
+    }
+
+    protected override void Exit() {
+        _mainMenuController.Remove(MainMenuEvent.PLAY_BUTTON_CLICK, GoNextState);
     }
 }

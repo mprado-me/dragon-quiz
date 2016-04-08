@@ -1,15 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
-public class ExitingHorizontalPipeDead : MonoBehaviour {
+public class ExitingHorizontalPipeDead : GameState {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    protected override void Enter() {
+    }
+
+    protected override State<GameController, GameSettings, GameData> Update() {
+        return null;
+    }
+
+    protected override void Exit() {
+    }
 }

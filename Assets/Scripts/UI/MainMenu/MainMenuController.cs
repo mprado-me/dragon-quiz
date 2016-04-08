@@ -34,6 +34,10 @@ public class MainMenuController : MonoBehaviour2 {
         _mainMenuEventsManager.On(mainMenuEvent, call);
     }
 
+    public void Remove(MainMenuEvent mainMenuEvent, UnityAction call) {
+        _mainMenuEventsManager.Remove(mainMenuEvent, call);
+    }
+
     public void Invoke(MainMenuEvent mainMenuEvent) {
         _mainMenuEventsManager.Invoke(mainMenuEvent);
     }

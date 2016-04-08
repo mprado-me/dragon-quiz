@@ -9,7 +9,9 @@ public class GameFactory : MonoBehaviour2 {
 
     public void CreateGame() {
         GameObject game = AddChild(gamePrefab);
-        GameStorer.Instance.GameController = game.GetComponent<GameController>();
+        GameController gameController = game.GetComponent<GameController>();
+        GameStorer.Instance.GameController = gameController;
+        gameController.Init();
     }
 
     public static GameFactory Instance

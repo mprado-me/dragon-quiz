@@ -3,21 +3,27 @@ using System.Collections;
 using System;
 
 public class NoneToMainMenuPS : PlayerState {
-
-    PlayerState _nextPlayerState;
+    PlayerState _nextState;
+    MainMenuController _mainMenuController;
 
     protected override void Enter() {
-        _nextPlayerState = null;
-        MainMenuController mainMenuController = UIStorer.Instance.MainMenuController;
+        _nextState = null;
+
         Controller.Add<BeatWingPB>();
-        mainMenuController.On(MainMenuEvent.IN_ANIMATION_END, delegate { _nextPlayerState = PlayerStatesStorer.Instance.Get<MainMenuPS>(); });
+
+        _mainMenuController = UIStorer.Instance.MainMenuController;
+        _mainMenuController.On(MainMenuEvent.IN_ANIMATION_END, GoNextState);
     }
 
-    protected override void Exit() {
-
+    private void GoNextState() {
+        _nextState = PlayerStatesStorer.Instance.Get<MainMenuPS>();
     }
 
     protected override State<PlayerController, PlayerSettings, PlayerData> Update() {
-        return _nextPlayerState;
+        return _nextState;
+    }
+
+    protected override void Exit() {
+        _mainMenuController.Remove(MainMenuEvent.IN_ANIMATION_END, GoNextState);
     }
 }

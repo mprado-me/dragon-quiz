@@ -14,21 +14,18 @@ public class AngleControlPB : PlayerBehaviour {
     }
 
     private void UpdateAngVel() {
-        float k = Data.RigidBody.velocity.y > 0 ? Settings.controlAngUpFactor : Settings.controlAngDownFactor;
-        Data.RigidBody.angularVelocity = k * Data.RigidBody.velocity.y * Mathf.Rad2Deg;
+        float k = Controller.YVel > 0 ? Settings.controlAngUpFactor : Settings.controlAngDownFactor;
+        Controller.AngularVel = k * Controller.YVel * Mathf.Rad2Deg;
     }
 
     private void LimitAng() {
         float minAng = 360.0f + Settings.minAng;
-        float ang = Data.Transform.localEulerAngles.z;
+        float ang = Controller.Ang;
         if(ang > Settings.maxAng && ang < minAng) {
             if(ang < 180)
-                Data.Transform.localEulerAngles = Vector3.forward * Settings.maxAng;
+                Controller.Ang = Settings.maxAng;
             else
-                Data.Transform.localEulerAngles = Vector3.forward * minAng;
+                Controller.Ang = minAng;
         }
-    }
-
-    public override void BeforeClear() {
     }
 }

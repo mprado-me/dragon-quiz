@@ -18,7 +18,6 @@ public class QuestionBoardController : MonoBehaviour2 {
 
 	}
 
-    private bool temp;
     public void InitInAn() {
         _animator.SetTrigger("initInQuestionBoardAn");
     }
@@ -29,10 +28,10 @@ public class QuestionBoardController : MonoBehaviour2 {
 
     public void SetQuestion(Question q) {
         InitNewQuestionContent();
-        for( int i = 0; i < q.questionType.Length; i++) {
-            if(q.questionType[i] == 'I') {
+        for( int i = 0; i < q.questionElementsType.Length; i++) {
+            if(q.questionElementsType[i] == QuestionElementType.IMAGE) {
                 AddImage("Images/Icons/"+q.questionContent[i]);
-            } else { // q.questionType[i] == 'T'
+            } else { // q.questionElementsType[i] == QuestionElementType.TEXT
                 AddText(q.questionContent[i]);
             }
         }
@@ -57,6 +56,10 @@ public class QuestionBoardController : MonoBehaviour2 {
 
     public void On(QuestionBoardEvent questionBoardEvent, UnityAction call) {
         _questionBoardEventsManager.On(questionBoardEvent, call);
+    }
+
+    public void Remove(QuestionBoardEvent questionBoardEvent, UnityAction call) {
+        _questionBoardEventsManager.Remove(questionBoardEvent, call);
     }
 
     public void Invoke(QuestionBoardEvent questionBoardEvent) {

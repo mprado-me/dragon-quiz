@@ -24,8 +24,8 @@ public class TestController : MonoBehaviour2 {
     }
 
     private void TestCreateAnswer() {
-        AnswersFactory.Instance.CreateUp('I', "Soccer Ball");
-        AnswersFactory.Instance.CreateDown('T', "a23aa");
+        AnswersFactory.Instance.CreateUp(AnswerType.IMAGE, "Soccer Ball");
+        AnswersFactory.Instance.CreateDown(AnswerType.TEXT, "a23aa");
     }
 
     private void TestSetQuestionFromJSONFile1() {
@@ -86,7 +86,7 @@ public class TestController : MonoBehaviour2 {
     }
 
     private void TestVerticalPipeCreation() {
-        ScenariosManager.Instance.vel = -5f;
+        ScenariosManager.Instance._DANGER_UnsafeSetVel(-5f);
         PipesFactory.Instance.CreateFixedVerticalPipe();
     }
 
@@ -116,8 +116,8 @@ public class TestController : MonoBehaviour2 {
     }
     private void TestPlayerDieOnFloorCollision2() {
         pc.State = new DivertingObstaclesPS();
-        pc.NormalizedVel = 0.0f;
-        Mock.Instance.VelPlayerScenario = 2f;
+        pc.XVel = 0.0f;
+        //Mock.Instance.VelPlayerScenario = 2f;
     }
 
     private void TestPlayerRelScenarioMove() {
@@ -128,8 +128,8 @@ public class TestController : MonoBehaviour2 {
     }
     private void TestPlayerRelScenarioMove2() {
         pc.State = new DivertingObstaclesPS();
-        pc.NormalizedVel = 0.5f;
-        Mock.Instance.VelPlayerScenario = 1f;
+        pc.XVel = 0.5f;
+        //Mock.Instance.VelPlayerScenario = 1f;
     }
 
     private void TestPlayerYMove() {

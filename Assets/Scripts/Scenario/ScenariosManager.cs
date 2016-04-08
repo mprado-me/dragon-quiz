@@ -13,7 +13,7 @@ public class ScenariosManager : MonoBehaviour2{
 
     // The signal is inside vel
     // Isn't releated to player vel
-    public float vel; 
+    private float _vel;
 
     private Dictionary<ScenarioType, GameObject> scenariosDict;
     private ScenarioType _current;
@@ -54,6 +54,16 @@ public class ScenariosManager : MonoBehaviour2{
 
         set {
             _instance = value;
+        }
+    }
+
+    public void _DANGER_UnsafeSetVel(float vel) {
+        _vel = vel;
+    }
+
+    public float Vel {
+        get {
+            return _vel;
         }
     }
 }

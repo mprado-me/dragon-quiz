@@ -9,6 +9,8 @@ public class BeatWingPB : PlayerBehaviour {
     private int _currentIdx;
     private bool _goRight;
     private float _delta;
+    private SpriteRenderer _frontWingSR;
+    private SpriteRenderer _backWingSR;
 
 
     public override void Start() {
@@ -18,6 +20,12 @@ public class BeatWingPB : PlayerBehaviour {
             _currentIdx = 0;
             _goRight = true;
             _delta = 0.0f;
+        }
+        foreach(SpriteRenderer sr in Controller.GetComponentsInChildren<SpriteRenderer>()) {
+            if(sr.ContainTag("BackWing"))
+                _backWingSR = sr;
+            else if(sr.ContainTag("FrontWing"))
+                _frontWingSR = sr;
         }
     }
 
@@ -29,29 +37,26 @@ public class BeatWingPB : PlayerBehaviour {
                 if( _currentIdx == _nSprites-1) {
                     _goRight = false;
                     _currentIdx--;
-                    Data.BackWingSR.sprite = _sprites[_currentIdx];
-                    Data.FrontWingSR.sprite = _sprites[_currentIdx];
+                    _backWingSR.sprite = _sprites[_currentIdx];
+                    _frontWingSR.sprite = _sprites[_currentIdx];
                 } else {
                     _currentIdx++;
-                    Data.BackWingSR.sprite = _sprites[_currentIdx];
-                    Data.FrontWingSR.sprite = _sprites[_currentIdx];
+                    _backWingSR.sprite = _sprites[_currentIdx];
+                    _frontWingSR.sprite = _sprites[_currentIdx];
                 }
             } else {
                 if(_currentIdx == 0) {
                     _goRight = true;
                     _currentIdx++;
-                    Data.BackWingSR.sprite = _sprites[_currentIdx];
-                    Data.FrontWingSR.sprite = _sprites[_currentIdx];
+                    _backWingSR.sprite = _sprites[_currentIdx];
+                    _frontWingSR.sprite = _sprites[_currentIdx];
                 }
                 else {
                     _currentIdx--;
-                    Data.BackWingSR.sprite = _sprites[_currentIdx];
-                    Data.FrontWingSR.sprite = _sprites[_currentIdx];
+                    _backWingSR.sprite = _sprites[_currentIdx];
+                    _frontWingSR.sprite = _sprites[_currentIdx];
                 }
             }
         }
-    }
-
-    public override void BeforeClear() {
     }
 }

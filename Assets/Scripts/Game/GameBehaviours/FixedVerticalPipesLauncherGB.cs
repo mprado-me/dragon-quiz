@@ -21,9 +21,6 @@ public class FixedVerticalPipesLauncherGB : GameBehaviour {
         }
     }
 
-    public override void BeforeClear() {
-    }
-
     public void ClearNLauched() {
         _nLauched = 0;
     }

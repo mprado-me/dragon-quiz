@@ -5,41 +5,46 @@ using System;
 public class LaunchingHorizontalPipesGS : GameState {
 
     private bool _firstChoice;
-    private GameState _nextGameState;
+    private GameState _nextState;
 
     protected override void Enter() {
-        _nextGameState = null;
+        _nextState = null;
         _firstChoice = true;
-        Controller.ClearBehaviours();
+
         Controller.StartCoroutine(LaunchHorizontalPipeWithDelay());
         Controller.StartCoroutine(RemoveQuestionBoardWithDelay());
-        Controller.On(GameEvent.ON_HORIZONTAL_PIPE_COMPLETLY_VISIBLE, delegate {
-            if(_firstChoice ) {
-                _firstChoice = false;
-                _nextGameState = GameStatesStorer.Instance.Get<EnterHorizontalPipeTutorialGS>();
-                PlayerStorer.Instance.PlayerController.Invoke(PlayerEvent.ON_ENTER_HORIZONTAL_PIPE_TURORIAL);
-            } else {
-                _nextGameState = GameStatesStorer.Instance.Get<ChoicingAnswerGS>();
-                PlayerStorer.Instance.PlayerController.Invoke(PlayerEvent.ON_CHOICE_ANSWER);
-            }
-        });
+
+        Controller.On(GameEvent.HORIZONTAL_PIPE_COMPLETLY_VISIBLE, GoNextState);
+    }
+
+    private void GoNextState() {
+        if(_firstChoice) {
+            _firstChoice = false;
+            _nextState = GameStatesStorer.Instance.Get<EnterHorizontalPipeTutorialGS>();
+            PlayerStorer.Instance.PlayerController.Invoke(PlayerEvent.GO_ENTER_HORIZONTAL_PIPE_TURORIAL);
+        }
+        else {
+            _nextState = GameStatesStorer.Instance.Get<ChoicingAnswerGS>();
+            PlayerStorer.Instance.PlayerController.Invoke(PlayerEvent.GO_CHOICE_ANSWER);
+        }
     }
 
     private IEnumerator LaunchHorizontalPipeWithDelay() {
-        yield return new WaitForSeconds(GameSettings.Instance.delayToLaunchHorizontalPipes);
+        yield return new WaitForSeconds(Settings.delayToLaunchHorizontalPipes);
         PipesFactory.Instance.CreateUpHorizontalPipe();
         PipesFactory.Instance.CreateDownHorizontalPipe();
     }
 
     private IEnumerator RemoveQuestionBoardWithDelay() {
-        yield return new WaitForSeconds(GameSettings.Instance.delayToRemoveQuestionBoard);
+        yield return new WaitForSeconds(Settings.delayToRemoveQuestionBoard);
         QuestionBoardStorer.Instance.QuestionBoardController.InitOutAn();
     }
 
     protected override State<GameController, GameSettings, GameData> Update() {
-        return _nextGameState;
+        return _nextState;
     }
 
     protected override void Exit() {
+        Controller.Remove(GameEvent.HORIZONTAL_PIPE_COMPLETLY_VISIBLE, GoNextState);
     }
 }

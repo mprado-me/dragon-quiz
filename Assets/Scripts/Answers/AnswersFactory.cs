@@ -22,23 +22,23 @@ public class AnswersFactory : MonoBehaviour2 {
         _downY = mediumBaloonPrafab.transform.localPosition.y;
     }
 
-    public void CreateUp(char type, string content) {
+    public void CreateUp(AnswerType answerType, string content) {
         GameObject up = Instantiate(answerPrefab);
         up.transform.SetParent(transform, false);
         up.transform.localPosition = new Vector3(up.transform.localPosition.x, _upY);
-        CreateAnswer(up, type, content);
+        CreateAnswer(up, answerType, content);
     }
 
-    public void CreateDown(char type, string content) {
+    public void CreateDown(AnswerType answerType, string content) {
         GameObject down = Instantiate(answerPrefab);
         down.transform.SetParent(transform, false);
         down.transform.localPosition = new Vector3(down.transform.localPosition.x, _downY);
-        CreateAnswer(down, type, content);
+        CreateAnswer(down, answerType, content);
     }
 
-    private void CreateAnswer(GameObject go, char type, string content) {
+    private void CreateAnswer(GameObject go, AnswerType answerType, string content) {
         GameObject baloon;
-        if(type == 'I') {
+        if(answerType == AnswerType.IMAGE) {
             baloon = CreateSmallBaloon();
             baloon.transform.SetParent(go.transform, false);
             baloon.transform.localPosition = Vector3.zero;
@@ -47,10 +47,9 @@ public class AnswersFactory : MonoBehaviour2 {
             imageGO.transform.localPosition = Vector3.zero;
             go.transform.localPosition = new Vector3(_smallX, go.transform.localPosition.y);
         }
-        else { // type == 'T'
+        else { // answerType == AnswerType.TEXT
             GameObject textGO = CanvasFactory.Instance.CreateText(content);
             RectTransform rt = textGO.GetComponent<RectTransform>();
-            //Debug.Log(rt.sizeDelta.x);
             if(rt.sizeDelta.x <= AnswersSettings.Instance.maxSmallXSize) {
                 baloon = CreateSmallBaloon();
                 go.transform.localPosition = new Vector3(_smallX, go.transform.localPosition.y);

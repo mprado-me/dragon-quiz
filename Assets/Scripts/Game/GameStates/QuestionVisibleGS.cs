@@ -6,16 +6,18 @@ public class QuestionVisibleGS : GameState {
     FixedVerticalPipesLauncherGB _fixedVerticalPipesLauncherGB;
 
     protected override void Enter() {
-        Controller.ClearBehaviours();
-        Controller.Add<FixedVerticalPipesLauncherGB>();
         _fixedVerticalPipesLauncherGB = GameBehavioursStorer.Instance.Get<FixedVerticalPipesLauncherGB>();
-        QuestionBoardController questionBoardController = QuestionBoardStorer.Instance.QuestionBoardController;
-        Data.Question = QuestionGenerator.Instance.GetNew();
-        questionBoardController.SetQuestion(Data.Question);
-        questionBoardController.InitInAn();
         _nPipesToLauchUntilShowQuestion = Random.Range(
             Settings.minPipesLaunchedUntilShowAnswers,
             Settings.maxPipesLaunchedUntilShowAnswers);
+
+        Controller.Add<FixedVerticalPipesLauncherGB>();
+
+        Data.Question = QuestionGenerator.Instance.GetNew();
+
+        QuestionBoardController questionBoardController = QuestionBoardStorer.Instance.QuestionBoardController;
+        questionBoardController.SetQuestion(Data.Question);
+        questionBoardController.InitInAn();
     }
 
     protected override State<GameController, GameSettings, GameData> Update() {

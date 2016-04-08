@@ -5,8 +5,9 @@ public abstract class State<C, S, D> where S : Settings where D : Data where C :
 
     C _controller;
 
-    public void SetControllerAndEnter(C controller) {
+    public void SetControllerClearBehavioursAndEnter(C controller) {
         Controller = controller;
+        Controller.ClearBehaviours();
         Enter();
     }
 
@@ -23,6 +24,7 @@ public abstract class State<C, S, D> where S : Settings where D : Data where C :
     protected abstract void Enter();
     protected abstract State<C, S, D> Update();
     protected abstract void Exit();
+    public virtual void OnTriggerEnter2D(Collider2D other) {}
 
     // It need be public? Or can be protected
     public C Controller {

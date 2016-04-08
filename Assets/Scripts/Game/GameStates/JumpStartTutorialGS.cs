@@ -3,23 +3,28 @@ using System.Collections;
 
 public class JumpStartTutorialGS : GameState {
 
-    private bool inAnFinished = false;
+    private bool _inAnFinished = false;
+    QuestionBoardController _questionBoardController;
 
     protected override void Enter() {
-        QuestionBoardStorer.Instance.QuestionBoardController.InitNewQuestionContent();
-        QuestionBoardStorer.Instance.QuestionBoardController.AddImage("Images/Tutorial/spacebar");
-        QuestionBoardStorer.Instance.QuestionBoardController.AddText("or");
-        QuestionBoardStorer.Instance.QuestionBoardController.AddImage("Images/Tutorial/mouse_left_click");
-        QuestionBoardStorer.Instance.QuestionBoardController.AddText("to jump and start");
-        QuestionBoardStorer.Instance.QuestionBoardController.FinishNewQuestionContent();
-        QuestionBoardStorer.Instance.QuestionBoardController.InitInAn();
-        QuestionBoardStorer.Instance.QuestionBoardController.On(QuestionBoardEvent.ON_FINISH_IN_AN, delegate { inAnFinished = true; });
+        _questionBoardController = QuestionBoardStorer.Instance.QuestionBoardController;
+
+        _questionBoardController.InitNewQuestionContent();
+        _questionBoardController.AddImage("Images/Tutorial/spacebar");
+        _questionBoardController.AddText("or");
+        _questionBoardController.AddImage("Images/Tutorial/mouse_left_click");
+        _questionBoardController.AddText("to jump and start");
+        _questionBoardController.FinishNewQuestionContent();
+
+        _questionBoardController.InitInAn();
+
+        _questionBoardController.On(QuestionBoardEvent.ON_FINISH_IN_AN, delegate { _inAnFinished = true; });
     }
 
     protected override State<GameController, GameSettings, GameData> Update() {
-        if(inAnFinished && (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space))) {
-            QuestionBoardStorer.Instance.QuestionBoardController.InitOutAn();
-            Controller.Invoke(GameEvent.ON_EXIT_JUMP_START_TUTORIAL);
+        if(_inAnFinished && (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space))) {
+            _questionBoardController.InitOutAn();
+            Controller.Invoke(GameEvent.EXIT_JUMP_START_TUTORIAL);
             return GameStatesStorer.Instance.Get<DivertingObstaclesGS>();
         }
         else
@@ -27,5 +32,6 @@ public class JumpStartTutorialGS : GameState {
     }
 
     protected override void Exit() {
+        _questionBoardController.Remove(QuestionBoardEvent.ON_FINISH_IN_AN, delegate { _inAnFinished = true; });
     }
 }

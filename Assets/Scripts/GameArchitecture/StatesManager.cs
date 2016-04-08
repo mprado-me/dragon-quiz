@@ -17,6 +17,10 @@ public class StatesManager<C, S, D> where S : Settings where D : Data where C : 
         }
     }
 
+    public void OnTriggerEnter2D(Collider2D other) {
+        CurrentState.OnTriggerEnter2D(other);
+    }
+
     public State<C, S, D> CurrentState {
         get {
             return _currentState;
@@ -26,7 +30,7 @@ public class StatesManager<C, S, D> where S : Settings where D : Data where C : 
                 _currentState.SetControllerAndExit(_controller);
             _currentState = value;
             if(value != null) {
-                _currentState.SetControllerAndEnter(_controller);
+                _currentState.SetControllerClearBehavioursAndEnter(_controller);
             }
         }
     }

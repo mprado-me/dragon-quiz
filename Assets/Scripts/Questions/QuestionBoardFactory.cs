@@ -10,7 +10,7 @@ public class QuestionBoardFactory : MonoBehaviour2 {
 
     public void CreateQuestionBoard() {
         GameObject questionBoard = AddChild(questionBoardPrefab);
-        Debug.Log(questionBoard.transform.localScale);
+        //Debug.Log(questionBoard.transform.localScale);
         QuestionBoardStorer.Instance.QuestionBoardController = questionBoard.GetComponent<QuestionBoardController>();
     }
 

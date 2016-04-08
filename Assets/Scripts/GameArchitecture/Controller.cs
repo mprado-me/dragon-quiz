@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Controller<S, D> : MonoBehaviour2 where S : Settings where D : Data {
+public abstract class Controller<S, D> : MonoBehaviour2 where S : Settings where D : Data {
 
     private D _data;
     private S _settings;
@@ -25,4 +25,7 @@ public class Controller<S, D> : MonoBehaviour2 where S : Settings where D : Data
             _settings = value;
         }
     }
+
+    public abstract void Init();
+    public abstract void ClearBehaviours();
 }

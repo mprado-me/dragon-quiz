@@ -6,14 +6,20 @@ using UnityEngine.UI;
 public class MainMenuGS : GameState {
 
     private GameState _nextState;
+    MainMenuController _mainMenuController;
 
     public MainMenuGS() {
     }
 
     protected override void Enter() {
         _nextState = null;
-        MainMenuController mainMenuController = UIStorer.Instance.MainMenuController;
-        mainMenuController.On(MainMenuEvent.PLAY_BUTTON_CLICK, delegate { _nextState = GameStatesStorer.Instance.Get<MainMenuToMatchGS>(); });
+
+        _mainMenuController = UIStorer.Instance.MainMenuController;
+        _mainMenuController.On(MainMenuEvent.PLAY_BUTTON_CLICK, GoNextState);
+    }
+
+    private void GoNextState() {
+        _nextState = GameStatesStorer.Instance.Get<MainMenuToMatchGS>();
     }
 
     protected override State<GameController, GameSettings, GameData> Update() {
@@ -21,6 +27,6 @@ public class MainMenuGS : GameState {
     }
 
     protected override void Exit() {
-
+        _mainMenuController.Remove(MainMenuEvent.PLAY_BUTTON_CLICK, GoNextState);
     }
 }

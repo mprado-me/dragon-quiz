@@ -4,22 +4,26 @@ using System;
 
 public class JumpStartTutorialPS : PlayerState {
 
-    private bool exit = false;
+    private bool _exit = false;
 
     protected override void Enter() {
-        MainMenuController mainMenuController = UIStorer.Instance.MainMenuController;
         Controller.Add<BeatWingPB>();
-        GameStorer.Instance.GameController.On(GameEvent.ON_EXIT_JUMP_START_TUTORIAL, delegate { exit = true; });
+
+        GameStorer.Instance.GameController.On(GameEvent.EXIT_JUMP_START_TUTORIAL, OnExitJumpStartTutorial);
     }
 
-    protected override void Exit() {
-
+    private void OnExitJumpStartTutorial() {
+        _exit = true;
     }
 
     protected override State<PlayerController, PlayerSettings, PlayerData> Update() {
-        if(exit)
+        if(_exit)
             return PlayerStatesStorer.Instance.Get<DivertingObstaclesPS>();
         else
             return null;
+    }
+
+    protected override void Exit() {
+        GameStorer.Instance.GameController.Remove(GameEvent.EXIT_JUMP_START_TUTORIAL, OnExitJumpStartTutorial);
     }
 }

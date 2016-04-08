@@ -6,9 +6,12 @@ public class AnswersVisibleGS : GameState {
     FixedVerticalPipesLauncherGB _fixedVerticalPipesLauncherGB;
 
     protected override void Enter() {
-        Controller.ClearBehaviours();
-        Controller.Add<FixedVerticalPipesLauncherGB>();
         _fixedVerticalPipesLauncherGB = GameBehavioursStorer.Instance.Get<FixedVerticalPipesLauncherGB>();
+        _nPipesToLauchUntilShowQuestion = Random.Range(
+            Settings.minPipesLaunchedUntilLaunchHorizontalPipes,
+            Settings.maxPipesLaunchedUntilLaunchHorizontalPipes);
+
+        Controller.Add<FixedVerticalPipesLauncherGB>();
 
         if( Random.Range(0, 2) == 0) {
             AnswersFactory.Instance.CreateUp(Data.Question.correctAnswerType, Data.Question.correctAnswerContent);
@@ -19,10 +22,6 @@ public class AnswersVisibleGS : GameState {
             AnswersFactory.Instance.CreateDown(Data.Question.correctAnswerType, Data.Question.correctAnswerContent);
             Data.CorrectAnswer = HorizontalPipe.DOWN;
         }
-
-        _nPipesToLauchUntilShowQuestion = Random.Range(
-            Settings.minPipesLaunchedUntilLaunchHorizontalPipes,
-            Settings.maxPipesLaunchedUntilLaunchHorizontalPipes);
     }
 
     protected override State<GameController, GameSettings, GameData> Update() {

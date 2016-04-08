@@ -15,20 +15,26 @@ public class NoneToMainMenuGS : GameState {
 
     protected override void Enter() {
         _nextState = null;
+        _delta = 0f;
+        _inAnimationInitialized = false;
+
+        PlayerFactory.Instance.CreatePlayer();
+        UIFactory.Instance.CreateMainMenu();
+
+        Controller.VelPlayerScenario = Settings.vel;
+
+        _playerController = PlayerStorer.Instance.PlayerController;
+        _playerController.XVel = 0f;
 
         ScenariosManager.Instance.Current = ScenarioType.SKY;
 
-        UIFactory.Instance.CreateMainMenu();
         _mainMenuController = UIStorer.Instance.MainMenuController;
-        _mainMenuController.On( MainMenuEvent.IN_ANIMATION_END, delegate { _nextState = GameStatesStorer.Instance.Get<MainMenuGS>(); } );
+        _mainMenuController.On(MainMenuEvent.IN_ANIMATION_END, GoNextState);
         _mainMenuController.gameObject.SetActive(false);
+    }
 
-        PlayerFactory.Instance.CreatePlayer();
-        _playerController = PlayerStorer.Instance.PlayerController;
-        _playerController.OnAfterStart(delegate { _playerController.NormalizedVel = 0.0f; });
-
-        _delta = 0.0f;
-        _inAnimationInitialized = false;
+    private void GoNextState() {
+        _nextState = GameStatesStorer.Instance.Get<MainMenuGS>();
     }
 
     protected override State<GameController, GameSettings, GameData> Update() {
@@ -43,5 +49,6 @@ public class NoneToMainMenuGS : GameState {
     }
 
     protected override void Exit() {
+        _mainMenuController.Remove(MainMenuEvent.IN_ANIMATION_END, GoNextState);
     }
 }
