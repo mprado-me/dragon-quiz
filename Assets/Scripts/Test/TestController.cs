@@ -20,7 +20,30 @@ public class TestController : MonoBehaviour2 {
         //TestQuestionBoard2();
         //TestQuestionTextImageCreation();
         //TestSetQuestionFromJSONFile1();
-        TestCreateAnswer();
+        //TestCreateAnswer();
+        TestGreenHorizontalPipe();
+    }
+
+    private void TestGreenHorizontalPipe() {
+        StartCoroutine(TestGreenHorizontalPipeCreatePlayer());
+        
+    }
+    private IEnumerator TestGreenHorizontalPipeCreatePlayer() {
+        yield return new WaitForSeconds(1f);
+        ScenariosManager.Instance._DANGER_UnsafeSetVel(-GameSettings.Instance.vel);
+        PipesFactory.Instance.CreateUpHorizontalPipe();
+        PipesFactory.Instance.CreateDownHorizontalPipe();
+        yield return new WaitForSeconds(1f);
+        GameController gc = FindObjectOfType<MockGameController>();
+        gc.VelPlayerScenario = GameSettings.Instance.vel;
+        GameStorer.Instance.GameController = gc;
+        PlayerFactory.Instance.CreatePlayer();
+        PlayerStorer.Instance.PlayerController.X = -Camera.main.orthographicSize*1.2f;
+        PlayerStorer.Instance.PlayerController.YVel = PlayerSettings.Instance.jumpVel;
+        PlayerSettings.Instance.GetInitialState = new PlayerSettings.GetInitialStateDelegate(GetInitialState2);
+    }
+    private PlayerState GetInitialState2() {
+        return PlayerStatesStorer.Instance.Get<ChoicingAnswerPS>();
     }
 
     private void TestCreateAnswer() {

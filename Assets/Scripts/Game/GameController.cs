@@ -50,7 +50,8 @@ public class GameController : Controller<GameSettings, GameData>  {
         _gameEventsManager.Invoke(gameEvent);
     }
 
-    public float VelPlayerScenario{
+    // It is virtual to allow MockGameController override it
+    public virtual float VelPlayerScenario{
         get {
             return _velPlayerScenario;
         }
