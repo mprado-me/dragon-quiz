@@ -21,7 +21,22 @@ public class TestController : MonoBehaviour2 {
         //TestQuestionTextImageCreation();
         //TestSetQuestionFromJSONFile1();
         //TestCreateAnswer();
-        TestGreenHorizontalPipe();
+        //TestGreenHorizontalPipe();
+        TestOpenCloseCircle();
+    }
+
+    private void TestOpenCloseCircle() {
+        StartCoroutine(TestOpenCloseCircleCoroutine());
+    }
+    private IEnumerator TestOpenCloseCircleCoroutine() {
+        OpenCloseCircleController c = OpenCloseCircleFactory.Instance.CreateOpenCloseCircle();
+        yield return new WaitForSeconds(0.25f);
+        while(true) {
+            yield return new WaitForSeconds(1.1f * OpenCloseCircleSettings.Instance.openCloseTime);
+            c.Close();
+            yield return new WaitForSeconds(1.1f * OpenCloseCircleSettings.Instance.openCloseTime);
+            c.Open();
+        }
     }
 
     private void TestGreenHorizontalPipe() {
