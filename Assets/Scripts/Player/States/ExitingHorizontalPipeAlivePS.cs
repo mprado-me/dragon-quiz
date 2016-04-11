@@ -1,32 +1,23 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System;
-using UnityEngine.Events;
 
-public class ChoicingAnswerPS : PlayerState {
-
-    private PlayerState _nextState;
+public class ExitingHorizontalPipeAlivePS : PlayerState {
 
     protected override void Enter() {
-        _nextState = null;
+        Controller.SetExitPosition(GameStorer.Instance.GameData.HorizontalPipeEntered);
 
         Controller.Add<JumpPB>();
         Controller.Add<AirCollisionPB>();
         Controller.Add<FloorCollisionPB>();
         Controller.Add<AngleControlPB>();
         Controller.Add<BeatWingPB>();
-        Controller.GravityScale = Settings.gravityScale;
+        Controller.GravityScale = PlayerSettings.Instance.gravityScale;
         Controller.XVel = GameSettings.Instance.vel;
-
-        GameStorer.Instance.GameController.On(GameEvent.PLAYER_IN_HORIZONTAL_PIPE, GoNextState);
-    }
-
-    private void GoNextState() {
-        _nextState = PlayerStatesStorer.Instance.Get<InHorizontalPipePS>();
+        Controller.YVel = PlayerSettings.Instance.exitHorizontalPipeYVel;
     }
 
     protected override State<PlayerController, PlayerSettings, PlayerData> Update() {
-        return _nextState;
+        return null;
     }
 
     protected override void Exit() {

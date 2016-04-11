@@ -10,6 +10,7 @@ public class GameData : Data {
 
     private Question _question;
     private HorizontalPipe _correctAnswer;
+    private HorizontalPipe _horizontalPipeEntered;
     private HorizontalPipeController _upHorizontalPipeController;
     private HorizontalPipeController _downHorizontalPipeController;
 
@@ -50,6 +51,15 @@ public class GameData : Data {
 
         set {
             _downHorizontalPipeController = value;
+        }
+    }
+
+    public HorizontalPipe HorizontalPipeEntered {
+        get {
+            return _horizontalPipeEntered;
+        }
+        set {
+            _horizontalPipeEntered = value;
         }
     }
 }

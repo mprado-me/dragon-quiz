@@ -6,6 +6,6 @@ using System;
 public class GameStatesManager : StatesManager<GameController, GameSettings, GameData> {
 
     public GameStatesManager(GameController gameController) : base(gameController) {
-        CurrentState = GameStatesStorer.Instance.Get<NoneToMainMenuGS>();
+        CurrentState = GameSettings.Instance.GetInitialState();
     }
 }

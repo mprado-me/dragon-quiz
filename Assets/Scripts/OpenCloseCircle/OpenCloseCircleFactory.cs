@@ -13,6 +13,7 @@ public class OpenCloseCircleFactory : MonoBehaviour2 {
         go.transform.SetParent(transform, false);
         go.transform.localPosition = Vector3.zero;
         OpenCloseCircleController controller = go.GetComponent<OpenCloseCircleController>();
+        OpenCloseCircleStorer.Instance.OpenCloseCircleController = controller;
         return controller;
     }
 

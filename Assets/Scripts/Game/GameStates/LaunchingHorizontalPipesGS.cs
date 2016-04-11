@@ -21,7 +21,7 @@ public class LaunchingHorizontalPipesGS : GameState {
         if(_firstChoice) {
             _firstChoice = false;
             _nextState = GameStatesStorer.Instance.Get<EnterHorizontalPipeTutorialGS>();
-            PlayerStorer.Instance.PlayerController.Invoke(PlayerEvent.GO_ENTER_HORIZONTAL_PIPE_TURORIAL);
+            PlayerStorer.Instance.PlayerController.Invoke(PlayerEvent.GO_ENTER_HORIZONTAL_PIPE_TUTORIAL);
         }
         else {
             _nextState = GameStatesStorer.Instance.Get<ChoicingAnswerGS>();

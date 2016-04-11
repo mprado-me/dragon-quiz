@@ -15,13 +15,13 @@ public class PipesFactory : MonoBehaviour2 {
 
     public HorizontalPipeController CreateUpHorizontalPipe() {
         GameObject go = CreateHorizontalPipe();
-        go.transform.localPosition = new Vector3(go.transform.localPosition.x, PipesSettings.Instance.upHorizontalPipe.localPosition.y);
+        go.transform.localPosition = new Vector3(go.transform.localPosition.x, PipesSettings.Instance.HorizontalUpY);
         return go.GetComponent<HorizontalPipeController>();
     }
 
     public HorizontalPipeController CreateDownHorizontalPipe() {
         GameObject go = CreateHorizontalPipe();
-        go.transform.localPosition = new Vector3(go.transform.localPosition.x, PipesSettings.Instance.downHorizontalPipe.localPosition.y);
+        go.transform.localPosition = new Vector3(go.transform.localPosition.x, PipesSettings.Instance.HorizontalDownY);
         return go.GetComponent<HorizontalPipeController>();
     }
 
@@ -32,18 +32,15 @@ public class PipesFactory : MonoBehaviour2 {
         return go;
     }
 
-    public static PipesFactory Instance
-    {
-        get
-        {
+    public static PipesFactory Instance {
+        get {
             if(_instance == null)
                 _instance = GameObject.FindObjectOfType<PipesFactory>();
 
             return _instance;
         }
 
-        set
-        {
+        set {
             _instance = value;
         }
     }

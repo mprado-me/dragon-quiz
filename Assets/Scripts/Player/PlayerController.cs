@@ -16,7 +16,7 @@ public class PlayerController : Controller<PlayerSettings, PlayerData> {
 
     public override void Init() {
         Settings = PlayerSettings.Instance;
-        Data = new PlayerData(this);
+        Data = new PlayerData();
         _rb = GetComponent<Rigidbody2D>();
     }
 
@@ -74,6 +74,13 @@ public class PlayerController : Controller<PlayerSettings, PlayerData> {
         _rb.velocity = new Vector2(xVel, _rb.velocity.y);
     }
 
+    public void SetExitPosition(HorizontalPipe horizontalPipeEntered) {
+        if(horizontalPipeEntered == HorizontalPipe.UP)
+            Position = GameSettings.Instance.UpOutPlayerPos;
+        else
+            Position = GameSettings.Instance.DownOutPlayerPos;
+    }
+
     public float XVel {
         get {
             return _rb.velocity.x;
@@ -129,4 +136,12 @@ public class PlayerController : Controller<PlayerSettings, PlayerData> {
         }
     }
 
+    public Vector3 Position {
+        get {
+            return transform.position;
+        }
+        set {
+            transform.position = value;
+        }
+    }
 }

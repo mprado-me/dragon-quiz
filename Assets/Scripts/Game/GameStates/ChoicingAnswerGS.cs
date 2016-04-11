@@ -4,23 +4,29 @@ using System;
 
 public class ChoicingAnswerGS : GameState {
 
+    private GameState _nextState;
+
     protected override void Enter() {
-        PlayerStorer.Instance.PlayerController.XVel = Controller.VelPlayerScenario;
+        _nextState = null;
 
         Data.UpHorizontalPipeController.On(HorizontalPipeEvent.PLAYER_ENTER, PlayerEnterInUpHorizontalPipe);
         Data.DownHorizontalPipeController.On(HorizontalPipeEvent.PLAYER_ENTER, PlayerEnterInDownHorizontalPipe);
     }
 
     private void PlayerEnterInUpHorizontalPipe() {
-        Debug.Log("PlayerEnterInUpHorizontalPipe");
+        _nextState = GameStatesStorer.Instance.Get<PlayerInHorizontalPipeGS>();
+        Controller.Invoke(GameEvent.PLAYER_IN_HORIZONTAL_PIPE);
+        Data.HorizontalPipeEntered = HorizontalPipe.UP;
     }
 
     private void PlayerEnterInDownHorizontalPipe() {
-        Debug.Log("PlayerEnterInDownHorizontalPipe");
+        _nextState = GameStatesStorer.Instance.Get<PlayerInHorizontalPipeGS>();
+        Controller.Invoke(GameEvent.PLAYER_IN_HORIZONTAL_PIPE);
+        Data.HorizontalPipeEntered = HorizontalPipe.DOWN;
     }
 
     protected override State<GameController, GameSettings, GameData> Update() {
-        return null;
+        return _nextState;
     }
 
     protected override void Exit() {

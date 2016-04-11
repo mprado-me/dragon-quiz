@@ -27,6 +27,8 @@ public class AnswerController : MonoBehaviour2 {
         _answerText = GetComponentInChildren<Text>();
         SetAlpha(0f);
         _delta = 0f;
+
+        gameObject.AddComponent<DestroyOnPlayerEnterInHorizontalPipeB>();
     }
 
     void Update() {

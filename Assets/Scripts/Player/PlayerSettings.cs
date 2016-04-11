@@ -14,13 +14,14 @@ public class PlayerSettings : Settings {
     public float wingCyclePeriod = 1f;
     public float initialX = -2f;
     public float timeToReachInitialX = 0.3f;
+    public float exitHorizontalPipeYVel = 8f;
+
     public GetInitialStateDelegate GetInitialState = GetDefaultInitialState;
-
-    private static PlayerSettings _instance;
-
     private static PlayerState GetDefaultInitialState() {
         return PlayerStatesStorer.Instance.Get<NoneToMainMenuPS>();
     }
+
+    private static PlayerSettings _instance;    
 
     public static PlayerSettings Instance {
         get {

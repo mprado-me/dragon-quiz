@@ -1,13 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System;
 
-public class ExitingHorizontalPipeDead : GameState {
+public class ExitingHorizontalPipeDeadPS : PlayerState {
 
     protected override void Enter() {
     }
 
-    protected override State<GameController, GameSettings, GameData> Update() {
+    protected override State<PlayerController, PlayerSettings, PlayerData> Update() {
         return null;
     }
 

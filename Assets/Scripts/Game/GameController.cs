@@ -15,13 +15,14 @@ public class GameController : Controller<GameSettings, GameData>  {
     public override void Init() {
         Settings = GameSettings.Instance;
         Data = new GameData();
+        _gameEventsManager = new GameEventsManager();
+        _gameBehavioursManager = new GameBehavioursManager(this);
     }
 
     private void Start() {
-        _gameEventsManager = new GameEventsManager();
-        _gameBehavioursManager = new GameBehavioursManager(this);
         _gameStatesManager = new GameStatesManager(this);
         QuestionBoardFactory.Instance.CreateQuestionBoard();
+        OpenCloseCircleFactory.Instance.CreateOpenCloseCircle();
     }
 
     private void Update() {

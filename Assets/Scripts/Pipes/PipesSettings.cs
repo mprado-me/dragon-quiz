@@ -8,8 +8,10 @@ public class PipesSettings : MonoBehaviour {
     public float minVisibleYSize = 1f;
     public float yDist = 5f;
     public float xToDestroy = -12f;
-    public Transform upHorizontalPipe;
-    public Transform downHorizontalPipe;
+    [SerializeField]
+    private Transform upHorizontalPipe;
+    [SerializeField]
+    private Transform downHorizontalPipe;
 
     public static PipesSettings Instance
     {
@@ -24,4 +26,23 @@ public class PipesSettings : MonoBehaviour {
             _instance = value;
         }
     }
+
+    public float HorizontalXStop {
+        get {
+            return upHorizontalPipe.position.x;
+        }
+    }
+
+    public float HorizontalUpY {
+        get {
+            return upHorizontalPipe.position.y;
+        }
+    }
+
+    public float HorizontalDownY {
+        get {
+            return downHorizontalPipe.position.y;
+        }
+    }
+
 }

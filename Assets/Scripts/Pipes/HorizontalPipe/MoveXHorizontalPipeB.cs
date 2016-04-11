@@ -1,15 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class MoveXHorizontalPipeB : MonoBehaviour {
 
     private float _xToStop;
+    private HorizontalPipeController _horizontalPipeController;
 
-	void Start () {
-        _xToStop = PipesSettings.Instance.upHorizontalPipe.localPosition.x;
+    private void Start () {
+        _xToStop = PipesSettings.Instance.HorizontalXStop;
     }
 	
-	void Update () {
+	private void Update () {
         if( transform.position.x > _xToStop) {
             transform.position = new Vector3(transform.position.x + Time.deltaTime * ScenariosManager.Instance.Vel, transform.position.y);
             if(transform.position.x < _xToStop) {

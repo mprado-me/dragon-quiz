@@ -17,7 +17,7 @@ public class DivertingObstaclesPS : PlayerState {
         Controller.GravityScale = PlayerSettings.Instance.gravityScale;
 
         Controller.On(PlayerEvent.GO_CHOICE_ANSWER, GoToChoiceAnswer);
-        Controller.On(PlayerEvent.GO_ENTER_HORIZONTAL_PIPE_TURORIAL, GoToEnterHorizontalPipe);
+        Controller.On(PlayerEvent.GO_ENTER_HORIZONTAL_PIPE_TUTORIAL, GoToEnterHorizontalPipe);
     }
 
     private void GoToChoiceAnswer() {
@@ -34,6 +34,6 @@ public class DivertingObstaclesPS : PlayerState {
 
     protected override void Exit() {
         Controller.Remove(PlayerEvent.GO_CHOICE_ANSWER, GoToChoiceAnswer);
-        Controller.Remove(PlayerEvent.GO_ENTER_HORIZONTAL_PIPE_TURORIAL, GoToEnterHorizontalPipe);
+        Controller.Remove(PlayerEvent.GO_ENTER_HORIZONTAL_PIPE_TUTORIAL, GoToEnterHorizontalPipe);
     }
 }

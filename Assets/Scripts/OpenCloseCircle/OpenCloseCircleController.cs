@@ -2,12 +2,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using System;
+using UnityEngine.Events;
 
 public enum OpenCloseCircleState {
     OPENED,
     OPENING,
     CLOSING,
     CLOSED
+}
+
+public enum OpenCloseEvent {
+    FINISH_OPEN,
+    FINISH_CLOSE,
 }
 
 public class OpenCloseCircleController : MonoBehaviour2 {
@@ -17,12 +23,14 @@ public class OpenCloseCircleController : MonoBehaviour2 {
     private List<Transform> _blackRects;
     private float _alpha;
     private float _delta;
+    private EventsManager<OpenCloseEvent> _eventsManager;
 
     void Start() {
         _state = OpenCloseCircleState.OPENED;
         _blackRects = new List<Transform>();
         _radius = OpenCloseCircleSettings.Instance.openedRadius;
         _alpha = 2 * Mathf.PI / OpenCloseCircleSettings.Instance.nBlackRects;
+        _eventsManager = new EventsManager<OpenCloseEvent>();
 
         for(int i = 0; i < OpenCloseCircleSettings.Instance.nBlackRects; i++) {
             Transform t = OpenCloseCircleFactory.Instance.CreateBlackRect().transform;
@@ -35,14 +43,14 @@ public class OpenCloseCircleController : MonoBehaviour2 {
         UpdateBlackRects();
     }
 
-    public void Open() {
+    private void Open() {
         if(_state == OpenCloseCircleState.CLOSED) {
             _delta = 0f;
             _state = OpenCloseCircleState.OPENING;
         }
     }
 
-    public void Close() {
+    private void Close() {
         if(_state == OpenCloseCircleState.OPENED) {
             _delta = 0f;
             _state = OpenCloseCircleState.CLOSING;
@@ -70,8 +78,10 @@ public class OpenCloseCircleController : MonoBehaviour2 {
                     OpenCloseCircleSettings.Instance.openedRadius,
                     t);
         UpdateBlackRects();
-        if(t >= 1f)
+        if(t >= 1f) {
             _state = OpenCloseCircleState.OPENED;
+            Invoke(OpenCloseEvent.FINISH_OPEN);
+        }
     }
 
     private void UpdateClosing(float t) {
@@ -81,8 +91,10 @@ public class OpenCloseCircleController : MonoBehaviour2 {
                     OpenCloseCircleSettings.Instance.closedRadius,
                     t);
         UpdateBlackRects();
-        if(t >= 1f)
+        if(t >= 1f) {
             _state = OpenCloseCircleState.CLOSED;
+            Invoke(OpenCloseEvent.FINISH_CLOSE);
+        }
     }
 
     private void UpdateAng() {
@@ -94,6 +106,43 @@ public class OpenCloseCircleController : MonoBehaviour2 {
         foreach(Transform t in _blackRects) {
             t.localPosition = (new Vector3(Mathf.Cos(ang), Mathf.Sin(ang))) * _radius;
             ang += _alpha;
+        }
+    }
+
+    public void On(OpenCloseEvent openCloseEvent, UnityAction call) {
+        _eventsManager.On(openCloseEvent, call);
+    }
+
+    public void Remove(OpenCloseEvent openCloseEvent, UnityAction call) {
+        _eventsManager.Remove(openCloseEvent, call);
+    }
+
+    public void Invoke(OpenCloseEvent openCloseEvent) {
+        _eventsManager.Invoke(openCloseEvent);
+    }
+
+    public void OpenOn(HorizontalPipe hp) {
+        if(hp == HorizontalPipe.UP)
+            Position = GameSettings.Instance.UpOutOpenCloseCirclePos;
+        else
+            Position = GameSettings.Instance.DownOutOpenCloseCirclePos;
+        Open();
+    }
+
+    public void CloseOn(HorizontalPipe hp) {
+        if(hp == HorizontalPipe.UP)
+            Position = GameSettings.Instance.UpInOpenCloseCirclePos;
+        else
+            Position = GameSettings.Instance.DownInOpenCloseCirclePos;
+        Close();
+    }
+
+    public Vector3 Position {
+        get {
+            return transform.position;
+        }
+        set {
+            transform.position = value;
         }
     }
 }

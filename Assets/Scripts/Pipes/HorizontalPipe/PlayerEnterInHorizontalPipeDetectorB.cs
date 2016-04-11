@@ -25,7 +25,6 @@ public class PlayerEnterInHorizontalPipeDetectorB : MonoBehaviour2 {
 
     public void OnTriggerStay2D(Collider2D player) {
         if( !_playerDetected && player.ContainTag("Player") && _coll.bounds.Contains(player.bounds)) {
-            Debug.Log("Player enter in region");
             _playerDetected = true;
             _horizontalPipeController.Invoke(HorizontalPipeEvent.PLAYER_ENTER);
         }

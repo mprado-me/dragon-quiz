@@ -22,7 +22,27 @@ public class TestController : MonoBehaviour2 {
         //TestSetQuestionFromJSONFile1();
         //TestCreateAnswer();
         //TestGreenHorizontalPipe();
-        TestOpenCloseCircle();
+        //TestOpenCloseCircle();
+        TestExitHorizontalPipeAlive();
+    }
+
+    private void TestExitHorizontalPipeAlive() {
+        PlayerSettings.Instance.GetInitialState = new PlayerSettings.GetInitialStateDelegate(GetInitialState3);
+        GameSettings.Instance.GetInitialState = new GameSettings.GetInitialStateDelegate(GetInitialState4);
+        OpenCloseCircleFactory.Instance.CreateOpenCloseCircle();
+        HorizontalPipeController hpcUp = PipesFactory.Instance.CreateUpHorizontalPipe();
+        hpcUp.PlayerGoing();
+        HorizontalPipeController hpcDown = PipesFactory.Instance.CreateDownHorizontalPipe();
+        hpcDown.PlayerGoing();
+        GameController gc = GameFactory.Instance.CreateGame();
+        gc.Data.HorizontalPipeEntered = HorizontalPipe.UP;
+        PlayerFactory.Instance.CreatePlayer();
+    }
+    private PlayerState GetInitialState3() {
+        return PlayerStatesStorer.Instance.Get<ExitingHorizontalPipeAlivePS>();
+    }
+    private GameState GetInitialState4() {
+        return GameStatesStorer.Instance.Get<ExitingHorizontalPipeAliveGS>();
     }
 
     private void TestOpenCloseCircle() {
@@ -33,9 +53,9 @@ public class TestController : MonoBehaviour2 {
         yield return new WaitForSeconds(0.25f);
         while(true) {
             yield return new WaitForSeconds(1.1f * OpenCloseCircleSettings.Instance.openCloseTime);
-            c.Close();
+            c.CloseOn(HorizontalPipe.UP);
             yield return new WaitForSeconds(1.1f * OpenCloseCircleSettings.Instance.openCloseTime);
-            c.Open();
+            c.OpenOn(HorizontalPipe.UP);
         }
     }
 
