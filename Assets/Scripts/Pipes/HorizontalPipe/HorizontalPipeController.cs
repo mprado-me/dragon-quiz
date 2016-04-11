@@ -17,17 +17,18 @@ public class HorizontalPipeController : MonoBehaviour2 {
 
     private HorizontalPipeState _state;
     private EventsManager<HorizontalPipeEvent> _eventsManager;
-    private PlayerEnterInHorizontalPipeDetectorB _b;
     private GameController _gameController;
+    private float _xToStop;
 
     void Start() {
         _state = HorizontalPipeState.MOVING_TO_POSITION;
         _eventsManager = new EventsManager<HorizontalPipeEvent>();
+        _xToStop = PipesSettings.Instance.HorizontalXStop;
 
         gameObject.AddComponent<MoveXHorizontalPipeB>();
         gameObject.AddComponent<DestroyPipeB>();
-        _b = gameObject.AddComponent<PlayerEnterInHorizontalPipeDetectorB>();
-        _b.SetParams(this);
+        PlayerEnterInHorizontalPipeDetectorB b = gameObject.AddComponent<PlayerEnterInHorizontalPipeDetectorB>();
+        b.SetParams(this);
 
         _gameController = GameStorer.Instance.GameController;
         _gameController.On(GameEvent.HORIZONTAL_PIPE_COMPLETLY_VISIBLE, ReachXToStop);
@@ -49,11 +50,23 @@ public class HorizontalPipeController : MonoBehaviour2 {
     void Update() {
         switch(_state) {
             case HorizontalPipeState.MOVING_TO_POSITION:
+                UpdateMovingToPosition();
                 break;
             case HorizontalPipeState.PLAYER_COMING:
                 break;
             case HorizontalPipeState.PLAYER_GOING:
+                transform.position = new Vector3(transform.position.x + Time.deltaTime * ScenariosManager.Instance.Vel, transform.position.y);
                 break;
+        }
+    }
+
+    private void UpdateMovingToPosition() {
+        if(transform.position.x > _xToStop) {
+            transform.position = new Vector3(transform.position.x + Time.deltaTime * ScenariosManager.Instance.Vel, transform.position.y);
+            if(transform.position.x < _xToStop) {
+                transform.position = new Vector3(_xToStop, transform.position.y);
+                GameStorer.Instance.GameController.Invoke(GameEvent.HORIZONTAL_PIPE_COMPLETLY_VISIBLE);
+            }
         }
     }
 

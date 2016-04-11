@@ -17,6 +17,11 @@ public class ExitingHorizontalPipeAlivePS : PlayerState {
     }
 
     protected override State<PlayerController, PlayerSettings, PlayerData> Update() {
+        if( Controller.X > PlayerSettings.Instance.initialX) {
+            Controller.X = PlayerSettings.Instance.initialX;
+            GameStorer.Instance.GameController.Invoke(GameEvent.PLAYER_BACK_TO_DIVERT_OSBTACLE_STATE);
+            return PlayerStatesStorer.Instance.Get<DivertingObstaclesPS>();
+        }
         return null;
     }
 

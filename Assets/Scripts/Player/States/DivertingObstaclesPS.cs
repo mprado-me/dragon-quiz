@@ -15,6 +15,7 @@ public class DivertingObstaclesPS : PlayerState {
         Controller.Add<AngleControlPB>();
         Controller.Add<BeatWingPB>();
         Controller.GravityScale = PlayerSettings.Instance.gravityScale;
+        Controller.XVel = 0f;
 
         Controller.On(PlayerEvent.GO_CHOICE_ANSWER, GoToChoiceAnswer);
         Controller.On(PlayerEvent.GO_ENTER_HORIZONTAL_PIPE_TUTORIAL, GoToEnterHorizontalPipe);
