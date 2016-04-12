@@ -16,6 +16,7 @@ public class GameSettings : Settings {
     public float delayToRemoveQuestionBoard = 1.0f;
     public float delayToLaunchHorizontalPipes = 3.0f;
     public float vel = 5.0f;
+    public float timeToGoGameOverState = 1f;
     [SerializeField]
     private Transform inOutOpenCloseCirclePos;
     [SerializeField]
@@ -27,6 +28,7 @@ public class GameSettings : Settings {
     }
 
     private static GameSettings _instance;
+    
 
     public static GameSettings Instance {
         get {

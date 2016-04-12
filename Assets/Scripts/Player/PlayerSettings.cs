@@ -15,6 +15,8 @@ public class PlayerSettings : Settings {
     public float initialX = -2f;
     public float timeToReachInitialX = 0.3f;
     public float exitHorizontalPipeYVel = 8f;
+    [SerializeField]
+    private Transform playerInitialTransform;
 
     public GetInitialStateDelegate GetInitialState = GetDefaultInitialState;
     private static PlayerState GetDefaultInitialState() {
@@ -33,6 +35,12 @@ public class PlayerSettings : Settings {
 
         set {
             _instance = value;
+        }
+    }
+
+    public Vector3 PlayerInitialPos {
+        get {
+            return playerInitialTransform.position;
         }
     }
 }

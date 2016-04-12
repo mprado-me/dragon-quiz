@@ -86,6 +86,11 @@ public class PlayerController : Controller<PlayerSettings, PlayerData> {
         Data.DeadBodyGO.SetActive(true);
     }
 
+    public void OnLive() {
+        Data.NormalBodyGO.SetActive(true);
+        Data.DeadBodyGO.SetActive(false);
+    }
+
     public float XVel {
         get {
             return _rb.velocity.x;

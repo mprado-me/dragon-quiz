@@ -8,7 +8,6 @@ public class AirCollisionPB : PlayerBehaviour {
     }
 
     public override void Update() {
-
     }
 
     public override void OnTriggerEnter2D(Collider2D other) {

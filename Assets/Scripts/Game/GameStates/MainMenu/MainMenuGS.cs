@@ -19,7 +19,9 @@ public class MainMenuGS : GameState {
     }
 
     private void GoNextState() {
+        Debug.Log("A");
         _nextState = GameStatesStorer.Instance.Get<MainMenuToMatchGS>();
+        Debug.Log("B");
     }
 
     protected override State<GameController, GameSettings, GameData> Update() {

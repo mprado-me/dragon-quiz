@@ -129,11 +129,21 @@ public class OpenCloseCircleController : MonoBehaviour2 {
         Open();
     }
 
+    public void OpenOn(Vector3 pos) {
+        Position = pos;
+        Open();
+    }
+
     public void CloseOn(HorizontalPipe hp) {
         if(hp == HorizontalPipe.UP)
             Position = GameSettings.Instance.UpInOpenCloseCirclePos;
         else
             Position = GameSettings.Instance.DownInOpenCloseCirclePos;
+        Close();
+    }
+
+    public void ClosenOn(Vector3 pos) {
+        Position = pos;
         Close();
     }
 

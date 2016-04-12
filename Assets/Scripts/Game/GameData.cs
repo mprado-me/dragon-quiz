@@ -13,6 +13,11 @@ public class GameData : Data {
     private HorizontalPipe _horizontalPipeEntered;
     private HorizontalPipeController _upHorizontalPipeController;
     private HorizontalPipeController _downHorizontalPipeController;
+    private bool _tutorialAlreadyShowed;
+
+    public GameData() : base() {
+        TutorialAlreadyShowed = false;
+    }
 
     public Question Question {
         get {
@@ -60,6 +65,16 @@ public class GameData : Data {
         }
         set {
             _horizontalPipeEntered = value;
+        }
+    }
+
+    public bool TutorialAlreadyShowed {
+        get {
+            return _tutorialAlreadyShowed;
+        }
+
+        set {
+            _tutorialAlreadyShowed = value;
         }
     }
 }

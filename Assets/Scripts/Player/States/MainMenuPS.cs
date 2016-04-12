@@ -11,6 +11,14 @@ public class MainMenuPS : PlayerState {
 
         Controller.Add<BeatWingPB>();
 
+        Controller.Position = PlayerSettings.Instance.PlayerInitialPos;
+        Controller.XVel = 0f;
+        Controller.YVel = 0f;
+        Controller.GravityScale = 0f;
+        Controller.OnLive();
+        Controller.Ang = 0f;
+        Controller.AngularVel = 0f;
+
         _mainMenuController = UIStorer.Instance.MainMenuController;
         _mainMenuController.On(MainMenuEvent.PLAY_BUTTON_CLICK, GoNextState);
     }

@@ -11,6 +11,7 @@ public class NoneToMainMenuGS : GameState {
     private float _delta;
 
     public NoneToMainMenuGS() {
+
     }
 
     protected override void Enter() {
@@ -18,13 +19,7 @@ public class NoneToMainMenuGS : GameState {
         _delta = 0f;
         _inAnimationInitialized = false;
 
-        PlayerFactory.Instance.CreatePlayer();
-        UIFactory.Instance.CreateMainMenu();
-
         Controller.VelPlayerScenario = Settings.vel;
-
-        _playerController = PlayerStorer.Instance.PlayerController;
-        _playerController.XVel = 0f;
 
         ScenariosManager.Instance.Current = ScenarioType.SKY;
 

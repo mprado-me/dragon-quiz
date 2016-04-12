@@ -27,6 +27,8 @@ public class MainMenuController : MonoBehaviour2 {
     }
 
     public void InvokePlayButtonClick() {
+        Debug.Log("playButtonClick");
+        _animator.SetTrigger("playButtonClick");
         Invoke(MainMenuEvent.PLAY_BUTTON_CLICK);
     }
 

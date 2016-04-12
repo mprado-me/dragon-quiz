@@ -17,12 +17,15 @@ public class GameController : Controller<GameSettings, GameData>  {
         Data = new GameData();
         _gameEventsManager = new GameEventsManager();
         _gameBehavioursManager = new GameBehavioursManager(this);
+
+        PlayerFactory.Instance.CreatePlayer();
+        UIFactory.Instance.CreateMainMenu();
+        QuestionBoardFactory.Instance.CreateQuestionBoard();
+        OpenCloseCircleFactory.Instance.CreateOpenCloseCircle();
     }
 
     private void Start() {
         _gameStatesManager = new GameStatesManager(this);
-        QuestionBoardFactory.Instance.CreateQuestionBoard();
-        OpenCloseCircleFactory.Instance.CreateOpenCloseCircle();
     }
 
     private void Update() {

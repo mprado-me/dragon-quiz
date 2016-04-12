@@ -4,10 +4,10 @@ using System;
 
 public class ExitingHorizontalPipeDeadGS : GameState {
 
-    private GameState _nextState;
+    private float _delta;
 
     protected override void Enter() {
-        _nextState = null;
+        _delta = 0f;
 
         Controller.VelPlayerScenario = Settings.vel;
 
@@ -17,7 +17,10 @@ public class ExitingHorizontalPipeDeadGS : GameState {
     }
 
     protected override State<GameController, GameSettings, GameData> Update() {
-        return _nextState;
+        _delta += Time.deltaTime;
+        if(_delta > GameSettings.Instance.timeToGoGameOverState)
+            return GameStatesStorer.Instance.Get<GameOverGS>();
+        return null;
     }
 
     protected override void Exit() {
