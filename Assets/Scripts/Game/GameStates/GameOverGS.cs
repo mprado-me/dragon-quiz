@@ -17,6 +17,7 @@ public class GameOverGS : GameState {
 
     private void OnFinishClose() {
         _openCloseCircleController.OpenOn(Vector3.zero);
+        QuestionBoardStorer.Instance.QuestionBoardController.GoOutNow();
         Controller.Invoke(GameEvent.BACK_TO_MAIN_MENU);
         _nextState = GameStatesStorer.Instance.Get<NoneToMainMenuGS>();
     }

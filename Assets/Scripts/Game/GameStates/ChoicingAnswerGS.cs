@@ -11,6 +11,11 @@ public class ChoicingAnswerGS : GameState {
 
         Data.UpHorizontalPipeController.On(HorizontalPipeEvent.PLAYER_ENTER, PlayerEnterInUpHorizontalPipe);
         Data.DownHorizontalPipeController.On(HorizontalPipeEvent.PLAYER_ENTER, PlayerEnterInDownHorizontalPipe);
+        Controller.On(GameEvent.GO_GAME_OVER, GoGameOverState);
+    }
+
+    private void GoGameOverState() {
+        _nextState = GameStatesStorer.Instance.Get<GameOverGS>();
     }
 
     private void PlayerEnterInUpHorizontalPipe() {
@@ -32,5 +37,6 @@ public class ChoicingAnswerGS : GameState {
     protected override void Exit() {
         Data.UpHorizontalPipeController.Remove(HorizontalPipeEvent.PLAYER_ENTER, PlayerEnterInUpHorizontalPipe);
         Data.DownHorizontalPipeController.Remove(HorizontalPipeEvent.PLAYER_ENTER, PlayerEnterInDownHorizontalPipe);
+        Controller.Remove(GameEvent.GO_GAME_OVER, GoGameOverState);
     }
 }

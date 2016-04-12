@@ -30,5 +30,6 @@ public class ExitingHorizontalPipeDeadPS : PlayerState {
     }
 
     protected override void Exit() {
+        GameStorer.Instance.GameController.Remove(GameEvent.BACK_TO_MAIN_MENU, GoNextState);
     }
 }

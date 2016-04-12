@@ -15,15 +15,21 @@ public class QuestionBoardController : MonoBehaviour2 {
     }
 	
 	void Update () {
-
 	}
 
     public void InitInAn() {
+        Debug.Log("InitInAn");
         _animator.SetTrigger("initInQuestionBoardAn");
     }
 
     public void InitOutAn() {
+        Debug.Log("InitOutAn");
         _animator.SetTrigger("initOutQuestionBoardAn");
+    }
+
+    public void GoOutNow() {
+        Debug.Log("GoOutNow");
+        _animator.SetTrigger("goIdleNow");
     }
 
     public void SetQuestion(Question q) {

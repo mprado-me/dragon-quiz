@@ -4,8 +4,10 @@ public class AnswersVisibleGS : GameState {
 
     private int _nPipesToLauchUntilShowQuestion;
     FixedVerticalPipesLauncherGB _fixedVerticalPipesLauncherGB;
+    private GameState _nextState;
 
     protected override void Enter() {
+        _nextState = null;
         _fixedVerticalPipesLauncherGB = GameBehavioursStorer.Instance.Get<FixedVerticalPipesLauncherGB>();
         _nPipesToLauchUntilShowQuestion = Random.Range(
             Settings.minPipesLaunchedUntilLaunchHorizontalPipes,
@@ -22,6 +24,12 @@ public class AnswersVisibleGS : GameState {
             AnswersFactory.Instance.CreateDown(Data.Question.correctAnswerType, Data.Question.correctAnswerContent);
             Data.CorrectAnswer = HorizontalPipe.DOWN;
         }
+
+        Controller.On(GameEvent.GO_GAME_OVER, GoGameOverState);
+    }
+
+    private void GoGameOverState() {
+        _nextState = GameStatesStorer.Instance.Get<GameOverGS>();
     }
 
     protected override State<GameController, GameSettings, GameData> Update() {
@@ -32,5 +40,6 @@ public class AnswersVisibleGS : GameState {
     }
 
     protected override void Exit() {
+        Controller.Remove(GameEvent.GO_GAME_OVER, GoGameOverState);
     }
 }
