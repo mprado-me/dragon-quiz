@@ -81,6 +81,11 @@ public class PlayerController : Controller<PlayerSettings, PlayerData> {
             Position = GameSettings.Instance.DownOutPlayerPos;
     }
 
+    public void OnDie() {
+        Data.NormalBodyGO.SetActive(false);
+        Data.DeadBodyGO.SetActive(true);
+    }
+
     public float XVel {
         get {
             return _rb.velocity.x;

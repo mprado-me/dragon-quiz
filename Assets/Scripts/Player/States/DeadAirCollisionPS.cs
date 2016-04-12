@@ -12,13 +12,9 @@ public class DeadAirCollisionPS : PlayerState {
         
         GameStorer.Instance.GameController.VelPlayerScenario = 0f;
 
-        ChangeBodySprite();
+        Controller.OnDie();
     }
 
-    private void ChangeBodySprite() {
-        Data.NormalBodyGO.SetActive(false);
-        Data.DeadBodyGO.SetActive(true);
-    }
 
     protected override void Exit() {
 
