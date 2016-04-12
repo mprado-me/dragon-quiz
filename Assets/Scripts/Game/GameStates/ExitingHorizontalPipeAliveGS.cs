@@ -13,6 +13,10 @@ public class ExitingHorizontalPipeAliveGS : GameState {
 
         OpenCloseCircleStorer.Instance.OpenCloseCircleController.OpenOn(Data.HorizontalPipeEntered);
 
+        FixedVerticalPipesLauncherGB fixedVerticalPipesLauncherGB = Controller.Add<FixedVerticalPipesLauncherGB>();
+        fixedVerticalPipesLauncherGB.AdvancedLaunch(0f);
+        fixedVerticalPipesLauncherGB.AdvancedLaunch(GameSettings.Instance.launchFixedVerticalPipePeriod);
+
         Controller.On(GameEvent.PLAYER_BACK_TO_DIVERT_OSBTACLE_STATE, GoNextState);
         Controller.Invoke(GameEvent.EXITING_HORIZONTAL_PIPE_START);
     }

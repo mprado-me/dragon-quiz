@@ -8,9 +8,10 @@ public class PipesFactory : MonoBehaviour2 {
 
     private static PipesFactory _instance;
 
-    public void CreateFixedVerticalPipe() {
+    public FixedVerticalPipeController CreateFixedVerticalPipe() {
         GameObject pipe = AddChild(skyFixedVerticalPipePrefab);
         pipe.transform.localPosition = Vector3.zero;
+        return pipe.GetComponent<FixedVerticalPipeController>();
     }
 
     public HorizontalPipeController CreateUpHorizontalPipe() {

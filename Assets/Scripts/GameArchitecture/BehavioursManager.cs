@@ -13,13 +13,14 @@ public abstract class BehavioursManager<C, S, D> where S : Settings where D : Da
         BehavioursByType = new Dictionary<Type, Behaviour<C, S, D> >();
     }
 
-    public void Add(Behaviour<C, S, D> auxiliaryBehaviour )   {
+    public Behaviour<C, S, D> Add(Behaviour<C, S, D> auxiliaryBehaviour )   {
         Type type = auxiliaryBehaviour.GetType();
         if(!BehavioursByType.ContainsKey(type)) {
             BehavioursByType.Add(type, auxiliaryBehaviour);
             auxiliaryBehaviour.Controller = _controller;
-            auxiliaryBehaviour.Start();
         }
+        auxiliaryBehaviour.Start();
+        return auxiliaryBehaviour;
     }
 
     public void Clear() {

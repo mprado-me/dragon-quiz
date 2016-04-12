@@ -7,9 +7,12 @@ public class FixedVerticalPipesLauncherGB : GameBehaviour {
     private int _nLauched;
     private float _delta;
 
+    public FixedVerticalPipesLauncherGB() {
+    }
+
     public override void Start() {
         _nLauched = 0;
-        _delta = 0.0f;
+        _delta = 0f;
     }
 
     public override void Update() {
@@ -29,5 +32,12 @@ public class FixedVerticalPipesLauncherGB : GameBehaviour {
         get {
             return _nLauched;
         }
+    }
+
+    public void AdvancedLaunch(float advancedTime) {
+        FixedVerticalPipeController fixedVerticalPipeController = PipesFactory.Instance.CreateFixedVerticalPipe();
+        fixedVerticalPipeController.transform.localPosition = new Vector3(
+            fixedVerticalPipeController.transform.localPosition.x - advancedTime*Controller.VelPlayerScenario,
+            fixedVerticalPipeController.transform.localPosition.y);
     }
 }

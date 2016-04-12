@@ -15,8 +15,9 @@ public class DivertingObstaclesGS : GameState {
             Settings.minPipesLaunchedUntilShowQuestion,
             Settings.maxPipesLaunchedUntilShowQuestion);
 
-        Controller.Add<FixedVerticalPipesLauncherGB>();
         Controller.VelPlayerScenario = GameSettings.Instance.vel;
+
+        Controller.Add<FixedVerticalPipesLauncherGB>();
     }
 
     protected override State<GameController, GameSettings, GameData> Update() {

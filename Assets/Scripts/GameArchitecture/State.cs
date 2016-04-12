@@ -18,6 +18,7 @@ public abstract class State<C, S, D> where S : Settings where D : Data where C :
 
     public void SetControllerAndExit(C controller) {
         Controller = controller;
+        Data.LastType = this.GetType();
         Exit();
     }
 

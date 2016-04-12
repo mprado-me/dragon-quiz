@@ -6,7 +6,7 @@ public class GameBehavioursManager : BehavioursManager<GameController, GameSetti
     public GameBehavioursManager(GameController gameController) : base(gameController) {
     }
 
-    public void Add<GB>() where GB : GameBehaviour, new() {
-        base.Add(GameBehavioursStorer.Instance.Get<GB>());
+    public GB Add<GB>() where GB : GameBehaviour, new() {
+        return (GB) base.Add(GameBehavioursStorer.Instance.Get<GB>());
     }
 }

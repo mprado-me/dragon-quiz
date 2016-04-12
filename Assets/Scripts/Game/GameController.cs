@@ -31,8 +31,8 @@ public class GameController : Controller<GameSettings, GameData>  {
         currentState = _gameStatesManager.CurrentState.GetType().Name;
     }
 
-    public void Add<GB>() where GB : GameBehaviour, new() {
-        _gameBehavioursManager.Add<GB>();
+    public GB Add<GB>() where GB : GameBehaviour, new() {
+        return _gameBehavioursManager.Add<GB>();
     }
 
     public override void ClearBehaviours() {
