@@ -4,14 +4,12 @@ using System;
 
 public class LaunchingHorizontalPipesGS : GameState {
 
-    private bool _firstChoice;
     private GameState _nextState;
     private float _delta0, _delta1;
-    private bool _triggered0, _triggered1; 
+    private bool _triggered0, _triggered1;
 
     protected override void Enter() {
         _nextState = null;
-        _firstChoice = true;
         _delta0 = 0f;
         _delta1 = 0f;
         _triggered0 = false;
@@ -22,8 +20,8 @@ public class LaunchingHorizontalPipesGS : GameState {
     }
 
     private void GoNextState() {
-        if(_firstChoice) {
-            _firstChoice = false;
+        if(!Data.EnterPipeTutorialAlreadyShowed) {
+            Data.EnterPipeTutorialAlreadyShowed = true;
             _nextState = GameStatesStorer.Instance.Get<EnterHorizontalPipeTutorialGS>();
             PlayerStorer.Instance.PlayerController.Invoke(PlayerEvent.GO_ENTER_HORIZONTAL_PIPE_TUTORIAL);
         }

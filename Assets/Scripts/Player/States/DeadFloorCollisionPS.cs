@@ -7,7 +7,7 @@ public class DeadFloorCollisionPS : PlayerState {
         Controller.XVel = 0f;
         Controller.YVel = 0f;
         Controller.GravityScale = 0f;
-        Controller.AngularVel = 0f;
+        Controller.AngVel = 0f;
 
         GameStorer.Instance.GameController.VelPlayerScenario = 0f;
     }

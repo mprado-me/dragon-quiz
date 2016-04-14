@@ -22,7 +22,7 @@ public class QuestionContentManager : MonoBehaviour2 {
     }
 
     public void AddText(string text) {
-        GameObject textGO = CanvasFactory.Instance.CreateText(text);
+        GameObject textGO = CanvasFactory.Instance.CreateQuestionAnswerText(text);
         textGO.transform.SetParent(_controller.transform, false);
         textGO.transform.localPosition = Vector3.zero;
         RectTransform rt = textGO.GetComponent<RectTransform>();

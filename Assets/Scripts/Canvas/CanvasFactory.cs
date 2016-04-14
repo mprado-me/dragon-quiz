@@ -5,14 +5,15 @@ using System.Collections;
 public class CanvasFactory : MonoBehaviour2 {
 
     private static CanvasFactory _instance;
-    public GameObject textPrefab;
+    public GameObject questionAnswerTextPrefab;
     public GameObject imagePrefab;
+    public GameObject additionalTextPrefab;
 
-    public GameObject CreateText(string text) {
-        GameObject textGO = Instantiate(textPrefab);
+    public GameObject CreateQuestionAnswerText(string text) {
+        GameObject textGO = Instantiate(questionAnswerTextPrefab);
         Text textComp = textGO.GetComponent<Text>();
         textComp.text = text;
-        textComp.rectTransform.sizeDelta = new Vector2(textComp.preferredWidth+1, textComp.rectTransform.sizeDelta.y);
+        textComp.rectTransform.sizeDelta = new Vector2(textComp.preferredWidth + 1, textComp.rectTransform.sizeDelta.y);
         return textGO;
     }
 
@@ -25,18 +26,23 @@ public class CanvasFactory : MonoBehaviour2 {
         return imageGO;
     }
 
-    public static CanvasFactory Instance
-    {
-        get
-        {
+    public GameObject CreateAdditionalText(string text) {
+        GameObject textGO = Instantiate(additionalTextPrefab);
+        textGO.transform.SetParent(transform, false);
+        Text textComp = textGO.GetComponent<Text>();
+        textComp.text = text;
+        return textGO;
+    }
+
+    public static CanvasFactory Instance {
+        get {
             if(_instance == null)
                 _instance = GameObject.FindObjectOfType<CanvasFactory>();
 
             return _instance;
         }
 
-        set
-        {
+        set {
             _instance = value;
         }
     }

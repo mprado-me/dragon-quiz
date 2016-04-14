@@ -10,7 +10,9 @@ public class ChoicingAnswerPS : PlayerState {
     protected override void Enter() {
         _nextState = null;
 
-        Controller.Add<JumpPB>();
+        JumpPB jumpPB = Controller.Add<JumpPB>();
+        if( Data.LastStateType == typeof(EnterHorizontalPipeTutorialPS) )
+            jumpPB.missFirstJumpCommand();
         Controller.Add<AirCollisionPB>();
         Controller.Add<FloorCollisionPB>();
         Controller.Add<AngleControlPB>();

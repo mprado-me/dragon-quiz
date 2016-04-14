@@ -3,19 +3,19 @@ using System.Collections;
 using System;
 
 public class Data {
-    private Type _lastType;
+    private Type _lastStateType;
 
     public Data() {
-        LastType = null;
+        LastStateType = null;
     }
 
-    public Type LastType {
+    public Type LastStateType {
         get {
-            return _lastType;
+            return _lastStateType;
         }
 
         set {
-            _lastType = value;
+            _lastStateType = value;
         }
     }
 }

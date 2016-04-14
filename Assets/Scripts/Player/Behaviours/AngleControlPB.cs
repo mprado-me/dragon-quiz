@@ -15,7 +15,7 @@ public class AngleControlPB : PlayerBehaviour {
 
     private void UpdateAngVel() {
         float k = Controller.YVel > 0 ? Settings.controlAngUpFactor : Settings.controlAngDownFactor;
-        Controller.AngularVel = k * Controller.YVel * Mathf.Rad2Deg;
+        Controller.AngVel = k * Controller.YVel * Mathf.Rad2Deg;
     }
 
     private void LimitAng() {

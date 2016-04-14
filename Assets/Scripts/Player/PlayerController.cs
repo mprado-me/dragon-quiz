@@ -36,8 +36,8 @@ public class PlayerController : Controller<PlayerSettings, PlayerData> {
         currentState = _playerStatesManager.CurrentState.GetType().Name;
     }
 
-    public void Add<PB>() where PB : PlayerBehaviour, new() {
-        _playerBehavioursManager.Add<PB>();
+    public PB Add<PB>() where PB : PlayerBehaviour, new() {
+        return _playerBehavioursManager.Add<PB>();
     }
 
     public override void ClearBehaviours() {
@@ -110,7 +110,7 @@ public class PlayerController : Controller<PlayerSettings, PlayerData> {
         }
     }
 
-    public float AngularVel {
+    public float AngVel {
         get {
             return _rb.angularVelocity;
         }

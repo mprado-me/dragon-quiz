@@ -18,8 +18,8 @@ public class MainMenuToMatchGS : GameState {
     }
 
     private void GoNextState() {
-        if(!Data.TutorialAlreadyShowed) {
-            Data.TutorialAlreadyShowed = true;
+        if(!Data.JumpStartTutorialAlreadyShowed) {
+            Data.JumpStartTutorialAlreadyShowed = true;
             Controller.Invoke(GameEvent.GO_TO_JUMP_START_TUTORIAL);
             _nextState = GameStatesStorer.Instance.Get<JumpStartTutorialGS>();
         }

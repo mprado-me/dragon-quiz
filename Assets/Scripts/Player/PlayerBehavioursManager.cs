@@ -7,7 +7,9 @@ public class PlayerBehavioursManager : BehavioursManager<PlayerController, Playe
     public PlayerBehavioursManager(PlayerController playerController) : base(playerController) {
     }
 
-    public void Add<PB>() where PB : PlayerBehaviour, new() {
-        base.Add(PlayerBehavioursStorer.Instance.Get<PB>());
+    public PB Add<PB>() where PB : PlayerBehaviour, new() {
+        PB pb = PlayerBehavioursStorer.Instance.Get<PB>();
+        base.Add(pb);
+        return pb;
     }
 }

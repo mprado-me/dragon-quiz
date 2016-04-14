@@ -13,10 +13,12 @@ public class GameData : Data {
     private HorizontalPipe _horizontalPipeEntered;
     private HorizontalPipeController _upHorizontalPipeController;
     private HorizontalPipeController _downHorizontalPipeController;
-    private bool _tutorialAlreadyShowed;
+    private bool _jumpStartTutorialAlreadyShowed;
+    private bool _enterPipeTutorialAlreadyShowed;
 
     public GameData() : base() {
-        TutorialAlreadyShowed = false;
+        JumpStartTutorialAlreadyShowed = false;
+        EnterPipeTutorialAlreadyShowed = false;
     }
 
     public Question Question {
@@ -68,13 +70,23 @@ public class GameData : Data {
         }
     }
 
-    public bool TutorialAlreadyShowed {
+    public bool JumpStartTutorialAlreadyShowed {
         get {
-            return _tutorialAlreadyShowed;
+            return _jumpStartTutorialAlreadyShowed;
         }
 
         set {
-            _tutorialAlreadyShowed = value;
+            _jumpStartTutorialAlreadyShowed = value;
+        }
+    }
+
+    public bool EnterPipeTutorialAlreadyShowed {
+        get {
+            return _enterPipeTutorialAlreadyShowed;
+        }
+
+        set {
+            _enterPipeTutorialAlreadyShowed = value;
         }
     }
 }

@@ -120,11 +120,11 @@ public class TestController : MonoBehaviour2 {
     }
 
     private void TestQuestionTextImageCreation() {
-        GameObject go = CanvasFactory.Instance.CreateText("oi amiguinho como vai vc eu vou bem");
+        GameObject go = CanvasFactory.Instance.CreateQuestionAnswerText("oi amiguinho como vai vc eu vou bem");
         go.transform.parent = QuestionBoardFactory.Instance.transform;
-        go = CanvasFactory.Instance.CreateText("oi");
+        go = CanvasFactory.Instance.CreateQuestionAnswerText("oi");
         go.transform.parent = QuestionBoardFactory.Instance.transform;
-        go = CanvasFactory.Instance.CreateText("oi amiguinho");
+        go = CanvasFactory.Instance.CreateQuestionAnswerText("oi amiguinho");
         go.transform.parent = QuestionBoardFactory.Instance.transform;
         go = CanvasFactory.Instance.CreateImage("Images/Tutorial/mouse_left_click");
         go.transform.parent = QuestionBoardFactory.Instance.transform;

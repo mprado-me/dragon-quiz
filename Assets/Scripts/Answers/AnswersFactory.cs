@@ -48,7 +48,7 @@ public class AnswersFactory : MonoBehaviour2 {
             go.transform.localPosition = new Vector3(_smallX, go.transform.localPosition.y);
         }
         else { // answerType == AnswerType.TEXT
-            GameObject textGO = CanvasFactory.Instance.CreateText(content);
+            GameObject textGO = CanvasFactory.Instance.CreateQuestionAnswerText(content);
             RectTransform rt = textGO.GetComponent<RectTransform>();
             if(rt.sizeDelta.x <= AnswersSettings.Instance.maxSmallXSize) {
                 baloon = CreateSmallBaloon();
