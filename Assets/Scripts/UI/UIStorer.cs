@@ -4,6 +4,7 @@ using System.Collections;
 public class UIStorer {
 
     private MainMenuController _mainMenuController;
+    private GameOverMenuController _gameOverMenuController;
 
     private static UIStorer _instance;
 
@@ -23,6 +24,16 @@ public class UIStorer {
                 _instance = new UIStorer();
             }
             return _instance;
+        }
+    }
+
+    public GameOverMenuController GameOverMenuController {
+        get {
+            return _gameOverMenuController;
+        }
+
+        set {
+            _gameOverMenuController = value;
         }
     }
 }

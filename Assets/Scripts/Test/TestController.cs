@@ -23,7 +23,31 @@ public class TestController : MonoBehaviour2 {
         //TestCreateAnswer();
         //TestGreenHorizontalPipe();
         //TestOpenCloseCircle();
-        TestExitHorizontalPipeAlive();
+        //TestExitHorizontalPipeAlive();
+        //TestRecordCreation();
+        TestGameOverMenuCreation();
+    }
+
+    private void TestGameOverMenuCreation() {
+        UIFactory.Instance.CreateGameOverMenu(10, false, 56, 700, false, 8954);
+        StartCoroutine(TestGameOverMenuCreationCoroutine());
+    }
+
+    private IEnumerator TestGameOverMenuCreationCoroutine() {
+        yield return new WaitForSeconds(0.1f);
+        UIStorer.Instance.GameOverMenuController.On(GameOverMenuEvent.TRY_AGAIN_BUTTON_CLICK, delegate {
+            Debug.Log("TRY_AGAIN_BUTTON_CLICK");
+        });
+        UIStorer.Instance.GameOverMenuController.On(GameOverMenuEvent.MAIN_MENU_BUTTON_CLICK, delegate {
+            Debug.Log("MAIN_MENU_BUTTON_CLICK");
+        });
+    }
+
+    private void StartCoroutine() {
+    }
+
+    private void TestRecordCreation() {
+        UIFactory.Instance.CreateRecord("NEW !", 8786);
     }
 
     private void TestExitHorizontalPipeAlive() {

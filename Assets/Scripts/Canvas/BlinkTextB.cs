@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class AdditionalTextBlinkB : MonoBehaviour2 {
+public class BlinkTextB : MonoBehaviour2 {
 
     private Text _textComponent;
     private bool _increasingAlpha;
@@ -23,8 +23,6 @@ public class AdditionalTextBlinkB : MonoBehaviour2 {
         _delta += Time.deltaTime;
         if( _increasingAlpha) {
             float t = _delta / CanvasSettings.Instance.blinkPeriodAdditionalText;
-            Debug.Log("incrasing");
-            Debug.Log(t);
             _textComponent.color = new Color(
             _textComponent.color.r,
             _textComponent.color.g,
@@ -36,8 +34,6 @@ public class AdditionalTextBlinkB : MonoBehaviour2 {
             }
         } else { // _decreasingAlpha
             float t = _delta / CanvasSettings.Instance.blinkPeriodAdditionalText;
-            Debug.Log("decreasing");
-            Debug.Log(t);
             _textComponent.color = new Color(
             _textComponent.color.r,
             _textComponent.color.g,
