@@ -21,7 +21,7 @@ public class UIFactory : MonoBehaviour2 {
         UIStorer.Instance.MainMenuController = mainMenu.GetComponent<MainMenuController>();
     }
 
-    public void CreateGameOverMenu(
+    public GameOverMenuController CreateGameOverMenu(
         int nCorrectAnswers,
         bool newCorrectAnswersRecord,
         int correctAnswersRecord, 
@@ -52,7 +52,7 @@ public class UIFactory : MonoBehaviour2 {
         else
             recordDescriptionText = "RECORD";
         GameObject correctAnswersRecordGO = CreateRecord(recordDescriptionText, correctAnswersRecord);
-        correctAnswersRecordGO.transform.SetParent(transform, false);
+        correctAnswersRecordGO.transform.SetParent(go.transform, false);
         correctAnswersRecordGO.transform.localPosition = new Vector3(
             correctAnswersRecordGO.transform.localPosition.x,
             nCorrectAnswersComponent.transform.localPosition.y);
@@ -62,7 +62,7 @@ public class UIFactory : MonoBehaviour2 {
         else
             recordDescriptionText = "RECORD";
         GameObject distanceRecordGO = CreateRecord(recordDescriptionText, distanceRecord);
-        distanceRecordGO.transform.SetParent(transform, false);
+        distanceRecordGO.transform.SetParent(go.transform, false);
         distanceRecordGO.transform.localPosition = new Vector3(
             distanceRecordGO.transform.localPosition.x,
             nDistanceComponent.transform.localPosition.y);
@@ -71,6 +71,7 @@ public class UIFactory : MonoBehaviour2 {
         CreateGoMainMenuButton(go.transform, OnGoMainMenuButtonClickInGameOverMenu, UISettings.Instance.GoMainMenuButtonGameOverMenuPos);
 
         gameOverMenuController.Init();
+        return gameOverMenuController;
     }
 
     // It's public only because of the test

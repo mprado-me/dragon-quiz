@@ -146,6 +146,15 @@ public class PlayerController : Controller<PlayerSettings, PlayerData> {
         }
     }
 
+    public float Y {
+        get {
+            return transform.position.y;
+        }
+        set {
+            transform.position = new Vector3(transform.position.x, value, transform.position.z);
+        }
+    }
+
     public Vector3 Position {
         get {
             return transform.position;

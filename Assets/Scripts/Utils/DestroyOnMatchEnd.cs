@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DestroyOnBackToMainMenu : MonoBehaviour2 {
+public class DestroyOnMatchEnd : MonoBehaviour2 {
 
     GameController _gameController;
 
     void Start () {
         _gameController = GameStorer.Instance.GameController;
-        _gameController.On(GameEvent.BACK_TO_MAIN_MENU, MyDestroy);
+        _gameController.On(GameEvent.MATCH_END, MyDestroy);
     }
 
     private void MyDestroy() {
@@ -15,6 +15,6 @@ public class DestroyOnBackToMainMenu : MonoBehaviour2 {
     }
 
     public void OnDestroy() {
-        _gameController.Remove(GameEvent.BACK_TO_MAIN_MENU, MyDestroy);
+        _gameController.Remove(GameEvent.MATCH_END, MyDestroy);
     }
 }

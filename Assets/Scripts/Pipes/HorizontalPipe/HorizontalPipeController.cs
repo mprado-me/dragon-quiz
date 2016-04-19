@@ -27,7 +27,7 @@ public class HorizontalPipeController : MonoBehaviour2 {
 
         gameObject.AddComponent<MoveXHorizontalPipeB>();
         gameObject.AddComponent<DestroyPipeB>();
-        gameObject.AddComponent<DestroyOnBackToMainMenu>();
+        gameObject.AddComponent<DestroyOnMatchEnd>();
         PlayerEnterInHorizontalPipeDetectorB b = gameObject.AddComponent<PlayerEnterInHorizontalPipeDetectorB>();
         b.SetParams(this);
 

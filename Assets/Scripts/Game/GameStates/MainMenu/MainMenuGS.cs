@@ -8,9 +8,6 @@ public class MainMenuGS : GameState {
     private GameState _nextState;
     MainMenuController _mainMenuController;
 
-    public MainMenuGS() {
-    }
-
     protected override void Enter() {
         _nextState = null;
 

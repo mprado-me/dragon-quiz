@@ -19,12 +19,13 @@ public class MainMenuToMatchGS : GameState {
 
     private void GoNextState() {
         if(!Data.JumpStartTutorialAlreadyShowed) {
-            Data.JumpStartTutorialAlreadyShowed = true;
+            //Data.JumpStartTutorialAlreadyShowed = true;
             Controller.Invoke(GameEvent.GO_TO_JUMP_START_TUTORIAL);
             _nextState = GameStatesStorer.Instance.Get<JumpStartTutorialGS>();
         }
         else {
-            Controller.Invoke(GameEvent.GO_DIRECT_TO_MATCH);
+            //Controller.Invoke(GameEvent.GO_DIRECT_TO_MATCH)
+            Controller.Invoke(GameEvent.GO_TO_JUMP_START_TUTORIAL);
             _nextState = GameStatesStorer.Instance.Get<DivertingObstaclesGS>();
         }
     }

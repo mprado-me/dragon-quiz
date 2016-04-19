@@ -3,6 +3,7 @@ using System.Collections;
 
 public class UISettings : MonoBehaviour2 {
 
+    public float gameOverMenuShowTime = 0.8f;
     [SerializeField]
     private Transform _tryAgainButtonGameOverMenu;
     [SerializeField]

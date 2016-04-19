@@ -29,7 +29,7 @@ public class AnswerController : MonoBehaviour2 {
         _delta = 0f;
 
         gameObject.AddComponent<DestroyOnPlayerEnterInHorizontalPipeB>();
-        gameObject.AddComponent<DestroyOnBackToMainMenu>();
+        gameObject.AddComponent<DestroyOnMatchEnd>();
     }
 
     void Update() {

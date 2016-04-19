@@ -19,7 +19,7 @@ public class FixedVerticalPipeController : MonoBehaviour2 {
         gameObject.AddComponent<MoveX>();
         gameObject.AddComponent<DestroyPipeB>();
         gameObject.AddComponent<DestroyOnPlayerEnterInHorizontalPipeB>();
-        gameObject.AddComponent<DestroyOnBackToMainMenu>();
+        gameObject.AddComponent<DestroyOnMatchEnd>();
     }
 	
 	void Update () {

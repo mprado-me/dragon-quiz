@@ -18,10 +18,15 @@ public class ExitingHorizontalPipeDeadPS : PlayerState {
 
         Controller.OnDie();
 
-        GameStorer.Instance.GameController.On(GameEvent.BACK_TO_MAIN_MENU, GoNextState);
+        GameStorer.Instance.GameController.On(GameEvent.BACK_TO_MAIN_MENU, GoToMainMenuPS);
+        GameStorer.Instance.GameController.On(GameEvent.GO_TO_JUMP_START_TUTORIAL, GoToJumpStartTutorialPS);
     }
 
-    private void GoNextState() {
+    private void GoToJumpStartTutorialPS() {
+        _nextState = PlayerStatesStorer.Instance.Get<JumpStartTutorialPS>();
+    }
+
+    private void GoToMainMenuPS() {
         _nextState = PlayerStatesStorer.Instance.Get<MainMenuPS>();
     }
 
@@ -30,6 +35,6 @@ public class ExitingHorizontalPipeDeadPS : PlayerState {
     }
 
     protected override void Exit() {
-        GameStorer.Instance.GameController.Remove(GameEvent.BACK_TO_MAIN_MENU, GoNextState);
+        GameStorer.Instance.GameController.Remove(GameEvent.BACK_TO_MAIN_MENU, GoToMainMenuPS);
     }
 }

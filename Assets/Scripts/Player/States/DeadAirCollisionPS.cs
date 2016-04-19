@@ -22,10 +22,15 @@ public class DeadAirCollisionPS : PlayerState {
 
         Controller.OnDie();
 
-        _gameController.On(GameEvent.BACK_TO_MAIN_MENU, GoNextState);
+        _gameController.On(GameEvent.BACK_TO_MAIN_MENU, GoMainMenuPS);
+        _gameController.On(GameEvent.GO_TO_JUMP_START_TUTORIAL, GoJumpStartTutorialPS);
     }
 
-    private void GoNextState() {
+    private void GoJumpStartTutorialPS() {
+        _nextState = PlayerStatesStorer.Instance.Get<JumpStartTutorialPS>();
+    }
+
+    private void GoMainMenuPS() {
         _nextState = PlayerStatesStorer.Instance.Get<MainMenuPS>();
     }
 
@@ -38,6 +43,7 @@ public class DeadAirCollisionPS : PlayerState {
     }
 
     protected override void Exit() {
-        _gameController.Remove(GameEvent.BACK_TO_MAIN_MENU, GoNextState);
+        _gameController.Remove(GameEvent.BACK_TO_MAIN_MENU, GoMainMenuPS);
+        _gameController.Remove(GameEvent.GO_TO_JUMP_START_TUTORIAL, GoJumpStartTutorialPS);
     }
 }

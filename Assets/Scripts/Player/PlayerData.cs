@@ -2,26 +2,26 @@
 using System.Collections;
 
 public class PlayerData : Data {
-    private GameObject _DeadBodyGO;
-    private GameObject _NormalBodyGO;
+    private GameObject _deadBodyGO;
+    private GameObject _normalBodyGO;
 
     public GameObject DeadBodyGO {
         get {
-            return _DeadBodyGO;
+            return _deadBodyGO;
         }
 
         set {
-            _DeadBodyGO = value;
+            _deadBodyGO = value;
         }
     }
 
     public GameObject NormalBodyGO {
         get {
-            return _NormalBodyGO;
+            return _normalBodyGO;
         }
 
         set {
-            _NormalBodyGO = value;
+            _normalBodyGO = value;
         }
     }
 }

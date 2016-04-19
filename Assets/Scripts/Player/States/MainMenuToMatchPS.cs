@@ -8,6 +8,7 @@ public class MainMenuToMatchPS : PlayerState {
     private bool _playerInPos;
     private bool _goToTutorial;
     private bool _goDirectToMatch;
+    private GameController _gameController;
 
     protected override void Enter() {
         _endMainMenuOutAnim = false;
@@ -20,10 +21,10 @@ public class MainMenuToMatchPS : PlayerState {
 
         MainMenuController mainMenuController = UIStorer.Instance.MainMenuController;
         mainMenuController.On(MainMenuEvent.OUT_ANIMATION_END, OnMainMenuOutAnimEnd);
-        
-        GameController gameController = GameStorer.Instance.GameController;
-        gameController.On(GameEvent.GO_TO_JUMP_START_TUTORIAL, GoToTutorial);
-        gameController.On(GameEvent.GO_DIRECT_TO_MATCH, GoDirectToMatch);
+
+        _gameController = GameStorer.Instance.GameController;
+        _gameController.On(GameEvent.GO_TO_JUMP_START_TUTORIAL, GoToTutorial);
+        _gameController.On(GameEvent.GO_DIRECT_TO_MATCH, GoDirectToMatch);
     }
 
     private void GoToTutorial() {
@@ -58,5 +59,7 @@ public class MainMenuToMatchPS : PlayerState {
     }
 
     protected override void Exit() {
+        _gameController.Remove(GameEvent.GO_TO_JUMP_START_TUTORIAL, GoToTutorial);
+        _gameController.Remove(GameEvent.GO_DIRECT_TO_MATCH, GoDirectToMatch);
     }
 }
