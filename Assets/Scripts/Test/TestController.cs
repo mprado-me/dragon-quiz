@@ -25,7 +25,19 @@ public class TestController : MonoBehaviour2 {
         //TestOpenCloseCircle();
         //TestExitHorizontalPipeAlive();
         //TestRecordCreation();
-        TestGameOverMenuCreation();
+        //TestGameOverMenuCreation();
+        //TestArrowCreation();
+        TestArrowSpawnerCreation();
+    }
+
+    private void TestArrowSpawnerCreation() {
+        ArrowFactory.Instance.CreateArrowSpawner(ArrowSettings.Instance.JumpStartTutorialPos, 90f);
+    }
+
+    private void TestArrowCreation() {
+        ArrowFactory.Instance.CreateArrow(ArrowSettings.Instance.JumpStartTutorialPos, 90f);
+        ArrowFactory.Instance.CreateArrow(ArrowSettings.Instance.ChoiceUpAnswer, 0f);
+        ArrowFactory.Instance.CreateArrow(ArrowSettings.Instance.ChoiceDownAnswer, 0f);
     }
 
     private void TestGameOverMenuCreation() {

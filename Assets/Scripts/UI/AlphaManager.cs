@@ -10,25 +10,19 @@ public class AlphaManager {
     private List<Text> _texts;
 
     public AlphaManager(GameObject go) {
-        Debug.Log("SpriteRenderer");
         _spriteRenderers = new List<SpriteRenderer>();
         foreach(SpriteRenderer sr in go.GetComponentsInChildren<SpriteRenderer>()) {
             _spriteRenderers.Add(sr);
-            Debug.Log(sr);
         }
 
-        Debug.Log("Image");
         _images = new List<Image>();
         foreach(Image i in go.GetComponentsInChildren<Image>()) {
             _images.Add(i);
-            Debug.Log(i);
         }
 
-        Debug.Log("Text");
         _texts = new List<Text>();
         foreach(Text t in go.GetComponentsInChildren<Text>()) {
             _texts.Add(t);
-            Debug.Log(t);
         }
     }
 

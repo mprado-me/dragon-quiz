@@ -4,7 +4,8 @@ using System.Collections;
 public class JumpStartTutorialGS : GameState {
 
     private bool _inAnFinished = false;
-    QuestionBoardController _questionBoardController;
+    private QuestionBoardController _questionBoardController;
+    private GameObject _arrowSpanner;
 
     protected override void Enter() {
         _questionBoardController = QuestionBoardStorer.Instance.QuestionBoardController;
@@ -19,6 +20,8 @@ public class JumpStartTutorialGS : GameState {
         _questionBoardController.InitInAn();
 
         _questionBoardController.On(QuestionBoardEvent.ON_FINISH_IN_AN, delegate { _inAnFinished = true; });
+
+        _arrowSpanner = ArrowFactory.Instance.CreateArrowSpawner(ArrowSettings.Instance.JumpStartTutorialPos, 90f);
     }
 
     protected override State<GameController, GameSettings, GameData> Update() {
@@ -33,5 +36,6 @@ public class JumpStartTutorialGS : GameState {
 
     protected override void Exit() {
         _questionBoardController.Remove(QuestionBoardEvent.ON_FINISH_IN_AN, delegate { _inAnFinished = true; });
+        GameObject.Destroy(_arrowSpanner);
     }
 }
