@@ -25,6 +25,7 @@ public class GameOverGS : GameState {
     }
 
     private void OnTryAgainButtonClick() {
+        GameEffectSoundManager.Instance.PlayButtonClick();
         _openCloseCircleController.ClosenOn(Vector3.zero);
         _openCloseCircleController.On(OpenCloseEvent.FINISH_CLOSE, OnFinishCloseByTryAgainClick);
     }
@@ -38,6 +39,7 @@ public class GameOverGS : GameState {
     }
 
     private void OnMainMenuButtonClick() {
+        GameEffectSoundManager.Instance.PlayButtonClick();
         _openCloseCircleController.ClosenOn(Vector3.zero);
         _openCloseCircleController.On(OpenCloseEvent.FINISH_CLOSE, OnFinishCloseByMainMenuClick);
     }

@@ -12,6 +12,7 @@ public class AirCollisionPB : PlayerBehaviour {
 
     public override void OnTriggerEnter2D(Collider2D other) {
         if(other.ContainTag("Ceil") || other.ContainTag("PipeColl")) {
+            PlayerEffectSoundManager.Instance.PlayColl();
             Controller.State = new DeadAirCollisionPS();
         }
     }

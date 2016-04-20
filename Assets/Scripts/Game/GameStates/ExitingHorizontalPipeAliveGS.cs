@@ -19,6 +19,8 @@ public class ExitingHorizontalPipeAliveGS : GameState {
 
         Controller.On(GameEvent.PLAYER_BACK_TO_DIVERT_OSBTACLE_STATE, GoNextState);
         Controller.Invoke(GameEvent.EXITING_HORIZONTAL_PIPE_START);
+
+        GameEffectSoundManager.Instance.PlayHitQuestion();
     }
 
     private void GoNextState() {

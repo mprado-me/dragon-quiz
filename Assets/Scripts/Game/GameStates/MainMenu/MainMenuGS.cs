@@ -16,6 +16,7 @@ public class MainMenuGS : GameState {
     }
 
     private void GoNextState() {
+        GameEffectSoundManager.Instance.PlayButtonClick();
         _nextState = GameStatesStorer.Instance.Get<MainMenuToMatchGS>();
     }
 

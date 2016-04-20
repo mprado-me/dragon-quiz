@@ -14,6 +14,8 @@ public class ExitingHorizontalPipeDeadGS : GameState {
         OpenCloseCircleStorer.Instance.OpenCloseCircleController.OpenOn(Data.HorizontalPipeEntered);
 
         Controller.Invoke(GameEvent.EXITING_HORIZONTAL_PIPE_START);
+
+        GameEffectSoundManager.Instance.PlayMissQuestion();
     }
 
     protected override State<GameController, GameSettings, GameData> Update() {

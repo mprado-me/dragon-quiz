@@ -16,6 +16,7 @@ public class JumpPB : PlayerBehaviour {
                 _firstCommandMissed = true;
                 return;
             }
+            PlayerEffectSoundManager.Instance.PlayJump();
             Controller.YVel = Settings.jumpVel;
         }
 	}
