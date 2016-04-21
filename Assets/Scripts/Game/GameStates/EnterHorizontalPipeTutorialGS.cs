@@ -33,7 +33,7 @@ public class EnterHorizontalPipeTutorialGS : GameState {
 
     private void OnFinishInAn() {
         _finishInAn = true;
-        _additionalTextGO = CanvasFactory.Instance.CreateAdditionalText("click or space to continue...");
+        _additionalTextGO = CanvasUtilsFactory.Instance.CreateAdditionalText("click or space to continue...");
     }
 
     protected override State<GameController, GameSettings, GameData> Update() {

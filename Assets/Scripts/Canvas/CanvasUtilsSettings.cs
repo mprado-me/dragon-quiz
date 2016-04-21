@@ -1,16 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CanvasSettings : MonoBehaviour2 {
+public class CanvasUtilsSettings : MonoBehaviour2 {
 
     public float blinkPeriodAdditionalText = 0.75f;
 
-    private static CanvasSettings _instance;
+    private static CanvasUtilsSettings _instance;
 
-    public static CanvasSettings Instance {
+    public static CanvasUtilsSettings Instance {
         get {
             if(_instance == null)
-                _instance = GameObject.FindObjectOfType<CanvasSettings>();
+                _instance = GameObject.FindObjectOfType<CanvasUtilsSettings>();
 
             return _instance;
         }

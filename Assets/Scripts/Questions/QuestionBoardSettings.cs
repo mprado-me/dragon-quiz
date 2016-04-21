@@ -3,6 +3,7 @@ using System.Collections;
 
 public class QuestionBoardSettings : MonoBehaviour2 {
 
+    public float alpha = 0.9f;
     public float contentDistance = 0.1f;
 
     private static QuestionBoardSettings _instance;

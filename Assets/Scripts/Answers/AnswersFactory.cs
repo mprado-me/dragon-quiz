@@ -42,13 +42,13 @@ public class AnswersFactory : MonoBehaviour2 {
             baloon = CreateSmallBaloon();
             baloon.transform.SetParent(go.transform, false);
             baloon.transform.localPosition = Vector3.zero;
-            GameObject imageGO = CanvasFactory.Instance.CreateImage("Images/Icons/"+content);
+            GameObject imageGO = CanvasUtilsFactory.Instance.CreateImage("Images/Icons/"+content);
             imageGO.transform.SetParent(go.transform, false);
             imageGO.transform.localPosition = Vector3.zero;
             go.transform.localPosition = new Vector3(_smallX, go.transform.localPosition.y);
         }
         else { // answerType == AnswerType.TEXT
-            GameObject textGO = CanvasFactory.Instance.CreateQuestionAnswerText(content);
+            GameObject textGO = CanvasUtilsFactory.Instance.CreateQuestionAnswerText(content);
             RectTransform rt = textGO.GetComponent<RectTransform>();
             if(rt.sizeDelta.x <= AnswersSettings.Instance.maxSmallXSize) {
                 baloon = CreateSmallBaloon();

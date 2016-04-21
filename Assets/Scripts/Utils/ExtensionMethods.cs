@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
@@ -90,5 +91,17 @@ public static class ExtensionMethods {
             other.min.y > b.min.y &&
             other.min.x > b.min.x &&
             other.max.x < b.max.x;
+    }
+
+    // Text
+    public static void SetAlpha(this Text t, float newAlpha) {
+        Color c = t.color;
+        t.color = new Color(c.r, c.g, c.b, newAlpha);
+    }
+
+    // Image
+    public static void SetAlpha(this Image i, float newAlpha) {
+        Color c = i.color;
+        i.color = new Color(c.r, c.g, c.b, newAlpha);
     }
 }

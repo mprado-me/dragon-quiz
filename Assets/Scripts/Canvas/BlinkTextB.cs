@@ -22,7 +22,7 @@ public class BlinkTextB : MonoBehaviour2 {
 	void Update () {
         _delta += Time.deltaTime;
         if( _increasingAlpha) {
-            float t = _delta / CanvasSettings.Instance.blinkPeriodAdditionalText;
+            float t = _delta / CanvasUtilsSettings.Instance.blinkPeriodAdditionalText;
             _textComponent.color = new Color(
             _textComponent.color.r,
             _textComponent.color.g,
@@ -33,7 +33,7 @@ public class BlinkTextB : MonoBehaviour2 {
                 _increasingAlpha = false;
             }
         } else { // _decreasingAlpha
-            float t = _delta / CanvasSettings.Instance.blinkPeriodAdditionalText;
+            float t = _delta / CanvasUtilsSettings.Instance.blinkPeriodAdditionalText;
             _textComponent.color = new Color(
             _textComponent.color.r,
             _textComponent.color.g,

@@ -2,9 +2,9 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class CanvasFactory : MonoBehaviour2 {
+public class CanvasUtilsFactory : MonoBehaviour2 {
 
-    private static CanvasFactory _instance;
+    private static CanvasUtilsFactory _instance;
     public GameObject questionAnswerTextPrefab;
     public GameObject imagePrefab;
     public GameObject additionalTextPrefab;
@@ -34,10 +34,10 @@ public class CanvasFactory : MonoBehaviour2 {
         return textGO;
     }
 
-    public static CanvasFactory Instance {
+    public static CanvasUtilsFactory Instance {
         get {
             if(_instance == null)
-                _instance = GameObject.FindObjectOfType<CanvasFactory>();
+                _instance = GameObject.FindObjectOfType<CanvasUtilsFactory>();
 
             return _instance;
         }

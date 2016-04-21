@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -22,7 +23,8 @@ public class QuestionContentManager : MonoBehaviour2 {
     }
 
     public void AddText(string text) {
-        GameObject textGO = CanvasFactory.Instance.CreateQuestionAnswerText(text);
+        GameObject textGO = CanvasUtilsFactory.Instance.CreateQuestionAnswerText(text);
+        textGO.GetComponent<Text>().SetAlpha(QuestionBoardSettings.Instance.alpha);
         textGO.transform.SetParent(_controller.transform, false);
         textGO.transform.localPosition = Vector3.zero;
         RectTransform rt = textGO.GetComponent<RectTransform>();
@@ -31,7 +33,10 @@ public class QuestionContentManager : MonoBehaviour2 {
     }
 
     public void AddImage(string adress) {
-        GameObject imageGO = CanvasFactory.Instance.CreateImage(adress);
+        GameObject imageGO = CanvasUtilsFactory.Instance.CreateImage(adress);
+        Image img = imageGO.GetComponent<Image>();
+        Debug.Log(img);
+        img.SetAlpha(QuestionBoardSettings.Instance.alpha);
         imageGO.transform.SetParent(_controller.transform, false);
         imageGO.transform.localPosition = Vector3.zero;
         RectTransform rt = imageGO.GetComponent<RectTransform>();
