@@ -1,0 +1,17 @@
+|Question|Correct Answer|Incorrect Answer|Difficulty|
+|---|---|---|---|
+|[Australia]|[Kangaroo]|[Rabbit]|-|
+|It reproduces quickly|[Rabbit]|[Cat]|-|
+|Ronc! Ronc! Ronc!|[Pig]|[Dog]|-|
+|Au! Au! Au!|[Dog]|[Frog]|-|
+|Greb! Greb!|[Frog]|[Year of Monkey]|-|
+|Extinct|[Dinosaur]|[Deer]|-|
+|More intelligent|[Dolphin]|[Cat]|-|
+|Man's best friend|[Dog]|[Cat]|-|
+|Danger of extinction|[Panda]|[Shark]|-|
+|Increases the greenhouse effect|[Cow]|[Whale]|-|
+|Mammal|[Whale]|[Prawn]|-|
+|It has 7 lives|[Cat]|[Tutle]|-|
+|Good luck|[Grasshopper]|[Christmas Penguin]|-|
+|Free Wily|[Tail Of Whale]|[Dolphin]|-|
+|It brings babies|[Stork]|[Falcon]|-|

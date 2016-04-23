@@ -1,0 +1,17 @@
+|Question|Correct Answer|Incorrect Answer|Difficulty|
+|---|---|---|---|
+|Bigger|[Gorilla]|[Leopard]|-|
+|Bigger|[Bear]|[Gas Station]|-|
+|Smaller|[Snail]|[Rabbit]|-|
+|Bigger|[Skateboard Truck]|[SD]|-|
+|Smaller|[Ant]|[Snail]|-|
+|Smaller|[Car]|[Interstate Truck]|-|
+|Bigger|[Airport]|[Fire Truck]|-|
+|Smaller|[CD]|[Skateboard Without Wheels]|-|
+|Bigger|[Frog]|[Ant]|-|
+|Higher|[Giraffe]|[Bear]|-|
+|Faster|[Horse]|[Bear]|-|
+|Slower|[Horse]|[Leopard]|-|
+|Slower|[Slug]|[Frog]|-|
+|Faster|[Airport]|[Car]|-|
+|Bigger|[Android]|[SD]|-|

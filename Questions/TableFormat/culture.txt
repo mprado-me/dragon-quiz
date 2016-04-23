@@ -1,0 +1,17 @@
+|Question|Correct Answer|Incorrect Answer|Difficulty|
+|---|---|---|---|
+|[Queen UK]|[Great Britain]|[Brazil]|-|
+|[Geisha]|[Japan]|[Egypt]|-|
+|[China]|[Year of Dragon]|[Anubis]|-|
+|[Egypt]|[Anubis]|[Maple Leaf]|-|
+|[Canada]|[Maple Leaf]|[Tea]|-|
+|[England]|[Tea]|[Bavarian Beer Mug]|-|
+|[German Hat]|[Bavarian Beer Mug]|[Tea]|-|
+|[Japan]|[Kimono]|[Bull]|-|
+|[Bull]|[Spanish]|[Germany]|-|
+|[Germany]|[Euro]|[Japonese Yen]|-|
+|[Japonese Yen]|[Japan]|[Tunusia]|-|
+|[Dali]|[Spanish]|[USA]|-|
+|[Mummy]|[Egypt]|[Switzerland]|-|
+|[Swiss Army Knife]|[Switzerland]|[England]|-|
+|[Italia]|[Da Vinci]|[Origami]|-|

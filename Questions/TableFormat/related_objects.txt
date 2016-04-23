@@ -1,0 +1,17 @@
+|Question|Correct Answer|Incorrect Answer|Difficulty|
+|---|---|---|---|
+|Related to [Android]|[Sim Card]|[Degrees]|-|
+|Related to [Android]|[WhatsApp]|[Caliper]|-|
+|Related to [Android]|[Smartphone Cpu]|[Mirror]|-|
+|Related to [Android]|[Charging Battery]|[Length]|-|
+|Related to [Length]|[Caliper]|[Test Tube]|-|
+|More related with [Prop Plane]|[Helicopter]|[Water Transportation]|-|
+|Related to [Water Transportation]|[Ship Wheel]|[Comb]|-|
+|Related to [Anchor]|[Ship Whell]|[Boots]|-|
+|Related to [Woman's Hair]|[Comb]|[Lipstick]|-|
+|Related to [Woman's Hair]|[Hair Dryer]|[Nail Polish]|-|
+|Related to [Nails]|[Nail Polish]|[Mirror]|-|
+|Related to [Lipstick]|[Lips]|[Woman's Hair]|-|
+|Related to [Grenade]|[Mushroom Cloud]|[Sim Card]|-|
+|Related to [Missile]|[Mushroom Cloud]|[Micrometer]|-|
+|Related to [Military Helicopter]|[Missile]|[Grenade]|-|

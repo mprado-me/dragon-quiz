@@ -1,0 +1,17 @@
+|Question|Correct Answer|Incorrect Answer|Difficulty|
+|---|---|---|---|
+|Lionel Messi|[Stadium]|[Basketball]|-|
+|Neymar Jr.|[Stadium]|[Running]|-|
+|Cristiano Ronaldo|[Stadium]|[F1 Race Car Side View]|-|
+|Zinédine Zidane|[Stadium]|[Golf]|-|
+|Pelé|[Stadium]|[Basketball]|-|
+|Xavi|[Stadium]|[F1 Race Car Side View]|-|
+|Roger Federer|[Tennis]|[Stadium]|-|
+|Rafael Nadal|[Tennis]|[F1 Race Car Side View]|-|
+|Maria Shaparova|[Tennis]|[Running]|-|
+|Venus Williams|[Tennis]|[Running]|-|
+|Michael Schumacher|[F1 Race Car Side View]|[Tennis]|-|
+|Ayrton Senna|[F1 Race Car Side View]|[Stadium]|-|
+|Lewis Hamilton|[F1 Race Car Side View]|[Basketball]|-|
+|Tiger Woods|[Golf]|[Tennis]|-|
+|Usain Bolt|[Running]|[Basketball]|-|
