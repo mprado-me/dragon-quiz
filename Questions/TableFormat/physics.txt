@@ -2,19 +2,19 @@
 |---|---|---|---|
 |Energy -> Mass is possible ?|Yes|No|-|
 |Mass -> Energy is possible ?|Yes|No|-|
-|Precisely, [Globe Asia] orbit in [Sun] is a|[Elipse]|[Circle Thin]|-|
+|Precisely, [Globe Asia] orbit in [Sun] is a|[Ellipse]|[Circle Thin]|-|
 |E = mc³|No|Yes|-|
 |E = mc²|Yes|No|-|
 |Newton law|F = ma|v = ds/dt|-|
 |1 atm|[Water Element]|[Earth Element]|-|
 |Lower density|[Bottle of Water]|[Rock]|-|
-|[Plus] and [Plus]|[Dislike]|[Hearts]|-|
-|[Plus] and [Minus]|[Hearts]|[Dislike]|-|
-|[Minus] and [Plus]|[Hearts]|[Dislike]|-|
-|[Minus] and [Minus]|[Dislike]|[Hearts]|-|
+|Eletric charges: [Plus] and [Plus]|[Dislike]|[Hearts]|-|
+|Eletric charges: [Plus] and [Minus]|[Hearts]|[Dislike]|-|
+|Eletric charges: [Minus] and [Plus]|[Hearts]|[Dislike]|-|
+|Eletric charges: [Minus] and [Minus]|[Dislike]|[Hearts]|-|
 |Conservation torque|[Garden Shears]|[Hammer]|-|
 |Conservation of linear momentum|[Launched Rocket]|[Explosion]|-|
-|Conservation of linear momentum|Swimming|Compact Camera|-|
+|Conservation of linear momentum|[Swimming]|[Compact Camera]|-|
 |Force is a vector|Yes|No|-|
 |Force is a scalar|No|Yes|-|
 |A vector has direction|Yes|No|-|

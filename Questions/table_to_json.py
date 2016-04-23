@@ -40,6 +40,8 @@ in_file.close();
 outJson = [];
 for i in range(2, len(lines)):
 	column = lines[i].split("|");
+	if(column[0]=="//" ):
+		continue;
 	column = column[1:4];
 	question = [];
 

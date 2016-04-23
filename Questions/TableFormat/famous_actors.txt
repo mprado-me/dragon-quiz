@@ -3,7 +3,7 @@
 |L. DiCaprio was ? of Wall Street|[Wolf]|[House Lannister]|-|
 |Johnny Deep|[Pirates of the Caribbean]|[Avengers]|-|
 |Brad Pitt participate of 12 ...|[Year of Monkey]|[Grasshopper]|-|
-|For Tom Cruise, nothing is ...|Impossible|Beatiful|-|
+//|For Tom Cruise, nothing is ...|Impossible|Beatiful|-|
 |Will Smith starred ? Pounds|7|5|-|
 |Matt Damon was lost in ...|[Mars]|[Globe Asia]|-|
 |Tom Hanks character ? for 3.5 years|[Running]|[Football]|-|
@@ -12,6 +12,6 @@
 |Rober Downey, Jr|[Iron Man]|[007 Logo]|-|
 |Ben Affleck|[Batman New]|[Avengers]|-|
 |Scarlett Johansson|[Spy Female]|[Lorde]|-|
-|Natalie Portman won oscar as ...|[Ballet Shoes Filled]|[Doctor Female]|-|
+|Natalie Portman won oscar as ...|[Ballet Shoes]|[Doctor Female]|-|
 |Anne Hathaway|[Batman New]|[Avengers]|-|
 |Cameron Diaz|[Leopard]|[Wolf]|-|

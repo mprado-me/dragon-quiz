@@ -8,10 +8,10 @@
 |[England]|[Tea]|[Bavarian Beer Mug]|-|
 |[German Hat]|[Bavarian Beer Mug]|[Tea]|-|
 |[Japan]|[Kimono]|[Bull]|-|
-|[Bull]|[Spanish]|[Germany]|-|
-|[Germany]|[Euro]|[Japonese Yen]|-|
-|[Japonese Yen]|[Japan]|[Tunusia]|-|
-|[Dali]|[Spanish]|[USA]|-|
+|[Bull]|[Spain 2]|[Germany]|-|
+|[Germany]|[Euro]|[Japanese Yen]|-|
+|[Japanese Yen]|[Japan]|[Tunisia]|-|
+|[Dali]|[Spain 2]|[USA]|-|
 |[Mummy]|[Egypt]|[Switzerland]|-|
 |[Swiss Army Knife]|[Switzerland]|[England]|-|
-|[Italia]|[Da Vinci]|[Origami]|-|
+|[Italy]|[Da Vinci]|[Origami]|-|

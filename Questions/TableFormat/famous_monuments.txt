@@ -1,16 +1,15 @@
 |Question|Correct Answer|Incorrect Answer|Difficulty|
 |---|---|---|---|
 |[Queen UK]|[Big Ben]|[Colosseum]|-|
-|[Geisha]|[Japan]|[Egypt]|-|
 |[China]|[Torii]|[Pyramids]|-|
 |[Egypt]|[Pyramids]|[Chichen Itza]|-|
 |[Great Wall]|[China]|[Japan]|-|
 |[Statue of Liberty]|[USA]|[Italy]|-|
 |[Statue of Liberty] was a gift of|[France]|[England]|-|
 |[France]|[Eiffel Tower]|[Sagrada Familia]|-|
-|[Spanish]|[Sagrada Familia]|[Big Ben]|-|
+|[Spain 2]|[Sagrada Familia]|[Big Ben]|-|
 |[Chichen Itza]|[Mexico]|[Brazil]|-|
-|[Big Ben]|[Great Britain]|[Tunusia]|-|
+|[Big Ben]|[Great Britain]|[Tunisia]|-|
 |[Colosseum]|[Italy]|[USA]|-|
 |[US Capitol]|[USA]|[Switzerland]|-|
 |[Pagoda]|[China]|[Philippines]|-|

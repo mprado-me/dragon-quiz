@@ -24,6 +24,7 @@ public class QuestionGenerator : MonoBehaviour2 {
         for( int i = 0; i < questions.Count; i++) {
             _queue.Enqueue(new Question(questions[i]));
         }
+        Debug.Log("Nº Questions: "+_queue.Count);
     }
 
     public static QuestionGenerator Instance

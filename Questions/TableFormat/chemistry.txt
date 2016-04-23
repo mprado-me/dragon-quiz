@@ -1,18 +1,18 @@
 |Question|Correct Answer|Incorrect Answer|Difficulty|
 |---|---|---|---|
-|[Na][Cl]|[Salt Shaker]|[Sugar Cubes]|-|
-|[H]_2+1/2[O]_2|[Water]|[Olive Oil]|-|
-|[H]_2+1/2[O]_2|[Explosion]|[Not Explosion]|-|
-|[K] + [Water]|[Explosion]|[Not Explosion]|-|
-|[Water] -> [H]_2 + 1/2[O]_2|[Explosion]|[Not Explosion]|-|
-|How many eletrons in [H]|1|2|-|
-|How many protons in [H]|1|3|-|
-|All organic beings have|[C]|[Cl]|-|
-|How many eletrons in [C]|6|8|-|
-|How many protons in [C]|6|8|-|
-|[Diamond]|[C]|[Si]|-|
-|[Eletronics]|[Si]|[P]|-|
-|You inspire|O_2|CO_2|-|
-|You expires|CO_2|O_2|-|
-|More in the air|N_2|O_2|-|
-|Noble|[He]|[Br]|-|
+//|[Na][Cl]|[Salt Shaker]|[Sugar Cubes]|-|
+//|[H]_2+1/2[O]_2|[Water]|[Olive Oil]|-|
+//|[H]_2+1/2[O]_2|[Explosion]|[Not Explosion]|-|
+//|[K] + [Water]|[Explosion]|[Not Explosion]|-|
+//|[Water] -> [H]_2 + 1/2[O]_2|[Explosion]|[Not Explosion]|-|
+//|How many eletrons in [H]|1|2|-|
+//|How many protons in [H]|1|3|-|
+//|All organic beings have|[C]|[Cl]|-|
+//|How many eletrons in [C]|6|8|-|
+//|How many protons in [C]|6|8|-|
+//|[Diamond]|[C]|[Si]|-|
+//|[Eletronics]|[Si]|[P]|-|
+//|You inspire|O_2|CO_2|-|
+//|You expires|CO_2|O_2|-|
+//|More in the air|N_2|O_2|-|
+//|Noble|[He]|[Br]|-|

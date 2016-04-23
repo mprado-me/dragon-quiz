@@ -1,18 +1,18 @@
 |Question|Correct Answer|Incorrect Answer|Difficulty|
 |---|---|---|---|
-|Australia|[Australia Flag]|[United Kingdom Flag]|-|
-|Japan|[Japan Flag]|[China Flag]|-|
-|China|[China Flag]|[Tunisia Flag]|-|
-|Canada|[Canada Flag]|[England Flag]|-|
-|France|[France Flag]|[Russia Flag]|-|
-|Germany|[Germany Flag]|[Netherlands Flag]|-|
-|Russia|[Russia Flag]|[Netherlands Flag]|-|
-|Egypt|[Egypt Flag]|[Mexico Flag]|-|
-|Brazil|[Brazil Flag]|[Italia Flag]|-|
-|Italia|[Italia Flag]|[Ireland Flag]|-|
-|Philippines|[Philippines Flag]|[Netherlands Flag]|-|
-|Netherlands|[Netherlands Flag]|[Russia Flag]|-|
-|Spain|[Spain Flag]|[Mexico Flag]|-|
-|Tunisia|[Tunisia Flag]|[Switzerland Flag]|-|
-|Saudi Arabia|[Saudi Arabia Flag]|[Brazil Flag]|-|
-|Switzerland|[Switzerland Flag]|[Tunisia Flag]|-|
+|Australia|[Australia]|[Great Britain]|-|
+|Japan|[Japan]|[China]|-|
+|China|[China]|[Tunisia]|-|
+|Canada|[Canada]|[England]|-|
+|France|[France]|[Russian Federation]|-|
+|Germany|[Germany]|[Netherlands]|-|
+|Russian Federation|[Russian Federation]|[Netherlands]|-|
+|Egypt|[Egypt]|[Mexico]|-|
+|Brazil|[Brazil]|[Italy]|-|
+|Italy|[Italy]|[Ireland]|-|
+|Philippines|[Philippines]|[Netherlands]|-|
+|Netherlands|[Netherlands]|[Russian Federation]|-|
+|Spain|[Spain 2]|[Mexico]|-|
+|Tunisia|[Tunisia]|[Switzerland]|-|
+|Saudi Arabia|[Saudi Arabia]|[Brazil]|-|
+|Switzerland|[Switzerland]|[Tunisia]|-|

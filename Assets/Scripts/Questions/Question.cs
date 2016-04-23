@@ -32,7 +32,8 @@ public class Question {
             else
                 questionElementsType[i] = QuestionElementType.IMAGE;
             s = json[1][i].ToString();
-            questionContent[i] = s.Substring(1, s.Length-2);
+            questionContent[i] = Utils.RemoveBarBefQuote(s.Substring(1, s.Length - 2));
+            //questionContent[i] = s.Substring(1, s.Length - 2);
         }
 
         if(json[2][0].ToString()[1] == 'T')

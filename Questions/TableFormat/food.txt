@@ -1,13 +1,13 @@
 |Question|Correct Answer|Incorrect Answer|Difficulty|
 |---|---|---|---|
 |More calories|[Cupcake]|[Christmas Candy]|-|
-|[Sushi]|[Japan Flag]|[China Flag]|-|
-|[Tapas]|[Spain Flag]|[Ireland Flag]|-|
-|[Brazil Flag] produces a lot|[Coffee to Go]|[Pumpkin]|-|
-|[Argentina Flag] speciality|[Steak]|[Cheese]|-|
-|[Switzerland Flag]|[Cheese]|[Bread]|-|
+|[Sushi]|[Japan]|[China]|-|
+|[Tapas]|[Spain 2]|[Ireland]|-|
+|[Brazil] produces a lot|[Coffee to Go]|[Pumpkin]|-|
+|[Argentina] speciality|[Steak]|[Cheese]|-|
+|[Switzerland]|[Cheese]|[Bread]|-|
 |Share same origin than [Milk Bottle]|[Cheese]|[Nachos]|-|
-|[Italy Flag]|[Pizza]|[Nachos]|-|
+|[Italy]|[Pizza]|[Nachos]|-|
 |[Banana Split] and [Cupcake]|[Cookies]|[Eggs]|-|
 |[Tapas] and [Spaghetti]|[French Fries]|[Banana Split]|-|
 |Good for [Eye]|[Carrot]|[Milk Bottle]|-|
@@ -15,4 +15,4 @@
 |More calories|[Apple]|[Watermelon]|-|
 |Halloween|[Pumpkin]|[Nachos]|-|
 |Halloween|[Christmas Candy]|[Pretzel]|-|
-|[Monkey] [Heart]|[Banana]|[Watermelon]|-|
+|[Year of Monkey] [Heart]|[Banana]|[Watermelon]|-|

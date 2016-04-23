@@ -13,7 +13,7 @@ public class CanvasUtilsFactory : MonoBehaviour2 {
         GameObject textGO = Instantiate(questionAnswerTextPrefab);
         Text textComp = textGO.GetComponent<Text>();
         textComp.text = text;
-        textComp.rectTransform.sizeDelta = new Vector2(textComp.preferredWidth + 1, textComp.rectTransform.sizeDelta.y);
+        textComp.rectTransform.sizeDelta = new Vector2(textComp.preferredWidth + 3, textComp.rectTransform.sizeDelta.y);
         return textGO;
     }
 
@@ -22,6 +22,7 @@ public class CanvasUtilsFactory : MonoBehaviour2 {
         GameObject imageGO = Instantiate(imagePrefab);
         Image imageComp = imageGO.GetComponent<Image>();
         Sprite sprite = Resources.Load<Sprite>(adress);
+        Debug.Log(sprite);
         imageComp.sprite = sprite;
         imageComp.rectTransform.sizeDelta = new Vector2(imageComp.rectTransform.sizeDelta.y * sprite.bounds.size.x / sprite.bounds.size.y, imageComp.rectTransform.sizeDelta.y);
         return imageGO;

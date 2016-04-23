@@ -2,15 +2,15 @@
 |---|---|---|---|
 |More expensive|[Car]|[Scooter]|-|
 |More expensive|[Fridge]|[Cooker]|-|
-|More expensive|[Hamburguer]|[Bottle of Water]|-|
-|More expensive|[Car]|[Scooter]|-|
+|More expensive|[Hamburger]|[Bottle of Water]|-|
+|Cheaper|[Scooter]|[Car]|-|
 |Cheaper|[Android]|[Iphone]|-|
 |More expensive|[Mac Client]|[Windows Client]|-|
 |Cheaper|[Car]|[Railroad Car]|-|
 |More expensive|[Home]|[Car]|-|
 |More expensive|[Harp]|[Guitar]|-|
 |More expensive|[Classic Music]|[Guitar]|-|
-|Cheaper|[Bottle of Water]|[Cookers]|-|
+|Cheaper|[Bottle of Water]|[Cooker]|-|
 |Cheaper|[Car]|[Truck]|-|
 |More expensive|[Wine Bottle]|[Bottle of Water]|-|
 |Cheaper|[Chicken]|[Cow]|-|
