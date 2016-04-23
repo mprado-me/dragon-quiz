@@ -11,7 +11,7 @@
 |Danger of extinction|[Panda]|[Shark]|-|
 |Increases the greenhouse effect|[Cow]|[Whale]|-|
 |Mammal|[Whale]|[Prawn]|-|
-|It has 7 lives|[Cat]|[Tutle]|-|
+|It has 7 lives|[Cat]|[Turtle]|-|
 |Good luck|[Grasshopper]|[Christmas Penguin]|-|
 |Free Wily|[Tail Of Whale]|[Dolphin]|-|
 |It brings babies|[Stork]|[Falcon]|-|

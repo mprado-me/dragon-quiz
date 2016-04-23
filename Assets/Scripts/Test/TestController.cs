@@ -27,7 +27,52 @@ public class TestController : MonoBehaviour2 {
         //TestRecordCreation();
         //TestGameOverMenuCreation();
         //TestArrowCreation();
-        TestArrowSpawnerCreation();
+        //TestArrowSpawnerCreation();
+        TestQuestions();
+    }
+
+    private AnswerController acUp, acDown;
+    private Question q;
+    private void TestQuestions() {
+        QuestionBoardFactory.Instance.CreateQuestionBoard();
+        StartCoroutine(TestQuestions2());
+    }
+    private IEnumerator TestQuestions2() {
+        yield return new WaitForSeconds(0.01f);
+        QuestionBoardStorer.Instance.QuestionBoardController.InitInAn();
+        yield return new WaitForSeconds(1f);
+        q = QuestionGenerator.Instance.GetNew();
+        QuestionBoardStorer.Instance.QuestionBoardController.SetQuestion(q);
+        acUp = AnswersFactory.Instance.CreateUp(q.correctAnswerType, q.correctAnswerContent);
+        acDown = AnswersFactory.Instance.CreateDown(q.incorrectAnswerType, q.incorrectAnswerContent);
+        StartCoroutine(TestQuestions3());
+    }
+    private IEnumerator TestQuestions3() {
+        yield return new WaitForSeconds(0.01f);
+        acUp.__TEST__SetState(AnswerState.WAITING_PLAYER_COME);
+        acUp.__TEST__SetAlpha(1f);
+        acDown.__TEST__SetState(AnswerState.WAITING_PLAYER_COME);
+        acDown.__TEST__SetAlpha(1f);
+        StartCoroutine(TestQuestions4());
+    }
+    private IEnumerator TestQuestions4() {
+        while(true) {
+            if( Input.GetKeyDown(KeyCode.RightArrow)) {
+                Destroy(acUp.gameObject);
+                Destroy(acDown.gameObject);
+                yield return new WaitForSeconds(0.01f);
+                q = QuestionGenerator.Instance.GetNew();
+                QuestionBoardStorer.Instance.QuestionBoardController.SetQuestion(q);
+                acUp = AnswersFactory.Instance.CreateUp(q.correctAnswerType, q.correctAnswerContent);
+                acDown = AnswersFactory.Instance.CreateDown(q.incorrectAnswerType, q.incorrectAnswerContent);
+                yield return new WaitForSeconds(0.01f);
+                acUp.__TEST__SetState(AnswerState.WAITING_PLAYER_COME);
+                acUp.__TEST__SetAlpha(1f);
+                acDown.__TEST__SetState(AnswerState.WAITING_PLAYER_COME);
+                acDown.__TEST__SetAlpha(1f);
+            }
+            yield return null;
+        }
     }
 
     private void TestArrowSpawnerCreation() {

@@ -35,7 +35,6 @@ public class QuestionContentManager : MonoBehaviour2 {
     public void AddImage(string adress) {
         GameObject imageGO = CanvasUtilsFactory.Instance.CreateImage(adress);
         Image img = imageGO.GetComponent<Image>();
-        Debug.Log(img);
         img.SetAlpha(QuestionBoardSettings.Instance.alpha);
         imageGO.transform.SetParent(_controller.transform, false);
         imageGO.transform.localPosition = Vector3.zero;

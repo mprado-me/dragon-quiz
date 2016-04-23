@@ -76,4 +76,12 @@ public class AnswerController : MonoBehaviour2 {
             _currentState = AnswerState.SHIFTING;
         }
     }
+
+    public void __TEST__SetState(AnswerState newState) {
+        _currentState = newState;
+    }
+
+    public void __TEST__SetAlpha(float alpha) {
+        SetAlpha(alpha);
+    }
 }

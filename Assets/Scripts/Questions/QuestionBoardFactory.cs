@@ -8,11 +8,13 @@ public class QuestionBoardFactory : MonoBehaviour2 {
 
     private static QuestionBoardFactory _instance;
 
-    public void CreateQuestionBoard() {
+    public QuestionBoardController CreateQuestionBoard() {
         GameObject questionBoard = AddChild(questionBoardPrefab);
         questionBoard.GetComponentInChildren<Image>().SetAlpha(QuestionBoardSettings.Instance.alpha);
         //Debug.Log(questionBoard.transform.localScale);
-        QuestionBoardStorer.Instance.QuestionBoardController = questionBoard.GetComponent<QuestionBoardController>();
+        QuestionBoardController questionBoardController = questionBoard.GetComponent<QuestionBoardController>();
+        QuestionBoardStorer.Instance.QuestionBoardController = questionBoardController;
+        return questionBoardController;
     }
 
     public static QuestionBoardFactory Instance

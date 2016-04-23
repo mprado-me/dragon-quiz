@@ -18,6 +18,7 @@ public class CanvasUtilsFactory : MonoBehaviour2 {
     }
 
     public GameObject CreateImage(string adress) {
+        Debug.Log("Creating image: " + adress);
         GameObject imageGO = Instantiate(imagePrefab);
         Image imageComp = imageGO.GetComponent<Image>();
         Sprite sprite = Resources.Load<Sprite>(adress);

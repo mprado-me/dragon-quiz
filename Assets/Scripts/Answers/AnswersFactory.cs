@@ -22,18 +22,20 @@ public class AnswersFactory : MonoBehaviour2 {
         _downY = mediumBaloonPrafab.transform.localPosition.y;
     }
 
-    public void CreateUp(AnswerType answerType, string content) {
+    public AnswerController CreateUp(AnswerType answerType, string content) {
         GameObject up = Instantiate(answerPrefab);
         up.transform.SetParent(transform, false);
         up.transform.localPosition = new Vector3(up.transform.localPosition.x, _upY);
         CreateAnswer(up, answerType, content);
+        return up.GetComponent<AnswerController>();
     }
 
-    public void CreateDown(AnswerType answerType, string content) {
+    public AnswerController CreateDown(AnswerType answerType, string content) {
         GameObject down = Instantiate(answerPrefab);
         down.transform.SetParent(transform, false);
         down.transform.localPosition = new Vector3(down.transform.localPosition.x, _downY);
         CreateAnswer(down, answerType, content);
+        return down.GetComponent<AnswerController>();
     }
 
     private void CreateAnswer(GameObject go, AnswerType answerType, string content) {
@@ -42,7 +44,7 @@ public class AnswersFactory : MonoBehaviour2 {
             baloon = CreateSmallBaloon();
             baloon.transform.SetParent(go.transform, false);
             baloon.transform.localPosition = Vector3.zero;
-            GameObject imageGO = CanvasUtilsFactory.Instance.CreateImage("Images/Icons/"+content);
+            GameObject imageGO = CanvasUtilsFactory.Instance.CreateImage("Images/Icons/" + content);
             imageGO.transform.SetParent(go.transform, false);
             imageGO.transform.localPosition = Vector3.zero;
             go.transform.localPosition = new Vector3(_smallX, go.transform.localPosition.y);
