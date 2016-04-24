@@ -17,6 +17,8 @@ public class PlayerSettings : Settings {
     public float exitHorizontalPipeYVel = 8f;
     [SerializeField]
     private Transform playerInitialTransform;
+    [SerializeField]
+    private Transform notJumpMoreLimitTransform;
 
     public GetInitialStateDelegate GetInitialState = GetDefaultInitialState;
     private static PlayerState GetDefaultInitialState() {
@@ -41,6 +43,12 @@ public class PlayerSettings : Settings {
     public Vector3 PlayerInitialPos {
         get {
             return playerInitialTransform.position;
+        }
+    }
+
+    public float NotJumpMoreLimitY {
+        get {
+            return notJumpMoreLimitTransform.position.y;
         }
     }
 }

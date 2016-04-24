@@ -17,6 +17,7 @@ public class ChoicingAnswerPS : PlayerState {
         Controller.Add<FloorCollisionPB>();
         Controller.Add<AngleControlPB>();
         Controller.Add<BeatWingPB>();
+        Controller.Add<YUpLimitPB>();
         Controller.GravityScale = Settings.gravityScale;
         Controller.XVel = GameSettings.Instance.vel;
 

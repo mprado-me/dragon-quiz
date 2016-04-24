@@ -27,6 +27,10 @@ public class PlayerEffectSoundManager : MonoBehaviour2 {
     }
     private IEnumerator PlayColl2() {
         yield return new WaitForSeconds(timeToPlayNoohAfterColl);
+        PlayNooh();
+    }
+
+    public void PlayNooh() {
         _audioSource.PlayOneShot(nooh);
     }
 

@@ -24,6 +24,7 @@ public class PlayerController : Controller<PlayerSettings, PlayerData> {
         _playerEventsManager = new PlayerEventsManager();
         _playerBehavioursManager = new PlayerBehavioursManager(this);
         _playerStatesManager = new PlayerStatesManager(this);
+        Position = PlayerSettings.Instance.PlayerInitialPos;
     }
 
     private void Update() {

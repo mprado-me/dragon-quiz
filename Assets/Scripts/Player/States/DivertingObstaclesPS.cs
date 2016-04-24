@@ -14,6 +14,7 @@ public class DivertingObstaclesPS : PlayerState {
         Controller.Add<FloorCollisionPB>();
         Controller.Add<AngleControlPB>();
         Controller.Add<BeatWingPB>();
+        Controller.Add<YUpLimitPB>();
         Controller.GravityScale = PlayerSettings.Instance.gravityScale;
         Controller.XVel = 0f;
 
