@@ -22,6 +22,8 @@ public class GameController : Controller<GameSettings, GameData>  {
         UIFactory.Instance.CreateMainMenu();
         QuestionBoardFactory.Instance.CreateQuestionBoard();
         OpenCloseCircleFactory.Instance.CreateOpenCloseCircle();
+        MarkersFactory.Instance.CreateDistanceMarker();
+        MarkersFactory.Instance.CreateCorrectAnswersMarker();
     }
 
     private void Start() {

@@ -51,7 +51,7 @@ public class UIFactory : MonoBehaviour2 {
             recordDescriptionText = "NEW!";
         else
             recordDescriptionText = "RECORD";
-        GameObject correctAnswersRecordGO = CreateRecord(recordDescriptionText, correctAnswersRecord);
+        GameObject correctAnswersRecordGO = CreateRecord(recordDescriptionText, correctAnswersRecord, "");
         correctAnswersRecordGO.transform.SetParent(go.transform, false);
         correctAnswersRecordGO.transform.localPosition = new Vector3(
             correctAnswersRecordGO.transform.localPosition.x,
@@ -61,7 +61,7 @@ public class UIFactory : MonoBehaviour2 {
             recordDescriptionText = "NEW!";
         else
             recordDescriptionText = "RECORD";
-        GameObject distanceRecordGO = CreateRecord(recordDescriptionText, distanceRecord);
+        GameObject distanceRecordGO = CreateRecord(recordDescriptionText, distanceRecord, "m");
         distanceRecordGO.transform.SetParent(go.transform, false);
         distanceRecordGO.transform.localPosition = new Vector3(
             distanceRecordGO.transform.localPosition.x,
@@ -75,7 +75,7 @@ public class UIFactory : MonoBehaviour2 {
     }
 
     // It's public only because of the test
-    public GameObject CreateRecord(string recordDescriptionText, int recordValue) {
+    public GameObject CreateRecord(string recordDescriptionText, int recordValue, string valueAppend) {
         GameObject go = Instantiate(recordPrefab);
         Text recordDescriptionTextComponent = null;
         Text recordValueComponent = null;
@@ -87,7 +87,7 @@ public class UIFactory : MonoBehaviour2 {
             }
         }
         recordDescriptionTextComponent.text = recordDescriptionText;
-        recordValueComponent.text = recordValue+"m";
+        recordValueComponent.text = recordValue+valueAppend;
         // TEST
         //go.transform.SetParent(transform, false);
         return go;

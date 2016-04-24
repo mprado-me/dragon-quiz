@@ -15,7 +15,7 @@ public class GameOverMenuController : MonoBehaviour2 {
     private GameOverMenuEventsManager _eventsManager;
     private float _delta;
     private AlphaManager _alphaManager;
-   
+
     private GameOverMenuState _state;
     public GameObject canvasTest;
 
@@ -28,9 +28,11 @@ public class GameOverMenuController : MonoBehaviour2 {
         _delta = 0f;
         _state = GameOverMenuState.SHOWING;
         SetAlpha(0f);
+        Debug.Log(MarkersStorer.Instance.DistanceMarkerController.GetDistance());
+        Debug.Log(MarkersStorer.Instance.CorrectAnswersMarkerController.GetNCorrectAnswers());
     }
-	
-	void Update () {
+
+    void Update () {
         switch(_state) {
             case GameOverMenuState.SHOWING:
                 _delta += Time.deltaTime;

@@ -23,6 +23,9 @@ public class NoneToMainMenuGS : GameState {
 
         ScenariosManager.Instance.Current = ScenarioType.SKY;
 
+        MarkersStorer.Instance.DistanceMarkerController.SetInactive();
+        MarkersStorer.Instance.CorrectAnswersMarkerController.SetInactive();
+
         _mainMenuController = UIStorer.Instance.MainMenuController;
         _mainMenuController.On(MainMenuEvent.IN_ANIMATION_END, GoNextState);
         _mainMenuController.gameObject.SetActive(false);

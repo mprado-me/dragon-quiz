@@ -12,13 +12,29 @@ public class GameOverGS : GameState {
         _nextState = null;
         _openCloseCircleController = OpenCloseCircleStorer.Instance.OpenCloseCircleController;
 
+        DistanceMarkerController distanceMarkerController = MarkersStorer.Instance.DistanceMarkerController;
+        CorrectAnswersMarkerController correctAnswersMarkerController = MarkersStorer.Instance.CorrectAnswersMarkerController;
+
+        bool distanceRecord = distanceMarkerController.GetDistance() > Data.DistanceRecord;
+        if(distanceRecord)
+            Data.DistanceRecord = distanceMarkerController.GetDistance();
+
+        bool correctAnswersRecord = correctAnswersMarkerController.GetNCorrectAnswers() > Data.NCorrectAnswersRecord;
+        if(correctAnswersRecord)
+            Data.NCorrectAnswersRecord = correctAnswersMarkerController.GetNCorrectAnswers();
+
         _gameOverMenuController = UIFactory.Instance.CreateGameOverMenu(
-            Data.NCorrectAnswers,
-            Data.NCorrectAnswers > Data.NCorrectAnswersRecord,
+            correctAnswersMarkerController.GetNCorrectAnswers(),
+            correctAnswersRecord,
             Data.NCorrectAnswersRecord,
-            Data.Distance,
-            Data.Distance > Data.DistanceRecord,
-            Data.DistanceRecord);
+            distanceMarkerController.GetDistance(),
+            distanceRecord,
+            Data.DistanceRecord
+            );
+
+        distanceMarkerController.SetInactive();
+
+        correctAnswersMarkerController.SetInactive();
 
         _gameOverMenuController.On(GameOverMenuEvent.TRY_AGAIN_BUTTON_CLICK, OnTryAgainButtonClick);
         _gameOverMenuController.On(GameOverMenuEvent.MAIN_MENU_BUTTON_CLICK, OnMainMenuButtonClick);
@@ -36,6 +52,8 @@ public class GameOverGS : GameState {
         Controller.Invoke(GameEvent.GO_TO_JUMP_START_TUTORIAL);
         QuestionBoardStorer.Instance.QuestionBoardController.GoOutNow();
         _nextState = GameStatesStorer.Instance.Get<JumpStartTutorialGS>();
+        MarkersStorer.Instance.DistanceMarkerController.ClearDistance();
+        MarkersStorer.Instance.CorrectAnswersMarkerController.ClearNCorrectAnswers();
     }
 
     private void OnMainMenuButtonClick() {
@@ -50,6 +68,8 @@ public class GameOverGS : GameState {
         _gameOverMenuController.Destroy();
         QuestionBoardStorer.Instance.QuestionBoardController.GoOutNow();
         _nextState = GameStatesStorer.Instance.Get<NoneToMainMenuGS>();
+        MarkersStorer.Instance.DistanceMarkerController.ClearDistance();
+        MarkersStorer.Instance.CorrectAnswersMarkerController.ClearNCorrectAnswers();
     }
 
     protected override State<GameController, GameSettings, GameData> Update() {

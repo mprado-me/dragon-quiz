@@ -19,6 +19,9 @@ public class DivertingObstaclesGS : GameState {
 
         Controller.VelPlayerScenario = GameSettings.Instance.vel;
 
+        MarkersStorer.Instance.DistanceMarkerController.SetActive();
+        MarkersStorer.Instance.CorrectAnswersMarkerController.SetActive();
+
         Controller.Add<FixedVerticalPipesLauncherGB>();
         Controller.On(GameEvent.GO_GAME_OVER, GoGameOverState);
     }

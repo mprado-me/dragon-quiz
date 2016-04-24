@@ -23,6 +23,7 @@ public class PlayerInHorizontalPipeGS : GameState {
     private void GoNextState() {
         if(Data.CorrectAnswer == Data.HorizontalPipeEntered) {
             _nextState = GameStatesStorer.Instance.Get<ExitingHorizontalPipeAliveGS>();
+            MarkersStorer.Instance.CorrectAnswersMarkerController.AnswerHit();
             _playerController.Invoke(PlayerEvent.GO_EXITING_ALIVE);
         }
         else {

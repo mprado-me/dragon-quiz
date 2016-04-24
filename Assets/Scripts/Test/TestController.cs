@@ -104,7 +104,7 @@ public class TestController : MonoBehaviour2 {
     }
 
     private void TestRecordCreation() {
-        UIFactory.Instance.CreateRecord("NEW !", 8786);
+        UIFactory.Instance.CreateRecord("NEW !", 8786, "");
     }
 
     private void TestExitHorizontalPipeAlive() {
