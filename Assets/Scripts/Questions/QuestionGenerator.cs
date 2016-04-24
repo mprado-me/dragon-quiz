@@ -23,6 +23,8 @@ public class QuestionGenerator : MonoBehaviour2 {
             return _mathQuestionGenerator.GetNew();
         }
         else {
+            if( _queue.Count == 0 )
+                return _mathQuestionGenerator.GetNew();
             return _queue.Dequeue();
         }
     }
