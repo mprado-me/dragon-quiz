@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using SimpleJSON;
+using System;
 
 public class QuestionGenerator : MonoBehaviour2 {
 
@@ -21,10 +22,28 @@ public class QuestionGenerator : MonoBehaviour2 {
     private void AppendAll() {
         TextAsset ta = Resources.Load<TextAsset>("questions");
         JSONArray questions = JSON.Parse(ta.text).AsArray;
+        Question[] questionsArray = new Question[questions.Count];
         for( int i = 0; i < questions.Count; i++) {
-            _queue.Enqueue(new Question(questions[i]));
+            questionsArray[i] = new Question(questions[i]);
+        }
+        Shuffle(questionsArray);
+        for(int i = 0; i < questionsArray.Length; i++) {
+            _queue.Enqueue(questionsArray[i]);
         }
         Debug.Log("Nº Questions: "+_queue.Count);
+    }
+
+    private void Shuffle(Question[] questionsArray) {
+        System.Random rng = new System.Random();
+
+        int n = questionsArray.Length;
+        while(n > 1) {
+            n--;
+            int k = rng.Next(n + 1);
+            Question value = questionsArray[k];
+            questionsArray[k] = questionsArray[n];
+            questionsArray[n] = value;
+        }
     }
 
     public static QuestionGenerator Instance
