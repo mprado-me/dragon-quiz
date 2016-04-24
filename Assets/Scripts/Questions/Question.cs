@@ -50,4 +50,15 @@ public class Question {
         s = json[3][1].ToString();
         incorrectAnswerContent = s.Substring(1, s.Length - 2);
     }
+
+    public Question(string question, string correctAnswer, string incorrectAnswer) {
+        questionElementsType = new QuestionElementType[1];
+        questionElementsType[0] = QuestionElementType.TEXT;
+        questionContent = new string[1];
+        questionContent[0] = question;
+        correctAnswerType = AnswerType.TEXT;
+        correctAnswerContent = correctAnswer;
+        incorrectAnswerType = AnswerType.TEXT;
+        incorrectAnswerContent = incorrectAnswer;
+    }
 }

@@ -6,17 +6,25 @@ using System;
 
 public class QuestionGenerator : MonoBehaviour2 {
 
+    private Queue<Question> _queue;
+    private MathQuestionGenerator _mathQuestionGenerator;
+
     private static QuestionGenerator _instance;
 
-    private Queue<Question> _queue;
 
     public void Start() {
         _queue = new Queue<Question>();
+        _mathQuestionGenerator = new MathQuestionGenerator();
         AppendAll();
     }
 
     public Question GetNew() {
-        return _queue.Dequeue();
+        if( UnityEngine.Random.Range(0f, 1f) < QuestionSettings.Instance.mathQuestionChance) {
+            return _mathQuestionGenerator.GetNew();
+        }
+        else {
+            return _queue.Dequeue();
+        }
     }
 
     private void AppendAll() {
